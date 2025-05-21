@@ -1,0 +1,978 @@
+  <!DOCTYPE html>
+  <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Калькулятор крафтов Minecraft</title>
+    <link rel="icon" href="https://minecraft.mix-servers.com/assets/main/img/favicon.ico" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #2b2d31;
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        padding: 0 20px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        width: 100%;
+        background-color: #313338;
+        padding: 16px 20px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        user-select: none;
+      }
+      header img {
+        height: 48px;
+        flex-shrink: 0;
+      }
+
+    .selected-item {
+      padding: 6px;
+      margin-bottom: 4px; /* Минимальные отступы */
+    }
+
+    .selected-item img {
+      border: 1px solid #666;
+      padding: 2px;
+      border-radius: 4px;
+      background-color: #2b2d31;
+    }
+
+    #result ul li {
+      margin-bottom: 3px; /* Уменьшаем расстояние в итоговом списке */
+    }
+
+      nav#tabs {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-grow: 1;
+        justify-content: center;
+        position: relative;
+      }
+      .tab-btn {
+        background-color: transparent;
+        color: #b9bbbe;
+        border: none;
+        border-bottom: 3px solid transparent;
+        padding: 10px 18px;
+        border-radius: 4px 4px 0 0;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.2s ease;
+        user-select: none;
+      }
+      .tab-btn:hover {
+        color: #ffffff;
+        background-color: #3a3b3f;
+      }
+      .tab-btn.active {
+        color: #ffffff;
+        border-bottom-color: #5865f2;
+        background-color: #2f3136;
+        font-weight: 700;
+      }
+
+      #search-container {
+        position: relative;
+        margin-left: auto;
+        min-width: 200px;
+        max-width: 280px;
+        flex-shrink: 0;
+      }
+      #search-input {
+        width: 100%;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid #444;
+        background: #1e1f22;
+        color: white;
+        font-size: 14px;
+        outline-offset: -2px;
+      }
+      #search-input::placeholder {
+        color: #888;
+      }
+      #autocomplete-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #313338;
+        border-radius: 0 0 8px 8px;
+        max-height: 200px;
+        overflow-y: auto;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+        z-index: 1000;
+        user-select: none;
+      }
+      .autocomplete-item {
+        padding: 8px 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: background-color 0.15s ease;
+        font-size: 14px;
+      }
+      .autocomplete-item:hover {
+        background-color: #5865f2;
+        color: white;
+      }
+      .autocomplete-item img {
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        flex-shrink: 0;
+      }
+
+      main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        width: 100%;
+        max-width: 960px;
+        flex-wrap: wrap;
+        min-height: unset; 
+      }
+
+      .grid-container, .selection-container {
+        background: #313338;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 0 24px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .grid-container {
+        max-width: 480px;
+        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 64px);
+        gap: 12px;
+        user-select: none;
+      }
+
+      .grid-item {
+        width: 64px;
+        height: 64px;
+        background-color: #1e1f22;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease;
+      }
+      .grid-item:hover {
+        transform: scale(1.05);
+      }
+      .grid-item img {
+        max-width: 48px;
+        max-height: 48px;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .selection-container {
+        min-width: 320px;
+        max-width: 600px;
+        gap: 16px;
+        user-select: none;
+      }
+
+      .selected-item {
+        background: #232428;
+        padding: 12px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .selected-item-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .selected-item-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-grow: 1;
+      }
+      .selected-item img {
+        width: 32px;
+        height: 32px;
+        user-select: none;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: filter 0.2s ease;
+      }
+      .selected-item img:hover {
+        filter: brightness(1.2);
+      }
+      .selected-item input {
+        width: 50px;
+        background: #1e1f22;
+        border: 1px solid #444;
+        color: #fff;
+        padding: 4px;
+        text-align: center;
+        border-radius: 6px;
+        user-select: text;
+        font-size: 14px;
+      }
+      .remove-btn {
+        background: none;
+        border: none;
+        color: #ff6b6b;
+        font-size: 18px;
+        cursor: pointer;
+        user-select: none;
+        transition: color 0.2s ease;
+      }
+      .remove-btn:hover {
+        color: #ff4d4d;
+      }
+
+      #result {
+        background: #232428;
+        padding: 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        user-select: none;
+        white-space: normal;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      #selected-list {
+        max-height: 260px;
+        overflow-y: auto;
+      }
+
+      .selected-item {
+        padding: 8px;
+        margin-bottom: 8px;
+      }
+
+      .selected-item img {
+        border: 1px solid #888;
+        padding: 2px;
+        background-color: #2b2d31;
+      }
+
+      main {
+        align-items: flex-start;
+        min-height: 520px; /* фиксированная минимальная высота */
+      }
+      
+      #selected-list {
+        overflow-y: unset; /* Убрать прокрутку */
+        max-height: unset; /* Убрать ограничение высоты */
+      }
+
+      .clear-btn {
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        transition: background-color 0.2s ease;
+        align-self: center; /* Центрирование кнопки */
+        width: auto; /* Автоматическая ширина */
+        text-align: center; /* Центрирование текста */
+      }
+      .clear-btn:hover {
+        background-color: #ff4d4d;
+      }
+
+      .selection-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      #selected-list {
+        margin-bottom: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      #result {
+        flex-grow: 1;
+      }
+
+    .craft-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 44px); /* Уменьшаем размер ячеек */
+      grid-template-rows: repeat(3, 44px);
+      gap: 6px; /* Уменьшаем промежутки между ячейками */
+      margin-top: 12px;
+      justify-content: center;
+      user-select: none;
+    }
+
+      .craft-cell {
+        background: #1e1f22;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+      }
+      .craft-cell img {
+        max-width: 40px;
+        max-height: 40px;
+        pointer-events: none;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+      .modal-content {
+        background: #313338;
+        padding: 24px 32px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        min-width: 320px;
+        max-width: 90vw;
+        user-select: none;
+      }
+      .modal-content img {
+        max-width: 64px;
+        max-height: 64px;
+        user-select: none;
+      }
+      .modal-content button {
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        user-select: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: background-color 0.2s ease;
+      }
+      .modal-content button:hover {
+        background-color: #ff4d4d;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 0 10px 20px;
+        }
+        
+        header {
+          flex-wrap: wrap;
+          padding: 12px 10px;
+          gap: 8px;
+        }
+        
+        header img {
+          height: 36px;
+        }
+        
+        nav#tabs {
+          flex-wrap: wrap;
+          gap: 8px;
+          justify-content: flex-start;
+        }
+        
+        .tab-btn {
+          padding: 8px 12px;
+          font-size: 12px;
+        }
+        
+        #search-container {
+          min-width: 100%;
+          margin-left: 0;
+          margin-top: 8px;
+          max-width: 100%;
+        }
+        
+        #search-input {
+          font-size: 13px;
+          padding: 6px 10px;
+        }
+        
+        main {
+          flex-direction: column;
+          gap: 20px;
+          max-width: 100%;
+        }
+        
+        .grid-container {
+          max-width: 100%;
+          grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
+          gap: 8px;
+        }
+        
+        .grid-item {
+          width: 48px;
+          height: 48px;
+        }
+        
+        .grid-item img {
+          max-width: 36px;
+          max-height: 36px;
+        }
+        
+        .selection-container {
+          min-width: 100%;
+          max-width: 100%;
+          padding: 16px;
+        }
+        
+        .selected-item img {
+          width: 24px;
+          height: 24px;
+        }
+        
+        .selected-item input {
+          width: 40px;
+          font-size: 13px;
+        }
+        
+        #result {
+          font-size: 13px;
+          max-height: 150px;
+        }
+        
+        .craft-grid {
+          grid-template-columns: repeat(3, 40px);
+          grid-template-rows: repeat(3, 40px);
+          gap: 6px;
+        }
+        
+        .craft-cell img {
+          max-width: 32px; /* Уменьшенный размер иконок */
+          max-height: 32px;
+          pointer-events: none;
+        }
+
+        
+        .modal-content {
+          min-width: 280px;
+          max-width: 95vw;
+          padding: 16px 20px;
+        }
+        
+        .modal-content img {
+          max-width: 48px;
+          max-height: 48px;
+        }
+        
+        .modal-content button {
+          padding: 6px 12px;
+          font-size: 13px;
+        }
+      }
+
+    .selected-item {
+      padding: 4px;
+      margin-bottom: 4px;
+    }
+    .selected-item img {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #888;
+      padding: 2px;
+      border-radius: 4px;
+      background-color: #2b2d31;
+    }
+    .craft-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 44px);
+      grid-template-rows: repeat(3, 44px);
+      gap: 6px;
+      margin-top: 12px;
+      justify-content: center;
+    }
+    .craft-cell {
+      background: #1e1f22;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .craft-cell img {
+      max-width: 32px;
+      max-height: 32px;
+      pointer-events: none;
+    }
+    </style>
+    <script src="craft.js"></script>
+  </head>
+  <body>
+
+    <header>
+      <img src="logo.png" alt="Логотип" />
+      <nav id="tabs">
+        <button class="tab-btn active" data-tab="ae">Applied Energistics</button>
+        <button class="tab-btn" data-tab="ic">Industrial Craft</button>
+        <button class="tab-btn" data-tab="matter">Крафты из материи</button>
+        <button class="tab-btn" data-tab="resurses">Ресурсы</button>
+        <div id="search-container">
+          <input type="text" id="search-input" placeholder="Поиск..." autocomplete="off" />
+          <div id="autocomplete-list" hidden></div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="grid-container" id="item-grid"></div>
+      <div class="selection-container">
+        <div id="selected-list"></div>
+        <button id="clear-selection" class="clear-btn">🗑 Очистить всё</button>
+        <div id="result">Выберите предметы слева.</div>
+      </div>
+    </main>
+
+    <div class="modal" id="modal" onclick="closeModal()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <img id="modal-img" src="" alt="Иконка предмета" />
+        <div id="modal-craft" class="craft-grid"></div>
+        <button onclick="closeModal()">Закрыть</button>
+      </div>
+    </div>
+
+    <script>
+      let currentTab = 'ae';
+      const selectedItems = [];
+      const tabs = document.querySelectorAll('.tab-btn');
+      const searchInput = document.getElementById('search-input');
+      const autocompleteList = document.getElementById('autocomplete-list');
+      const itemGrid = document.getElementById('item-grid');
+      const selectedList = document.getElementById('selected-list');
+      const resultDiv = document.getElementById('result');
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modal-img');
+      const modalCraft = document.getElementById('modal-craft');
+
+      // Навесим события на табы
+      tabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+          if(currentTab !== btn.dataset.tab) {
+            currentTab = btn.dataset.tab;
+            updateTabs();
+            renderItemGrid();
+            clearSearch();
+          }
+        });
+      });
+      function addToSelection(id) {
+        const existing = selectedItems.find(item => item.id === id);
+        if (existing) {
+          existing.count++;
+        } else {
+          selectedItems.push({ id, count: 1 });
+        }
+        renderSelectedList();
+        calculateResources();
+      }
+
+      function updateTabs() {
+        tabs.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === currentTab));
+      }
+
+      // Отрисовка сетки предметов по фильтру категории и поиска
+      function renderItemGrid() {
+        itemGrid.innerHTML = '';
+        const searchValue = searchInput.value.toLowerCase();
+
+        const filtered = crafts
+          .filter(craft => craft.category === currentTab)
+          .filter(craft => !craft.hidden)
+          .filter(craft => craft.name.toLowerCase().includes(searchValue));
+
+        filtered.forEach(craft => {
+          const div = document.createElement('div');
+          div.className = 'grid-item';
+          div.title = craft.name;
+
+          const img = document.createElement('img');
+          img.src = craft.img || 'https://via.placeholder.com/48';
+          img.alt = craft.name;
+
+          div.appendChild(img);
+
+          // Если outputQuantity больше 1 — показываем маленький счетчик рядом с иконкой
+          if (craft.outputQuantity && craft.outputQuantity > 1) {
+            const qtyBadge = document.createElement('div');
+            qtyBadge.textContent = craft.outputQuantity;
+            qtyBadge.style.position = 'absolute';
+            qtyBadge.style.bottom = '4px';
+            qtyBadge.style.right = '4px';
+            qtyBadge.style.background = 'rgba(0,0,0,0.6)';
+            qtyBadge.style.color = 'white';
+            qtyBadge.style.fontSize = '11px';
+            qtyBadge.style.padding = '1px 4px';
+            qtyBadge.style.borderRadius = '6px';
+            qtyBadge.style.pointerEvents = 'none';
+            qtyBadge.style.userSelect = 'none';
+
+            div.style.position = 'relative'; // для позиционирования
+            div.appendChild(qtyBadge);
+          }
+
+          div.onclick = () => addToSelection(craft.id);
+
+          itemGrid.appendChild(div);
+        });
+
+        if (filtered.length === 0) {
+          itemGrid.innerHTML = '<p style="color:#999; grid-column: span 4;">Предметы не найдены</p>';
+        }
+      }
+
+      function renderSelectedList() {
+        selectedList.innerHTML = '';
+        if (selectedItems.length === 0) {
+          selectedList.innerHTML = '<p style="color:#999;">Нет выбранных предметов</p>';
+          resultDiv.textContent = 'Выберите предметы слева.';
+          return;
+        }
+      document.getElementById('clear-selection').addEventListener('click', () => {
+        selectedItems.length = 0;
+        renderSelectedList();
+        calculateResources();
+      });
+
+        selectedItems.forEach(({ id, count }) => {
+          const craft = crafts.find(c => c.id === id);
+          if (!craft) return;
+
+          const div = document.createElement('div');
+          div.className = 'selected-item';
+
+          const header = document.createElement('div');
+          header.className = 'selected-item-header';
+
+          const info = document.createElement('div');
+          info.className = 'selected-item-info';
+
+          const img = document.createElement('img');
+          img.src = craft.img || 'https://via.placeholder.com/32';
+          img.alt = craft.name;
+          img.title = 'Показать рецепт крафта';
+          img.onclick = () => showCraftModal(craft);
+
+          const nameSpan = document.createElement('span');
+          nameSpan.textContent = craft.name;
+
+          info.appendChild(img);
+          info.appendChild(nameSpan);
+
+          const countInput = document.createElement('input');
+          countInput.type = 'number';
+          countInput.min = 1;
+          countInput.step = 1;
+          countInput.value = count;
+          countInput.title = 'Количество крафтов (шагов)';
+          countInput.onchange = (e) => {
+            let val = parseInt(e.target.value);
+            if (isNaN(val) || val < 1) {
+              val = 1;
+            }
+            e.target.value = val;
+            selectedItems.find(i => i.id === id).count = val;
+            renderSelectedList(); // Обновить отображение итогов
+            calculateResources();
+          };
+
+          const removeBtn = document.createElement('button');
+          removeBtn.className = 'remove-btn';
+          removeBtn.title = 'Удалить';
+          removeBtn.textContent = '×';
+          removeBtn.onclick = () => {
+            const idx = selectedItems.findIndex(i => i.id === id);
+            if (idx !== -1) {
+              selectedItems.splice(idx, 1);
+              renderSelectedList();
+              calculateResources();
+            }
+          };
+
+          header.appendChild(info);
+          header.appendChild(countInput);
+          header.appendChild(removeBtn);
+          div.appendChild(header);
+          selectedList.appendChild(div);
+        });
+      }
+
+      // Рассчёт ресурсов с учётом вложенных крафтов
+    function calculateResources() {
+      if (selectedItems.length === 0) {
+        resultDiv.innerHTML = '<p style="color:#999;">Выберите предметы слева для расчёта ресурсов.</p>';
+        return;
+      }
+
+      resultDiv.innerHTML = '';
+      let matterTotal = 0;
+      const leftovers = {};
+      const resourcesCount = {};
+
+      const selectedSet = new Set(selectedItems.map(i => i.id));
+
+      function accumulate(craft, quantity, isRoot = false) {
+        const output = craft.outputQuantity || 1;
+        const craftCount = Math.ceil(quantity / output);
+        const totalOutput = craftCount * output;
+        const extra = totalOutput - quantity;
+
+        if (extra > 0 && !isRoot) {
+          leftovers[craft.id] = (leftovers[craft.id] || 0) + extra;
+        }
+
+        if (craft.components) {
+          craft.components.forEach(component => {
+            if (component.id === 'matter') {
+              matterTotal += component.count * craftCount;
+              return;
+            }
+
+            const subCraft = crafts.find(c => c.id === component.id);
+            if (subCraft) {
+              accumulate(subCraft, component.count * craftCount);
+            } else {
+              resourcesCount[component.id] = (resourcesCount[component.id] || 0) + component.count * craftCount;
+            }
+          });
+        }
+
+        // Добавляем только если это не корневой предмет (выбранный пользователем)
+        if (!isRoot) {
+          resourcesCount[craft.id] = (resourcesCount[craft.id] || 0) + quantity;
+        }
+      }
+
+      selectedItems.forEach(({ id, count }) => {
+        const craft = crafts.find(c => c.id === id);
+        if (!craft) return;
+        accumulate(craft, count, true);
+      });
+
+      const tree = document.createElement('ul');
+      tree.style.listStyle = 'none';
+      tree.style.paddingLeft = '0';
+
+      for (const [id, qty] of Object.entries(resourcesCount)) {
+        const craft = crafts.find(c => c.id === id);
+        if (!craft || qty <= 0) continue;
+
+        const li = document.createElement('li');
+        li.style.display = 'flex';
+        li.style.alignItems = 'center';
+        li.style.gap = '6px';
+
+        const img = document.createElement('img');
+        img.src = craft.img || 'https://via.placeholder.com/20';
+        img.alt = craft.name;
+        img.style.width = '20px';
+        img.style.height = '20px';
+        img.style.borderRadius = '4px';
+
+        const span = document.createElement('span');
+        span.textContent = `${craft.name} × ${qty}`;
+
+        li.appendChild(img);
+        li.appendChild(span);
+        tree.appendChild(li);
+      }
+
+      if (tree.children.length > 0) {
+        resultDiv.appendChild(tree);
+      }
+
+      if (matterTotal > 0) {
+        const matterInfo = document.createElement('p');
+        matterInfo.style.marginTop = '12px';
+        matterInfo.style.color = '#ffde59';
+        matterInfo.innerHTML = `
+          <img src="https://ru.minecraft.wiki/images/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%8F_%28IndustrialCraft_2%29.png?518e5" 
+          alt="Материя" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 6px;">
+          Необходимая Материя: <b>${matterTotal}</b>
+        `;
+        resultDiv.appendChild(matterInfo);
+      }
+
+      if (Object.keys(leftovers).length > 0) {
+        const leftoverTitle = document.createElement('p');
+        leftoverTitle.innerHTML = '📦 Остатки после крафта:';
+        leftoverTitle.style.marginTop = '12px';
+        leftoverTitle.style.fontWeight = 'bold';
+        resultDiv.appendChild(leftoverTitle);
+
+        const ul = document.createElement('ul');
+        ul.style.listStyle = 'none';
+        ul.style.paddingLeft = '20px';
+
+        for (const [id, qty] of Object.entries(leftovers)) {
+          const craft = crafts.find(c => c.id === id);
+          if (!craft) continue;
+
+          const li = document.createElement('li');
+          li.style.display = 'flex';
+          li.style.alignItems = 'center';
+          li.style.gap = '6px';
+
+          const img = document.createElement('img');
+          img.src = craft.img || 'https://via.placeholder.com/20';
+          img.style.width = '20px';
+          img.style.height = '20px';
+          img.style.borderRadius = '4px';
+
+          const text = document.createElement('span');
+          text.textContent = `${craft.name}: +${qty}`;
+
+          li.appendChild(img);
+          li.appendChild(text);
+          ul.appendChild(li);
+        }
+
+        resultDiv.appendChild(ul);
+      }
+    }
+      // Модальное окно с рецептом крафта
+      function showCraftModal(craft) {
+        modalImg.src = craft.img || 'https://via.placeholder.com/64';
+        modalImg.alt = craft.name;
+
+        modalCraft.innerHTML = '';
+        // Отрисуем рецепт 3x3
+        if(!craft.recipe) {
+          modalCraft.textContent = 'Рецепт отсутствует';
+        } else {
+          for(let r = 0; r < 3; r++) {
+            for(let c = 0; c < 3; c++) {
+              const cell = document.createElement('div');
+              cell.className = 'craft-cell';
+
+              const itemId = craft.recipe[r][c];
+              if(itemId) {
+                const cellCraft = crafts.find(x => x.id === itemId);
+                if(cellCraft) {
+                  const img = document.createElement('img');
+                  img.src = cellCraft.img || 'https://via.placeholder.com/40';
+                  img.alt = cellCraft.name;
+                  img.title = cellCraft.name;
+                  cell.appendChild(img);
+                }
+              }
+              modalCraft.appendChild(cell);
+            }
+          }
+        }
+        modal.style.display = 'flex';
+      }
+      function closeModal() {
+        modal.style.display = 'none';
+      }
+
+      // Поиск с автодополнением
+      searchInput.addEventListener('input', () => {
+        const val = searchInput.value.toLowerCase();
+        if(val.length === 0) {
+          autocompleteList.hidden = true;
+          renderItemGrid();
+          return;
+        }
+
+        const filtered = crafts.filter(c => c.category === currentTab && c.name.toLowerCase().includes(val)).slice(0, 10);
+
+        autocompleteList.innerHTML = '';
+        if(filtered.length === 0) {
+          autocompleteList.hidden = true;
+          renderItemGrid();
+          return;
+        }
+
+        filtered.forEach(craft => {
+          const div = document.createElement('div');
+          div.className = 'autocomplete-item';
+          div.title = craft.name;
+
+          const img = document.createElement('img');
+          img.src = craft.img || 'https://via.placeholder.com/24';
+          img.alt = craft.name;
+          div.appendChild(img);
+
+          const span = document.createElement('span');
+          span.textContent = craft.name;
+          div.appendChild(span);
+
+          div.onclick = () => {
+            addToSelection(craft.id);
+            clearSearch();
+          };
+
+          autocompleteList.appendChild(div);
+        });
+
+        autocompleteList.hidden = false;
+        renderItemGrid();
+      });
+
+      function clearSearch() {
+        searchInput.value = '';
+        autocompleteList.innerHTML = '';
+        autocompleteList.hidden = true;
+        renderItemGrid();
+      }
+
+      // Закрываем список автодополнения при клике вне
+      document.addEventListener('click', e => {
+        if(!searchInput.contains(e.target) && !autocompleteList.contains(e.target)) {
+          autocompleteList.hidden = true;
+        }
+      });
+
+      // Инициализация страницы
+      updateTabs();
+      renderItemGrid();
+      renderSelectedList();
+    </script>
+
+  </body>
+  </html>

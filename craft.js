@@ -1,0 +1,982 @@
+  const crafts = [
+    // Крафты Applied Energistics (ae)
+    //{
+    //  id: 'ae_cable',
+    //  name: 'ME Cable',
+    //  img: 'https://minecraft.mix-servers.com/assets/main/img/items/me_cable.png',
+    //  category: 'ae',
+    //  outputQuantity: 8,
+    //  components: [
+    //    { id: 'ae_fluix_dust', count: 2 },
+    //    { id: 'ae_silicon', count: 1 }
+    //  ],
+    //  recipe: [
+    //    [null, 'ae_fluix_dust', null],
+    //    ['ae_fluix_dust', 'ae_silicon', 'ae_fluix_dust'],
+    //    [null, 'ae_fluix_dust', null]
+    //  ]
+    //},
+    // Крафты Ресурсы
+    {
+      id: 'Wood_Boards',
+      name: 'Доски',
+      img: 'https://minecraft.wiki/images/thumb/Oak_Planks.png/160px-Oak_Planks.png?d9efa',
+      category: 'resurses',
+      outputQuantity: 4,
+      components: [
+        { id: 'Log', count: 1 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, 'Log', null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Cobblestone',
+      name: 'Булыжник',
+      img: 'https://minecraft.wiki/images/thumb/Cobblestone_JE5_BE3.png/160px-Cobblestone_JE5_BE3.png?29624',
+      category: 'resurses',
+      outputQuantity: 1,
+      components: [
+        { id: 'Stone', count: 1 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, 'Stone', null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Furnace',
+      name: 'Печка',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9F%D0%B5%D1%87%D1%8C_JE4.png/160px-%D0%9F%D0%B5%D1%87%D1%8C_JE4.png?824e0',
+      category: 'resurses',
+      outputQuantity: 1,
+      components: [
+        { id: 'Cobblestone', count: 8 },
+      ],
+      recipe: [
+        ['Cobblestone', 'Cobblestone', 'Cobblestone'],
+        ['Cobblestone', null, 'Cobblestone'],
+        ['Cobblestone', 'Cobblestone', 'Cobblestone']
+      ]
+    },
+    {
+      id: 'Iron',
+      name: 'Железо',
+      img: 'https://ru.minecraft.wiki/images/%D0%96%D0%B5%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B9_%D1%81%D0%BB%D0%B8%D1%82%D0%BE%D0%BA_JE3_BE2.png?82794',
+      category: 'resurses',
+      outputQuantity: 2,
+      components: [
+        { id: 'Iron_Ore', count: 1 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, 'Iron_Ore', null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Gold',
+      name: 'Золото',
+      img: 'https://ru.minecraft.wiki/images/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%BE%D0%B9_%D1%81%D0%BB%D0%B8%D1%82%D0%BE%D0%BA_JE4_BE2.png?81750',
+      category: 'resurses',
+      outputQuantity: 2,
+      components: [
+        { id: 'Gold_Ore', count: 1 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, 'Gold_Ore', null],
+        [null, null, null]
+      ]
+    },
+    
+    // Крафты из Industrial Craft (ic)
+    {
+      id: 'Windmill_CBH',
+      name: 'Ветряк СВН',
+      img: 'https://mixicons.zrefio.com/api/items/3653/64/',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Windmill_BH', count: 4 },
+        { id: 'Transformer_upgrade', count: 1 }
+      ],
+      recipe: [
+        [null, 'Windmill_BH', null],
+        ['Windmill_BH', 'Transformer_upgrade', 'Windmill_BH'],
+        [null, 'Windmill_BH', null]
+      ]
+    },
+    {
+      id: 'Windmill_BH',
+      name: 'Ветряк ВН',
+      img: 'https://mixicons.zrefio.com/api/items/3652/64/',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Windmill_CH', count: 4 },
+        { id: 'Transformer_upgrade', count: 1 }
+      ],
+      recipe: [
+        [null, 'Windmill_CH', null],
+        ['Windmill_CH', 'Transformer_upgrade', 'Windmill_CH'],
+        [null, 'Windmill_CH', null]
+      ]
+    },
+    {
+      id: 'Windmill_CH',
+      name: 'Ветряк СН',
+      img: 'https://mixicons.zrefio.com/api/items/3651/64/',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Windmill_HH', count: 4 },
+        { id: 'Transformer_upgrade', count: 1 }
+      ],
+      recipe: [
+        [null, 'Windmill_HH', null],
+        ['Windmill_HH', 'Transformer_upgrade', 'Windmill_HH'],
+        [null, 'Windmill_HH', null]
+      ]
+    },
+    {
+      id: 'Windmill_HH',
+      name: 'Ветряк НН',
+      img: 'https://mixicons.zrefio.com/api/items/3650/64/',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Windmill_CHH', count: 4 },
+        { id: 'Transformer_upgrade', count: 1 }
+      ],
+      recipe: [
+        [null, 'Windmill_CHH', null],
+        ['Windmill_CHH', 'Transformer_upgrade', 'Windmill_CHH'],
+        [null, 'Windmill_CHH', null]
+      ]
+    },
+    {
+      id: 'Transformer_upgrade',
+      name: 'Апгрейд трансформатора',
+      img: 'https://mixicons.zrefio.com/api/items/3773/64/',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Glass', count: 5 },
+        { id: 'Gold_Cable', count: 2 },
+        { id: 'Electrical_circuit', count: 1 },
+        { id: 'CH', count: 1 }
+      ],
+      recipe: [
+        ['Glass', 'Glass', 'Glass'],
+        ['Gold_Cable', 'CH', 'Gold_Cable'],
+        ['Glass', 'Electrical_circuit', 'Glass']
+      ]
+    },
+    {
+      id: 'CH',
+      name: 'Трансформатор СН',
+      img: 'https://mixicons.zrefio.com/api/items/3575/64/',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Gold_Cable', count: 2 },
+        { id: 'Mechanism', count: 1 }
+      ],
+      recipe: [
+        [null, 'Gold_Cable', null],
+        [null, 'Mechanism', null],
+        [null, 'Gold_Cable', null]
+      ]
+    },
+    {
+      id: 'Gold_Cable',
+      name: 'Золотой провод с двойной изоляцией',
+      img: 'https://ru.minecraft.wiki/images/%D0%98%D0%B7%D0%BE%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B7%D0%BE%D0%BB%D0%BE%D1%82%D0%BE%D0%B9_%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4_%28IndustrialCraft_2%29.png?b6aec',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Gold', count: 3 }
+      ],
+      recipe: [
+        ['Rubber', 'Rubber', null],
+        ['The_Golden_Wire', null, null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'The_Golden_Wire',
+      name: 'Золотой провод',
+      img: 'https://ru.minecraft.wiki/images/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%BE%D0%B9_%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4_%28IndustrialCraft_2%29.png?1ba09',
+      category: 'ic',
+      outputQuantity: 12,
+      components: [
+        { id: 'Gold', count: 3 }
+      ],
+      recipe: [
+        [null, null, null],
+        ['Gold', 'Gold', 'Gold'],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Electrical_circuit',
+      name: 'Электросхема',
+      img: 'https://ru.minecraft.wiki/images/%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D1%81%D1%85%D0%B5%D0%BC%D0%B0_%28IndustrialCraft_2%29.png?affbe',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Insulated_Copper_Cable', count: 6 },
+        { id: 'Redstone', count: 2 },
+        { id: 'Steel_Ingot', count: 1 }
+      ],
+      recipe: [
+        ['Insulated_Copper_Cable', 'Insulated_Copper_Cable', 'Insulated_Copper_Cable'],
+        ['Redstone', 'Steel_Ingot', 'Redstone'],
+        ['Insulated_Copper_Cable', 'Insulated_Copper_Cable', 'Insulated_Copper_Cable']
+      ]
+    },
+    {
+      id: 'Windmill_CHH',
+      name: 'Ветряк СНН',
+      img: 'https://mixicons.zrefio.com/api/items/3649/64/',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Wind_Mill', count: 4 },
+        { id: 'HH', count: 1 }
+      ],
+      recipe: [
+        [null, 'Wind_Mill', null],
+        ['Wind_Mill', 'HH', 'Wind_Mill'],
+        [null, 'Wind_Mill', null]
+      ]
+    },
+    {
+      id: 'HH',
+      name: 'Трансформатор НН',
+      img: 'https://mixicons.zrefio.com/api/items/3574/64/',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Wood_Boards', count: 4 },
+        { id: 'Insulated_Copper_Cable', count: 2 },
+        { id: 'Copper_Ingot', count: 3 }
+      ],
+      recipe: [
+        ['Wood_Boards', 'Insulated_Copper_Cable', 'Wood_Boards'],
+        ['Copper_Ingot', 'Copper_Ingot', 'Copper_Ingot'],
+        ['Wood_Boards', 'Insulated_Copper_Cable', 'Wood_Boards']
+      ]
+    },
+    {
+      id: 'Wind_Mill',
+      name: 'Ветряк',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%92%D0%B5%D1%82%D1%80%D0%BE%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80_%28IndustrialCraft_2%29.png/160px-%D0%92%D0%B5%D1%82%D1%80%D0%BE%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80_%28IndustrialCraft_2%29.png?93a8b',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Iron', count: 4 },
+        { id: 'Generator', count: 1 }
+      ],
+      recipe: [
+        ['Iron', null, 'Iron'],
+        [null, 'Generator', null],
+        ['Iron', null, 'Iron']
+      ]
+    },
+    {
+      id: 'Generator',
+      name: 'Генератор',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80_%28IndustrialCraft_2%29.png/160px-%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80_%28IndustrialCraft_2%29.png?7461b',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Battery', count: 1 },
+        { id: 'Mechanism', count: 1 },
+        { id: 'Furnace', count: 1 },
+      ],
+      recipe: [
+        [null, 'Battery', null],
+        [null, 'Mechanism', null],
+        [null, 'Furnace', null]
+      ]
+    },
+    {
+      id: 'Battery',
+      name: 'Аккамулятор',
+      img: 'https://ru.minecraft.wiki/images/%D0%90%D0%BA%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80_%28IndustrialCraft_2%29.gif?acf96',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Redstone', count: 2 },
+        { id: 'Tin_Ingot', count: 4 },
+        { id: 'Insulated_Copper_Cable', count: 1 },
+      ],
+      recipe: [
+        [null, 'Insulated_Copper_Cable', null],
+        ['Tin_Ingot', 'Redstone', 'Tin_Ingot'],
+        ['Tin_Ingot', 'Redstone', 'Tin_Ingot']
+      ]
+    },
+    {
+      id: 'Insulated_Copper_Cable',
+      name: 'Изолированный медный провод',
+      img: 'https://ru.minecraft.wiki/images/IC2_%D0%98%D0%B7%D0%BE%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4.png?32039',
+      category: 'ic',
+      outputQuantity: 6,
+      components: [
+        { id: 'Copper_Ingot', count: 3 },
+        { id: 'Rubber', count: 6 }
+      ],
+      recipe: [
+        ['Rubber', 'Rubber', 'Rubber'],
+        ['Copper_Ingot', 'Copper_Ingot', 'Copper_Ingot'],
+        ['Rubber', 'Rubber', 'Rubber']
+      ]
+    },
+    {
+      id: 'Rubber',
+      name: 'Резина',
+      img: 'https://ru.minecraft.wiki/images/%D0%A0%D0%B5%D0%B7%D0%B8%D0%BD%D0%B0_%28IndustrialCraft_2%29.png?dfd2c',
+      category: 'ic',
+      outputQuantity: 3,
+      components: [
+        { id: 'Sticky_Resin', count: 1 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, 'Sticky_Resin', null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Steel_Ingot',
+      name: 'Слиток закаленного железа',
+      img: 'https://ru.minecraft.wiki/images/%D0%A1%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%81%D0%BB%D0%B8%D1%82%D0%BE%D0%BA_%28IndustrialCraft_2%29.png?b78c9',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Iron', count: 1 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, 'Iron', null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Tin_Ingot',
+      name: 'Оловянный слиток',
+      img: 'https://ru.minecraft.wiki/images/%D0%9E%D0%BB%D0%BE%D0%B2%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9_%D1%81%D0%BB%D0%B8%D1%82%D0%BE%D0%BA_%28IndustrialCraft_2%29.png?b5c5e',
+      category: 'ic',
+      outputQuantity: 2,
+      components: [
+        { id: 'Tin_ore', count: 1 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, 'Tin_ore', null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Copper_Ingot',
+      name: 'Медный слиток',
+      img: 'https://ru.minecraft.wiki/images/%D0%9C%D0%B5%D0%B4%D0%BD%D1%8B%D0%B9_%D1%81%D0%BB%D0%B8%D1%82%D0%BE%D0%BA_%28IndustrialCraft_2%29.png?3176e',
+      category: 'ic',
+      outputQuantity: 2,
+      components: [
+        { id: 'Copper_ore', count: 1 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, 'Copper_ore', null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Mechanism',
+      name: 'Механизм',
+      img: 'https://ru.minecraft.wiki/images/%D0%9A%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC%D0%B0_%28IndustrialCraft_2%29.png?1b634',
+      category: 'ic',
+      outputQuantity: 1,
+      components: [
+        { id: 'Steel_Ingot', count: 8 }
+      ],
+      recipe: [
+        ['Steel_Ingot', 'Steel_Ingot', 'Steel_Ingot'],
+        ['Steel_Ingot', null, 'Steel_Ingot'],
+        ['Steel_Ingot', 'Steel_Ingot', 'Steel_Ingot']
+      ]
+    },
+    // Крафты из материи (matter)
+    {
+      id: 'matter',
+      name: 'Материя',
+      img: 'https://ru.minecraft.wiki/images/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%8F_%28IndustrialCraft_2%29.png?518e5',
+      category: 'matter',
+      outputQuantity: 1,
+      components: [],
+      recipe: null,
+      hidden: true  // <- этот флаг для скрытия из списка выбора
+    },
+    {
+      id: 'Log',
+      name: 'Древесина',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%94%D1%83%D0%B1%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B4%D1%80%D0%B5%D0%B2%D0%B5%D1%81%D0%B8%D0%BD%D0%B0_JE5_BE3.png/160px-%D0%94%D1%83%D0%B1%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B4%D1%80%D0%B5%D0%B2%D0%B5%D1%81%D0%B8%D0%BD%D0%B0_JE5_BE3.png?3fc45',
+      category: 'matter',
+      outputQuantity: 8,
+      components: [
+        { id: 'matter', count: 1 }
+      ],
+      recipe: [
+        [null, 'matter', null],
+        [null, null, null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Stone',
+      name: 'Камень',
+      img: 'https://minecraft.wiki/images/thumb/Stone_JE8.png/160px-Stone_JE8.png?b5028',
+      category: 'matter',
+      outputQuantity: 16,
+      components: [
+        { id: 'matter', count: 1 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, 'matter', null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Snow',
+      name: 'Стег (Блок)',
+      img: 'https://ru.minecraft.wiki/images/%D0%A1%D0%BD%D0%B5%D0%B6%D0%BD%D1%8B%D0%B9_%D0%B1%D0%BB%D0%BE%D0%BA_JE2_BE2.png?cfb44',
+      category: 'matter',
+      outputQuantity: 4,
+      components: [
+        { id: 'matter', count: 2 }
+      ],
+      recipe: [
+        ['matter', null, 'matter'],
+        [null, null, null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Grass',
+      name: 'Трава',
+      img: 'https://minecraft.wiki/images/Grass_Block_JE7_BE6.png?424c1',
+      category: 'matter',
+      outputQuantity: 16,
+      components: [
+        { id: 'matter', count: 2 }
+      ],
+      recipe: [
+        [null, null, null],
+        ['matter', null, null],
+        ['matter', null, null]
+      ]
+    },
+    {
+      id: 'Sandstone',
+      name: 'Песчаник',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9F%D0%B5%D1%81%D1%87%D0%B0%D0%BD%D0%B8%D0%BA.png/160px-%D0%9F%D0%B5%D1%81%D1%87%D0%B0%D0%BD%D0%B8%D0%BA.png?0cbf3',
+      category: 'matter',
+      outputQuantity: 16,
+      components: [
+        { id: 'matter', count: 2 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, null, 'matter'],
+        [null, 'matter', null]
+      ]
+    },
+    {
+      id: 'Water',
+      name: 'Вода',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%92%D0%BE%D0%B4%D0%B0.png/160px-%D0%92%D0%BE%D0%B4%D0%B0.png?be87b',
+      category: 'matter',
+      outputQuantity: 1,
+      components: [
+        { id: 'matter', count: 2 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, 'matter', null],
+        [null, 'matter', null]
+      ]
+    },
+    {
+      id: 'Lava',
+      name: 'Лава',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9B%D0%B0%D0%B2%D0%B0_JE14.png/160px-%D0%9B%D0%B0%D0%B2%D0%B0_JE14.png?1c545',
+      category: 'matter',
+      outputQuantity: 1,
+      components: [
+        { id: 'matter', count: 3 }
+      ],
+      recipe: [
+        [null, 'matter', null],
+        [null, 'matter', null],
+        [null, 'matter', null]
+      ]
+    },
+    {
+      id: 'Mossy_cobblestone',
+      name: 'Замшелый булыжник',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%97%D0%B0%D0%BC%D1%88%D0%B5%D0%BB%D1%8B%D0%B9_%D0%B1%D1%83%D0%BB%D1%8B%D0%B6%D0%BD%D0%B8%D0%BA_JE4_BE2.png/160px-%D0%97%D0%B0%D0%BC%D1%88%D0%B5%D0%BB%D1%8B%D0%B9_%D0%B1%D1%83%D0%BB%D1%8B%D0%B6%D0%BD%D0%B8%D0%BA_JE4_BE2.png?92bf3',
+      category: 'matter',
+      outputQuantity: 16,
+      components: [
+        { id: 'matter', count: 3 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, 'matter', null],
+        ['matter', null, 'matter']
+      ]
+    },
+    {
+      id: 'Copper_ore',
+      name: 'Медная руда',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9C%D0%B5%D0%B4%D0%BD%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_%28IndustrialCraft_2%29.png/160px-%D0%9C%D0%B5%D0%B4%D0%BD%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_%28IndustrialCraft_2%29.png?ee35e',
+      category: 'matter',
+      outputQuantity: 5,
+      components: [
+        { id: 'matter', count: 3 }
+      ],
+      recipe: [
+        [null, null, 'matter'],
+        ['matter', null, 'matter'],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Tin_ore',
+      name: 'Оловянная руда',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9E%D0%BB%D0%BE%D0%B2%D1%8F%D0%BD%D0%BD%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_%28IndustrialCraft_2%29.png/160px-%D0%9E%D0%BB%D0%BE%D0%B2%D1%8F%D0%BD%D0%BD%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_%28IndustrialCraft_2%29.png?69901',
+      category: 'matter',
+      outputQuantity: 5,
+      components: [
+        { id: 'matter', count: 3 }
+      ],
+      recipe: [
+        [null, null, null],
+        ['matter', null, 'matter'],
+        [null, null, 'matter']
+      ]
+    },
+    {
+      id: 'Netherrack',
+      name: 'Адский камень',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%90%D0%B4%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C_JE4_BE2.png/160px-%D0%90%D0%B4%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C_JE4_BE2.png?a20a7',
+      category: 'matter',
+      outputQuantity: 16,
+      components: [
+        { id: 'matter', count: 3 }
+      ],
+      recipe: [
+        [null, null, 'matter'],
+        [null, 'matter', null],
+        ['matter', null, null]
+      ]
+    },
+    {
+      id: 'Snowball',
+      name: 'Снежок',
+      img: 'https://ru.minecraft.wiki/images/%D0%A1%D0%BD%D0%B5%D0%B6%D0%BE%D0%BA_JE3_BE3.png?44fb0',
+      category: 'matter',
+      outputQuantity: 16,
+      components: [
+        { id: 'matter', count: 3 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, null, null],
+        ['matter', 'matter', 'matter']
+      ]
+    },
+    {
+      id: 'Coal',
+      name: 'Уголь',
+      img: 'https://ru.minecraft.wiki/images/%D0%A3%D0%B3%D0%BE%D0%BB%D1%8C_JE4_BE3.png?4532a',
+      category: 'matter',
+      outputQuantity: 8,
+      components: [
+        { id: 'matter', count: 3 }
+      ],
+      recipe: [
+        [null, null, 'matter'],
+        ['matter', null, null],
+        [null, null, 'matter']
+      ]
+    },
+    {
+      id: 'White_wool',
+      name: 'Белая Шерсть',
+      img: 'https://minecraft.wiki/images/thumb/White_Wool_JE2_BE2.png/160px-White_Wool_JE2_BE2.png?2bcdc',
+      category: 'matter',
+      outputQuantity: 12,
+      components: [
+        { id: 'matter', count: 3 }
+      ],
+      recipe: [
+        ['matter', null, 'matter'],
+        [null, null, null],
+        [null, 'matter', null]
+      ]
+    },
+    {
+      id: 'Vines',
+      name: 'Лианы',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9B%D0%B8%D0%B0%D0%BD%D1%8B.png/160px-%D0%9B%D0%B8%D0%B0%D0%BD%D1%8B.png?53222',
+      category: 'matter',
+      outputQuantity: 24,
+      components: [
+        { id: 'matter', count: 3 }
+      ],
+      recipe: [
+        ['matter', null, null],
+        ['matter', null, null],
+        ['matter', null, null]
+      ]
+    },
+    {
+      id: 'Lapis_Lazuli',
+      name: 'Лазурит',
+      img: 'https://ru.minecraft.wiki/images/%D0%9B%D0%B0%D0%B7%D1%83%D1%80%D0%B8%D1%82.png?12fbe',
+      category: 'matter',
+      outputQuantity: 9,
+      components: [
+        { id: 'matter', count: 4 }
+      ],
+      recipe: [
+        ['matter', null, null],
+        ['matter', null, null],
+        ['matter', 'matter', null]
+      ]
+    },
+    {
+      id: 'Bone',
+      name: 'Кость',
+      img: 'https://ru.minecraft.wiki/images/%D0%9A%D0%BE%D1%81%D1%82%D1%8C.png?ac62b',
+      category: 'matter',
+      outputQuantity: 32,
+      components: [
+        { id: 'matter', count: 4 }
+      ],
+      recipe: [
+        ['matter', null, null],
+        ['matter', 'matter', null],
+        ['matter', null, null]
+      ]
+    },
+    {
+      id: 'Obsidian',
+      name: 'Обсидиан',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9E%D0%B1%D1%81%D0%B8%D0%B4%D0%B8%D0%B0%D0%BD_JE3_BE2.png/160px-%D0%9E%D0%B1%D1%81%D0%B8%D0%B4%D0%B8%D0%B0%D0%BD_JE3_BE2.png?5f03f',
+      category: 'matter',
+      outputQuantity: 12,
+      components: [
+        { id: 'matter', count: 4 }
+      ],
+      recipe: [
+        ['matter', null, 'matter'],
+        ['matter', null, 'matter'],
+        [null, null, null]
+      ]
+    },
+    {
+      id: 'Feather',
+      name: 'Перо',
+      img: 'https://ru.minecraft.wiki/images/%D0%9F%D0%B5%D1%80%D0%BE_JE3_BE2.png?5e1b7',
+      category: 'matter',
+      outputQuantity: 32,
+      components: [
+        { id: 'matter', count: 4 }
+      ],
+      recipe: [
+        [null, 'matter', null],
+        [null, 'matter', null],
+        ['matter', null, 'matter']
+      ]
+    },
+    {
+      id: 'Redstone',
+      name: 'Редстоун',
+      img: 'https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17',
+      category: 'matter',
+      outputQuantity: 24,
+      components: [
+        { id: 'matter', count: 4 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, 'matter', null],
+        ['matter', 'matter', 'matter']
+      ]
+    },
+    {
+      id: 'Glass',
+      name: 'Стекло',
+      img: 'https://minecraft.wiki/images/thumb/Glass_JE4_BE2.png/160px-Glass_JE4_BE2.png?fb219',
+      category: 'matter',
+      outputQuantity: 32,
+      components: [
+        { id: 'matter', count: 4 }
+      ],
+      recipe: [
+        [null, 'matter', null],
+        ['matter', null, 'matter'],
+        [null, 'matter', null]
+      ]
+    },
+    {
+      id: 'Sticky_Resin',
+      name: 'Латекс',
+      img: 'https://ru.minecraft.wiki/images/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D1%81_%28IndustrialCraft_2%29.png?56f34',
+      category: 'matter',
+      outputQuantity: 21,
+      components: [
+        { id: 'matter', count: 4 }
+      ],
+      recipe: [
+        ['matter', null, 'matter'],
+        [null, null, null],
+        ['matter', null, 'matter']
+      ]
+    },
+    {
+      id: 'Clay',
+      name: 'Глина',
+      img: 'https://ru.minecraft.wiki/images/%D0%9A%D0%BE%D0%BC%D0%BE%D0%BA_%D0%B3%D0%BB%D0%B8%D0%BD%D1%8B_JE2_BE2.png?98e01',
+      category: 'matter',
+      outputQuantity: 48,
+      components: [
+        { id: 'matter', count: 5 }
+      ],
+      recipe: [
+        ['matter', 'matter', null],
+        ['matter', null, null],
+        ['matter', 'matter', null]
+      ]
+    },
+    {
+      id: 'Mycelium',
+      name: 'Мицелий',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9C%D0%B8%D1%86%D0%B5%D0%BB%D0%B8%D0%B9.png/160px-%D0%9C%D0%B8%D1%86%D0%B5%D0%BB%D0%B8%D0%B9.png?33ad9',
+      category: 'matter',
+      outputQuantity: 24,
+      components: [
+        { id: 'matter', count: 5 }
+      ],
+      recipe: [
+        [null, null, null],
+        ['matter', null, 'matter'],
+        ['matter', 'matter', 'matter']
+      ]
+    },
+    {
+      id: 'Iron_Ore',
+      name: 'Железная руда',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%96%D0%B5%D0%BB%D0%B5%D0%B7%D0%BD%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_JE6_BE4.png/160px-%D0%96%D0%B5%D0%BB%D0%B5%D0%B7%D0%BD%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_JE6_BE4.png?6ea47',
+      category: 'matter',
+      outputQuantity: 2,
+      components: [
+        { id: 'matter', count: 5 }
+      ],
+      recipe: [
+        ['matter', null, 'matter'],
+        [null, 'matter', null],
+        ['matter', null, 'matter']
+      ]
+    },
+    {
+      id: 'Gold_Ore',
+      name: 'Золотая руда',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_JE7_BE4.png/160px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_JE7_BE4.png?99b15',
+      category: 'matter',
+      outputQuantity: 2,
+      components: [
+        { id: 'matter', count: 5 }
+      ],
+      recipe: [
+        [null, 'matter', null],
+        ['matter', 'matter', 'matter'],
+        [null, 'matter', null]
+      ]
+    },
+    {
+      id: 'Ink_Sac',
+      name: 'Чернильный мешок',
+      img: 'https://ru.minecraft.wiki/images/%D0%A7%D0%B5%D1%80%D0%BD%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%88%D0%BE%D0%BA.png?fb1df',
+      category: 'matter',
+      outputQuantity: 48,
+      components: [
+        { id: 'matter', count: 5 }
+      ],
+      recipe: [
+        [null, 'matter', 'matter'],
+        [null, 'matter', 'matter'],
+        [null, 'matter', null]
+      ]
+    },
+    {
+      id: 'Cocoa_Beans',
+      name: 'Какао-бобы',
+      img: 'https://ru.minecraft.wiki/images/%D0%9A%D0%B0%D0%BA%D0%B0%D0%BE-%D0%B1%D0%BE%D0%B1%D1%8B.png?943e0',
+      category: 'matter',
+      outputQuantity: 32,
+      components: [
+        { id: 'matter', count: 5 }
+      ],
+      recipe: [
+        ['matter', 'matter', null],
+        [null, null, 'matter'],
+        ['matter', 'matter', null]
+      ]
+    },
+    {
+      id: 'Flint',
+      name: 'Кремень',
+      img: 'https://ru.minecraft.wiki/images/%D0%9A%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D1%8C_JE3_BE3.png?546d8',
+      category: 'matter',
+      outputQuantity: 32,
+      components: [
+        { id: 'matter', count: 5 }
+      ],
+      recipe: [
+        [null, 'matter', null],
+        ['matter', 'matter', null],
+        ['matter', 'matter', null]
+      ]
+    },
+    {
+      id: 'Stone_brick',
+      name: 'Каменный кирпич',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87.png/160px-%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87.png?2a56e',
+      category: 'matter',
+      outputQuantity: 48,
+      components: [
+        { id: 'matter', count: 5 }
+      ],
+      recipe: [
+        ['matter', 'matter', null],
+        ['matter', 'matter', null],
+        ['matter', null, null]
+      ]
+    },
+    {
+      id: 'Glowstone',
+      name: 'Светокамень',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C_JE4_BE2.png/160px-%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C_JE4_BE2.png?b1c6a',
+      category: 'matter',
+      outputQuantity: 8,
+      components: [
+        { id: 'matter', count: 6 }
+      ],
+      recipe: [
+        [null, 'matter', null],
+        ['matter', null, 'matter'],
+        ['matter', 'matter', 'matter']
+      ]
+    },
+    {
+      id: 'Cactus',
+      name: 'Кактус',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9A%D0%B0%D0%BA%D1%82%D1%83%D1%81_JE4.png/160px-%D0%9A%D0%B0%D0%BA%D1%82%D1%83%D1%81_JE4.png?879de',
+      category: 'matter',
+      outputQuantity: 48,
+      components: [
+        { id: 'matter', count: 6 }
+      ],
+      recipe: [
+        [null, 'matter', null],
+        ['matter', 'matter', 'matter'],
+        ['matter', null, 'matter']
+      ]
+    },
+    {
+      id: 'Sugar_Canes',
+      name: 'Сахарный тростник',
+      img: 'https://ru.minecraft.wiki/images/thumb/%D0%A1%D0%B0%D1%85%D0%B0%D1%80%D0%BD%D1%8B%D0%B9_%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%BD%D0%B8%D0%BA_JE2_BE2.png/160px-%D0%A1%D0%B0%D1%85%D0%B0%D1%80%D0%BD%D1%8B%D0%B9_%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%BD%D0%B8%D0%BA_JE2_BE2.png?ae0a2',
+      category: 'matter',
+      outputQuantity: 48,
+      components: [
+        { id: 'matter', count: 6 }
+      ],
+      recipe: [
+        ['matter', null, 'matter'],
+        ['matter', null, 'matter'],
+        ['matter', null, 'matter']
+      ]
+    },
+    {
+      id: 'Gunpowder',
+      name: 'Порох',
+      img: 'https://ru.minecraft.wiki/images/%D0%9F%D0%BE%D1%80%D0%BE%D1%85_JE2_BE2.png?f36ba',
+      category: 'matter',
+      outputQuantity: 15,
+      components: [
+        { id: 'matter', count: 7 }
+      ],
+      recipe: [
+        ['matter', 'matter', 'matter'],
+        ['matter', null, null],
+        ['matter', 'matter', 'matter']
+      ]
+    },
+    {
+      id: 'Iridium_Ore',
+      name: 'Иридий',
+      img: 'https://ru.minecraft.wiki/images/%D0%98%D1%80%D0%B8%D0%B4%D0%B8%D0%B9_%28IndustrialCraft_2%29.png?dcc3e',
+      category: 'matter',
+      outputQuantity: 1,
+      components: [
+        { id: 'matter', count: 7 }
+      ],
+      recipe: [
+        ['matter', 'matter', 'matter'],
+        [null, 'matter', null],
+        ['matter', 'matter', 'matter']
+      ]
+    },
+    {
+      id: 'Diamond',
+      name: 'Алмаз',
+      img: 'https://ru.minecraft.wiki/images/%D0%90%D0%BB%D0%BC%D0%B0%D0%B7_JE3_BE3.png?0b981',
+      category: 'matter',
+      outputQuantity: 1,
+      components: [
+        { id: 'matter', count: 9 }
+      ],
+      recipe: [
+        ['matter', 'matter', 'matter'],
+        ['matter', 'matter', 'matter'],
+        ['matter', 'matter', 'matter']
+      ]
+    }
+  //  {
+  //    id: 'Snow',
+  //    name: '1',
+  //    img: '',
+  //    category: 'matter',
+  //    outputQuantity: 1,
+  //    components: [
+  //      { id: 'matter', count: 5 }
+  //   ],
+  //    recipe: [
+  //      [null, null, null],
+  //      [null, null, null],
+  //      [null, null, null]
+  //    ]
+  //  },
+  ];
