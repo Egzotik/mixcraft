@@ -20,7 +20,7 @@
     {
       id: 'Wood_Boards',
       name: 'Доски',
-      img: 'https://minecraft.wiki/images/thumb/Oak_Planks.png/160px-Oak_Planks.png?d9efa',
+      img: 'https://mixicons.zrefio.com/api/items/4579/64/',
       category: 'resurses',
       outputQuantity: 4,
       components: [
@@ -35,7 +35,7 @@
     {
       id: 'Cobblestone',
       name: 'Булыжник',
-      img: 'https://minecraft.wiki/images/thumb/Cobblestone_JE5_BE3.png/160px-Cobblestone_JE5_BE3.png?29624',
+      img: 'https://mixicons.zrefio.com/api/items/4405/64/',
       category: 'resurses',
       outputQuantity: 1,
       components: [
@@ -50,7 +50,7 @@
     {
       id: 'Furnace',
       name: 'Печка',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9F%D0%B5%D1%87%D1%8C_JE4.png/160px-%D0%9F%D0%B5%D1%87%D1%8C_JE4.png?824e0',
+      img: 'https://mixicons.zrefio.com/api/items/4584/64/',
       category: 'resurses',
       outputQuantity: 1,
       components: [
@@ -65,7 +65,7 @@
     {
       id: 'Iron',
       name: 'Железо',
-      img: 'https://ru.minecraft.wiki/images/%D0%96%D0%B5%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B9_%D1%81%D0%BB%D0%B8%D1%82%D0%BE%D0%BA_JE3_BE2.png?82794',
+      img: 'https://mixicons.zrefio.com/api/items/3631/64/',
       category: 'resurses',
       outputQuantity: 2,
       components: [
@@ -80,7 +80,7 @@
     {
       id: 'Gold',
       name: 'Золото',
-      img: 'https://ru.minecraft.wiki/images/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%BE%D0%B9_%D1%81%D0%BB%D0%B8%D1%82%D0%BE%D0%BA_JE4_BE2.png?81750',
+      img: 'https://mixicons.zrefio.com/api/items/3632/64/',
       category: 'resurses',
       outputQuantity: 2,
       components: [
@@ -195,7 +195,7 @@
     {
       id: 'Gold_Cable',
       name: 'Золотой провод с двойной изоляцией',
-      img: 'https://ru.minecraft.wiki/images/%D0%98%D0%B7%D0%BE%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B7%D0%BE%D0%BB%D0%BE%D1%82%D0%BE%D0%B9_%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4_%28IndustrialCraft_2%29.png?b6aec',
+      img: 'https://mixicons.zrefio.com/api/items/3874/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
@@ -210,7 +210,7 @@
     {
       id: 'The_Golden_Wire',
       name: 'Золотой провод',
-      img: 'https://ru.minecraft.wiki/images/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%BE%D0%B9_%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4_%28IndustrialCraft_2%29.png?1ba09',
+      img: 'https://mixicons.zrefio.com/api/items/3872/64/',
       category: 'ic',
       outputQuantity: 12,
       components: [
@@ -225,7 +225,7 @@
     {
       id: 'Electrical_circuit',
       name: 'Электросхема',
-      img: 'https://ru.minecraft.wiki/images/%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D1%81%D1%85%D0%B5%D0%BC%D0%B0_%28IndustrialCraft_2%29.png?affbe',
+      img: 'https://mixicons.zrefio.com/api/items/3886/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
@@ -275,7 +275,7 @@
     {
       id: 'Wind_Mill',
       name: 'Ветряк',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%92%D0%B5%D1%82%D1%80%D0%BE%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80_%28IndustrialCraft_2%29.png/160px-%D0%92%D0%B5%D1%82%D1%80%D0%BE%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80_%28IndustrialCraft_2%29.png?93a8b',
+      img: 'https://mixicons.zrefio.com/api/items/3596/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
@@ -291,7 +291,7 @@
     {
       id: 'Generator',
       name: 'Генератор',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80_%28IndustrialCraft_2%29.png/160px-%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80_%28IndustrialCraft_2%29.png?7461b',
+      img: 'https://mixicons.zrefio.com/api/items/3592/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
@@ -307,8 +307,8 @@
     },
     {
       id: 'Battery',
-      name: 'Аккамулятор',
-      img: 'https://ru.minecraft.wiki/images/%D0%90%D0%BA%D0%BA%D1%83%D0%BC%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80_%28IndustrialCraft_2%29.gif?acf96',
+      name: 'Аккумулятор',
+      img: 'https://mixicons.zrefio.com/api/items/3947/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
@@ -325,7 +325,7 @@
     {
       id: 'Insulated_Copper_Cable',
       name: 'Изолированный медный провод',
-      img: 'https://ru.minecraft.wiki/images/IC2_%D0%98%D0%B7%D0%BE%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4.png?32039',
+      img: 'https://mixicons.zrefio.com/api/items/3867/64/',
       category: 'ic',
       outputQuantity: 6,
       components: [
@@ -341,7 +341,7 @@
     {
       id: 'Rubber',
       name: 'Резина',
-      img: 'https://ru.minecraft.wiki/images/%D0%A0%D0%B5%D0%B7%D0%B8%D0%BD%D0%B0_%28IndustrialCraft_2%29.png?dfd2c',
+      img: 'https://mixicons.zrefio.com/api/items/3914/64/',
       category: 'ic',
       outputQuantity: 3,
       components: [
@@ -356,7 +356,7 @@
     {
       id: 'Steel_Ingot',
       name: 'Слиток закаленного железа',
-      img: 'https://ru.minecraft.wiki/images/%D0%A1%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%81%D0%BB%D0%B8%D1%82%D0%BE%D0%BA_%28IndustrialCraft_2%29.png?b78c9',
+      img: 'https://mixicons.zrefio.com/api/items/3954/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
@@ -371,7 +371,7 @@
     {
       id: 'Tin_Ingot',
       name: 'Оловянный слиток',
-      img: 'https://ru.minecraft.wiki/images/%D0%9E%D0%BB%D0%BE%D0%B2%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9_%D1%81%D0%BB%D0%B8%D1%82%D0%BE%D0%BA_%28IndustrialCraft_2%29.png?b5c5e',
+      img: 'https://mixicons.zrefio.com/api/items/3952/64/',
       category: 'ic',
       outputQuantity: 2,
       components: [
@@ -386,7 +386,7 @@
     {
       id: 'Copper_Ingot',
       name: 'Медный слиток',
-      img: 'https://ru.minecraft.wiki/images/%D0%9C%D0%B5%D0%B4%D0%BD%D1%8B%D0%B9_%D1%81%D0%BB%D0%B8%D1%82%D0%BE%D0%BA_%28IndustrialCraft_2%29.png?3176e',
+      img: 'https://mixicons.zrefio.com/api/items/3953/64/',
       category: 'ic',
       outputQuantity: 2,
       components: [
@@ -401,7 +401,7 @@
     {
       id: 'Mechanism',
       name: 'Механизм',
-      img: 'https://ru.minecraft.wiki/images/%D0%9A%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC%D0%B0_%28IndustrialCraft_2%29.png?1b634',
+      img: 'https://mixicons.zrefio.com/api/items/3604/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
@@ -417,7 +417,7 @@
     {
       id: 'matter',
       name: 'Материя',
-      img: 'https://ru.minecraft.wiki/images/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%8F_%28IndustrialCraft_2%29.png?518e5',
+      img: 'https://mixicons.zrefio.com/api/items/3883/64/',
       category: 'matter',
       outputQuantity: 1,
       components: [],
@@ -427,14 +427,14 @@
     {
       id: 'Log',
       name: 'Древесина',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%94%D1%83%D0%B1%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B4%D1%80%D0%B5%D0%B2%D0%B5%D1%81%D0%B8%D0%BD%D0%B0_JE5_BE3.png/160px-%D0%94%D1%83%D0%B1%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B4%D1%80%D0%B5%D0%B2%D0%B5%D1%81%D0%B8%D0%BD%D0%B0_JE5_BE3.png?3fc45',
+      img: 'https://mixicons.zrefio.com/api/items/3311/64/',
       category: 'matter',
       outputQuantity: 8,
       components: [
         { id: 'matter', count: 1 }
       ],
       recipe: [
-        [null, 'matter', null],
+        [null, 'matter', null], 
         [null, null, null],
         [null, null, null]
       ]
@@ -442,7 +442,7 @@
     {
       id: 'Stone',
       name: 'Камень',
-      img: 'https://minecraft.wiki/images/thumb/Stone_JE8.png/160px-Stone_JE8.png?b5028',
+      img: 'https://mixicons.zrefio.com/api/items/3527/64/',
       category: 'matter',
       outputQuantity: 16,
       components: [
@@ -457,7 +457,7 @@
     {
       id: 'Snow',
       name: 'Стег (Блок)',
-      img: 'https://ru.minecraft.wiki/images/%D0%A1%D0%BD%D0%B5%D0%B6%D0%BD%D1%8B%D0%B9_%D0%B1%D0%BB%D0%BE%D0%BA_JE2_BE2.png?cfb44',
+      img: 'https://mixicons.zrefio.com/api/items/4600/64/',
       category: 'matter',
       outputQuantity: 4,
       components: [
@@ -472,7 +472,7 @@
     {
       id: 'Grass',
       name: 'Трава',
-      img: 'https://minecraft.wiki/images/Grass_Block_JE7_BE6.png?424c1',
+      img: 'https://mixicons.zrefio.com/api/items/3713/64/',
       category: 'matter',
       outputQuantity: 16,
       components: [
@@ -487,7 +487,7 @@
     {
       id: 'Sandstone',
       name: 'Песчаник',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9F%D0%B5%D1%81%D1%87%D0%B0%D0%BD%D0%B8%D0%BA.png/160px-%D0%9F%D0%B5%D1%81%D1%87%D0%B0%D0%BD%D0%B8%D0%BA.png?0cbf3',
+      img: 'https://mixicons.zrefio.com/api/items/3601/64/',
       category: 'matter',
       outputQuantity: 16,
       components: [
@@ -532,7 +532,7 @@
     {
       id: 'Mossy_cobblestone',
       name: 'Замшелый булыжник',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%97%D0%B0%D0%BC%D1%88%D0%B5%D0%BB%D1%8B%D0%B9_%D0%B1%D1%83%D0%BB%D1%8B%D0%B6%D0%BD%D0%B8%D0%BA_JE4_BE2.png/160px-%D0%97%D0%B0%D0%BC%D1%88%D0%B5%D0%BB%D1%8B%D0%B9_%D0%B1%D1%83%D0%BB%D1%8B%D0%B6%D0%BD%D0%B8%D0%BA_JE4_BE2.png?92bf3',
+      img: 'https://mixicons.zrefio.com/api/items/4403/64/',
       category: 'matter',
       outputQuantity: 16,
       components: [
@@ -547,7 +547,7 @@
     {
       id: 'Copper_ore',
       name: 'Медная руда',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9C%D0%B5%D0%B4%D0%BD%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_%28IndustrialCraft_2%29.png/160px-%D0%9C%D0%B5%D0%B4%D0%BD%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_%28IndustrialCraft_2%29.png?ee35e',
+      img: 'https://mixicons.zrefio.com/api/items/3600/64/',
       category: 'matter',
       outputQuantity: 5,
       components: [
@@ -562,7 +562,7 @@
     {
       id: 'Tin_ore',
       name: 'Оловянная руда',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9E%D0%BB%D0%BE%D0%B2%D1%8F%D0%BD%D0%BD%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_%28IndustrialCraft_2%29.png/160px-%D0%9E%D0%BB%D0%BE%D0%B2%D1%8F%D0%BD%D0%BD%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_%28IndustrialCraft_2%29.png?69901',
+      img: 'https://mixicons.zrefio.com/api/items/3599/64/',
       category: 'matter',
       outputQuantity: 5,
       components: [
@@ -577,7 +577,7 @@
     {
       id: 'Netherrack',
       name: 'Адский камень',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%90%D0%B4%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C_JE4_BE2.png/160px-%D0%90%D0%B4%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C_JE4_BE2.png?a20a7',
+      img: 'https://mixicons.zrefio.com/api/items/4606/64/',
       category: 'matter',
       outputQuantity: 16,
       components: [
@@ -592,7 +592,7 @@
     {
       id: 'Snowball',
       name: 'Снежок',
-      img: 'https://ru.minecraft.wiki/images/%D0%A1%D0%BD%D0%B5%D0%B6%D0%BE%D0%BA_JE3_BE3.png?44fb0',
+      img: 'https://mixicons.zrefio.com/api/items/4120/64/',
       category: 'matter',
       outputQuantity: 16,
       components: [
@@ -607,7 +607,7 @@
     {
       id: 'Coal',
       name: 'Уголь',
-      img: 'https://ru.minecraft.wiki/images/%D0%A3%D0%B3%D0%BE%D0%BB%D1%8C_JE4_BE3.png?4532a',
+      img: 'https://mixicons.zrefio.com/api/items/3628/64/',
       category: 'matter',
       outputQuantity: 8,
       components: [
@@ -622,7 +622,7 @@
     {
       id: 'White_wool',
       name: 'Белая Шерсть',
-      img: 'https://minecraft.wiki/images/thumb/White_Wool_JE2_BE2.png/160px-White_Wool_JE2_BE2.png?2bcdc',
+      img: 'https://mixicons.zrefio.com/api/items/4164/64/',
       category: 'matter',
       outputQuantity: 12,
       components: [
@@ -637,7 +637,7 @@
     {
       id: 'Vines',
       name: 'Лианы',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9B%D0%B8%D0%B0%D0%BD%D1%8B.png/160px-%D0%9B%D0%B8%D0%B0%D0%BD%D1%8B.png?53222',
+      img: 'https://mixicons.zrefio.com/api/items/2596/64/',
       category: 'matter',
       outputQuantity: 24,
       components: [
@@ -652,7 +652,7 @@
     {
       id: 'Lapis_Lazuli',
       name: 'Лазурит',
-      img: 'https://ru.minecraft.wiki/images/%D0%9B%D0%B0%D0%B7%D1%83%D1%80%D0%B8%D1%82.png?12fbe',
+      img: 'https://mixicons.zrefio.com/api/items/4150/64/',
       category: 'matter',
       outputQuantity: 9,
       components: [
@@ -667,7 +667,7 @@
     {
       id: 'Bone',
       name: 'Кость',
-      img: 'https://ru.minecraft.wiki/images/%D0%9A%D0%BE%D1%81%D1%82%D1%8C.png?ac62b',
+      img: 'https://mixicons.zrefio.com/api/items/4156/64/',
       category: 'matter',
       outputQuantity: 32,
       components: [
@@ -682,7 +682,7 @@
     {
       id: 'Obsidian',
       name: 'Обсидиан',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9E%D0%B1%D1%81%D0%B8%D0%B4%D0%B8%D0%B0%D0%BD_JE3_BE2.png/160px-%D0%9E%D0%B1%D1%81%D0%B8%D0%B4%D0%B8%D0%B0%D0%BD_JE3_BE2.png?5f03f',
+      img: 'https://mixicons.zrefio.com/api/items/4404/64/',
       category: 'matter',
       outputQuantity: 12,
       components: [
@@ -697,7 +697,7 @@
     {
       id: 'Feather',
       name: 'Перо',
-      img: 'https://ru.minecraft.wiki/images/%D0%9F%D0%B5%D1%80%D0%BE_JE3_BE2.png?5e1b7',
+      img: 'https://mixicons.zrefio.com/api/items/3665/64/',
       category: 'matter',
       outputQuantity: 32,
       components: [
@@ -712,7 +712,7 @@
     {
       id: 'Redstone',
       name: 'Редстоун',
-      img: 'https://minecraft.wiki/images/Redstone_Dust_JE2_BE2.png?8cf17',
+      img: 'https://mixicons.zrefio.com/api/items/4119/64/',
       category: 'matter',
       outputQuantity: 24,
       components: [
@@ -727,7 +727,7 @@
     {
       id: 'Glass',
       name: 'Стекло',
-      img: 'https://minecraft.wiki/images/thumb/Glass_JE4_BE2.png/160px-Glass_JE4_BE2.png?fb219',
+      img: 'https://mixicons.zrefio.com/api/items/3541/64/',
       category: 'matter',
       outputQuantity: 32,
       components: [
@@ -742,7 +742,7 @@
     {
       id: 'Sticky_Resin',
       name: 'Латекс',
-      img: 'https://ru.minecraft.wiki/images/%D0%9B%D0%B0%D1%82%D0%B5%D0%BA%D1%81_%28IndustrialCraft_2%29.png?56f34',
+      img: 'https://mixicons.zrefio.com/api/items/3915/64/',
       category: 'matter',
       outputQuantity: 21,
       components: [
@@ -757,7 +757,7 @@
     {
       id: 'Clay',
       name: 'Глина',
-      img: 'https://ru.minecraft.wiki/images/%D0%9A%D0%BE%D0%BC%D0%BE%D0%BA_%D0%B3%D0%BB%D0%B8%D0%BD%D1%8B_JE2_BE2.png?98e01',
+      img: 'https://mixicons.zrefio.com/api/items/4125/64/',
       category: 'matter',
       outputQuantity: 48,
       components: [
@@ -772,7 +772,7 @@
     {
       id: 'Mycelium',
       name: 'Мицелий',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9C%D0%B8%D1%86%D0%B5%D0%BB%D0%B8%D0%B9.png/160px-%D0%9C%D0%B8%D1%86%D0%B5%D0%BB%D0%B8%D0%B9.png?33ad9',
+      img: 'https://mixicons.zrefio.com/api/items/2601/64/',
       category: 'matter',
       outputQuantity: 24,
       components: [
@@ -787,7 +787,7 @@
     {
       id: 'Iron_Ore',
       name: 'Железная руда',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%96%D0%B5%D0%BB%D0%B5%D0%B7%D0%BD%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_JE6_BE4.png/160px-%D0%96%D0%B5%D0%BB%D0%B5%D0%B7%D0%BD%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_JE6_BE4.png?6ea47',
+      img: 'https://mixicons.zrefio.com/api/items/3309/64/',
       category: 'matter',
       outputQuantity: 2,
       components: [
@@ -802,7 +802,7 @@
     {
       id: 'Gold_Ore',
       name: 'Золотая руда',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_JE7_BE4.png/160px-%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%B0%D1%8F_%D1%80%D1%83%D0%B4%D0%B0_JE7_BE4.png?99b15',
+      img: 'https://mixicons.zrefio.com/api/items/3274/64/',
       category: 'matter',
       outputQuantity: 2,
       components: [
@@ -817,7 +817,7 @@
     {
       id: 'Ink_Sac',
       name: 'Чернильный мешок',
-      img: 'https://ru.minecraft.wiki/images/%D0%A7%D0%B5%D1%80%D0%BD%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%88%D0%BE%D0%BA.png?fb1df',
+      img: 'https://mixicons.zrefio.com/api/items/4140/64/',
       category: 'matter',
       outputQuantity: 48,
       components: [
@@ -832,7 +832,7 @@
     {
       id: 'Cocoa_Beans',
       name: 'Какао-бобы',
-      img: 'https://ru.minecraft.wiki/images/%D0%9A%D0%B0%D0%BA%D0%B0%D0%BE-%D0%B1%D0%BE%D0%B1%D1%8B.png?943e0',
+      img: 'https://mixicons.zrefio.com/api/items/4149/64/',
       category: 'matter',
       outputQuantity: 32,
       components: [
@@ -847,7 +847,7 @@
     {
       id: 'Flint',
       name: 'Кремень',
-      img: 'https://ru.minecraft.wiki/images/%D0%9A%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D1%8C_JE3_BE3.png?546d8',
+      img: 'https://mixicons.zrefio.com/api/items/4103/64/',
       category: 'matter',
       outputQuantity: 32,
       components: [
@@ -862,7 +862,7 @@
     {
       id: 'Stone_brick',
       name: 'Каменный кирпич',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87.png/160px-%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B8%D1%80%D0%BF%D0%B8%D1%87.png?2a56e',
+      img: 'https://mixicons.zrefio.com/api/items/4662/64/',
       category: 'matter',
       outputQuantity: 48,
       components: [
@@ -877,7 +877,7 @@
     {
       id: 'Glowstone',
       name: 'Светокамень',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C_JE4_BE2.png/160px-%D0%A1%D0%B2%D0%B5%D1%82%D0%BE%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C_JE4_BE2.png?b1c6a',
+      img: 'https://mixicons.zrefio.com/api/items/4608/64/',
       category: 'matter',
       outputQuantity: 8,
       components: [
@@ -892,7 +892,7 @@
     {
       id: 'Cactus',
       name: 'Кактус',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%9A%D0%B0%D0%BA%D1%82%D1%83%D1%81_JE4.png/160px-%D0%9A%D0%B0%D0%BA%D1%82%D1%83%D1%81_JE4.png?879de',
+      img: 'https://mixicons.zrefio.com/api/items/4601/64/',
       category: 'matter',
       outputQuantity: 48,
       components: [
@@ -907,7 +907,7 @@
     {
       id: 'Sugar_Canes',
       name: 'Сахарный тростник',
-      img: 'https://ru.minecraft.wiki/images/thumb/%D0%A1%D0%B0%D1%85%D0%B0%D1%80%D0%BD%D1%8B%D0%B9_%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%BD%D0%B8%D0%BA_JE2_BE2.png/160px-%D0%A1%D0%B0%D1%85%D0%B0%D1%80%D0%BD%D1%8B%D0%B9_%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%BD%D0%B8%D0%BA_JE2_BE2.png?ae0a2',
+      img: 'https://mixicons.zrefio.com/api/items/4126/64/',
       category: 'matter',
       outputQuantity: 48,
       components: [
@@ -922,7 +922,7 @@
     {
       id: 'Gunpowder',
       name: 'Порох',
-      img: 'https://ru.minecraft.wiki/images/%D0%9F%D0%BE%D1%80%D0%BE%D1%85_JE2_BE2.png?f36ba',
+      img: 'https://mixicons.zrefio.com/api/items/3666/64/',
       category: 'matter',
       outputQuantity: 15,
       components: [
@@ -937,7 +937,7 @@
     {
       id: 'Iridium_Ore',
       name: 'Иридий',
-      img: 'https://ru.minecraft.wiki/images/%D0%98%D1%80%D0%B8%D0%B4%D0%B8%D0%B9_%28IndustrialCraft_2%29.png?dcc3e',
+      img: 'https://mixicons.zrefio.com/api/items/3800/64/',
       category: 'matter',
       outputQuantity: 1,
       components: [
@@ -952,7 +952,7 @@
     {
       id: 'Diamond',
       name: 'Алмаз',
-      img: 'https://ru.minecraft.wiki/images/%D0%90%D0%BB%D0%BC%D0%B0%D0%B7_JE3_BE3.png?0b981',
+      img: 'https://mixicons.zrefio.com/api/items/3630/64/',
       category: 'matter',
       outputQuantity: 1,
       components: [
