@@ -3,7 +3,6 @@
       id: '30241',
       name: 'Энергокристалл',
       img: 'https://mixicons.zrefio.com/api/items/4579/64/',
-      category: 'resurses',
       outputQuantity: 4,
       components: [
         { id: '17', count: 1 }
@@ -18,7 +17,6 @@
       id: '5',
       name: 'Доски',
       img: 'https://mixicons.zrefio.com/api/items/4579/64/',
-      category: 'resurses',
       outputQuantity: 4,
       components: [
         { id: '17', count: 1 }
@@ -33,7 +31,6 @@
       id: '4',
       name: 'Булыжник',
       img: 'https://mixicons.zrefio.com/api/items/4405/64/',
-      category: 'resurses',
       outputQuantity: 1,
       components: [
         { id: '1', count: 1 }
@@ -48,7 +45,6 @@
       id: '61',
       name: 'Печка',
       img: 'https://mixicons.zrefio.com/api/items/4584/64/',
-      category: 'resurses',
       outputQuantity: 1,
       components: [
         { id: '4', count: 8 },
@@ -63,7 +59,6 @@
       id: '265',
       name: 'Железо',
       img: 'https://mixicons.zrefio.com/api/items/3631/64/',
-      category: 'resurses',
       outputQuantity: 2,
       components: [
         { id: '15', count: 1 }
@@ -78,7 +73,6 @@
       id: '266',
       name: 'Золото',
       img: 'https://mixicons.zrefio.com/api/items/3632/64/',
-      category: 'resurses',
       outputQuantity: 2,
       components: [
         { id: '14', count: 1 }
@@ -95,7 +89,6 @@
       id: '2790:4',
       name: 'Ветряк СВН',
       img: 'https://mixicons.zrefio.com/api/items/3653/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '2790:3', count: 4 },
@@ -111,7 +104,6 @@
       id: '2790:3',
       name: 'Ветряк ВН',
       img: 'https://mixicons.zrefio.com/api/items/3652/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '2790:2', count: 4 },
@@ -127,7 +119,6 @@
       id: '2790:2',
       name: 'Ветряк СН',
       img: 'https://mixicons.zrefio.com/api/items/3651/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '2790:1', count: 4 },
@@ -143,7 +134,6 @@
       id: '2790:1',
       name: 'Ветряк НН',
       img: 'https://mixicons.zrefio.com/api/items/3650/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '2790', count: 4 },
@@ -159,7 +149,6 @@
       id: '30125:1',
       name: 'Апгрейд трансформатора',
       img: 'https://mixicons.zrefio.com/api/items/3773/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '20', count: 5 },
@@ -177,7 +166,6 @@
       id: '227:4',
       name: 'Трансформатор СН',
       img: 'https://mixicons.zrefio.com/api/items/3575/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '30184:4', count: 2 },
@@ -193,7 +181,6 @@
       id: '30184:4',
       name: 'Золотой провод с двойной изоляцией',
       img: 'https://mixicons.zrefio.com/api/items/3874/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '266', count: 3 }
@@ -208,7 +195,6 @@
       id: '30184:2',
       name: 'Золотой провод',
       img: 'https://mixicons.zrefio.com/api/items/3872/64/',
-      category: 'ic',
       outputQuantity: 12,
       components: [
         { id: '266', count: 3 }
@@ -223,7 +209,6 @@
       id: '30191',
       name: 'Электросхема',
       img: 'https://mixicons.zrefio.com/api/items/3886/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '30184', count: 6 },
@@ -240,7 +225,6 @@
       id: '2790',
       name: 'Ветряк СНН',
       img: 'https://mixicons.zrefio.com/api/items/3649/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '246:4', count: 4 },
@@ -256,7 +240,6 @@
       id: '227:3',
       name: 'Трансформатор НН',
       img: 'https://mixicons.zrefio.com/api/items/3574/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '5', count: 4 },
@@ -273,7 +256,6 @@
       id: '246:4',
       name: 'Ветряк',
       img: 'https://mixicons.zrefio.com/api/items/3596/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '265', count: 4 },
@@ -289,7 +271,6 @@
       id: '246',
       name: 'Генератор',
       img: 'https://mixicons.zrefio.com/api/items/3592/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '30239', count: 1 },
@@ -306,7 +287,6 @@
       id: '30239',
       name: 'Аккумулятор',
       img: 'https://mixicons.zrefio.com/api/items/3947/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '331', count: 2 },
@@ -323,7 +303,6 @@
       id: '30184',
       name: 'Изолированный медный провод',
       img: 'https://mixicons.zrefio.com/api/items/3867/64/',
-      category: 'ic',
       outputQuantity: 6,
       components: [
         { id: '30248', count: 3 },
@@ -339,7 +318,6 @@
       id: '30216',
       name: 'Резина',
       img: 'https://mixicons.zrefio.com/api/items/3914/64/',
-      category: 'ic',
       outputQuantity: 3,
       components: [
         { id: '30217', count: 1 }
@@ -354,7 +332,6 @@
       id: '30249',
       name: 'Слиток закаленного железа',
       img: 'https://mixicons.zrefio.com/api/items/3954/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '265', count: 1 }
@@ -369,7 +346,6 @@
       id: '30247',
       name: 'Оловянный слиток',
       img: 'https://mixicons.zrefio.com/api/items/3952/64/',
-      category: 'ic',
       outputQuantity: 2,
       components: [
         { id: '248', count: 1 }
@@ -384,7 +360,6 @@
       id: '30248',
       name: 'Медный слиток',
       img: 'https://mixicons.zrefio.com/api/items/3953/64/',
-      category: 'ic',
       outputQuantity: 2,
       components: [
         { id: '249', count: 1 }
@@ -399,7 +374,6 @@
       id: '250',
       name: 'Механизм',
       img: 'https://mixicons.zrefio.com/api/items/3604/64/',
-      category: 'ic',
       outputQuantity: 1,
       components: [
         { id: '30249', count: 8 }
@@ -928,7 +902,6 @@
   //    id: '80',
   //    name: '1',
   //    img: '',
-  //    category: '30188',
   //    outputQuantity: 1,
   //    components: [
   //      { id: '30188', count: 5 }
