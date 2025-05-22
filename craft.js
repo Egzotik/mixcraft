@@ -1,421 +1,418 @@
   const crafts = [
-    // Крафты Applied Energistics (ae)
-    //{
-    //  id: 'ae_cable',
-    //  name: 'ME Cable',
-    //  img: 'https://minecraft.mix-servers.com/assets/main/img/items/me_cable.png',
-    //  category: 'ae',
-    //  outputQuantity: 8,
-    //  components: [
-    //    { id: 'ae_fluix_dust', count: 2 },
-    //    { id: 'ae_silicon', count: 1 }
-    //  ],
-    //  recipe: [
-    //    [null, 'ae_fluix_dust', null],
-    //    ['ae_fluix_dust', 'ae_silicon', 'ae_fluix_dust'],
-    //    [null, 'ae_fluix_dust', null]
-    //  ]
-    //},
-    // Крафты Ресурсы
     {
-      id: 'Wood_Boards',
+      id: '30241',
+      name: 'Энергокристалл',
+      img: 'https://mixicons.zrefio.com/api/items/4579/64/',
+      category: 'resurses',
+      outputQuantity: 4,
+      components: [
+        { id: '17', count: 1 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, '17', null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: '5',
       name: 'Доски',
       img: 'https://mixicons.zrefio.com/api/items/4579/64/',
       category: 'resurses',
       outputQuantity: 4,
       components: [
-        { id: 'Log', count: 1 }
+        { id: '17', count: 1 }
       ],
       recipe: [
         [null, null, null],
-        [null, 'Log', null],
+        [null, '17', null],
         [null, null, null]
       ]
     },
     {
-      id: 'Cobblestone',
+      id: '4',
       name: 'Булыжник',
       img: 'https://mixicons.zrefio.com/api/items/4405/64/',
       category: 'resurses',
       outputQuantity: 1,
       components: [
-        { id: 'Stone', count: 1 }
+        { id: '1', count: 1 }
       ],
       recipe: [
         [null, null, null],
-        [null, 'Stone', null],
+        [null, '1', null],
         [null, null, null]
       ]
     },
     {
-      id: 'Furnace',
+      id: '61',
       name: 'Печка',
       img: 'https://mixicons.zrefio.com/api/items/4584/64/',
       category: 'resurses',
       outputQuantity: 1,
       components: [
-        { id: 'Cobblestone', count: 8 },
+        { id: '4', count: 8 },
       ],
       recipe: [
-        ['Cobblestone', 'Cobblestone', 'Cobblestone'],
-        ['Cobblestone', null, 'Cobblestone'],
-        ['Cobblestone', 'Cobblestone', 'Cobblestone']
+        ['4', '4', '4'],
+        ['4', null, '4'],
+        ['4', '4', '4']
       ]
     },
     {
-      id: 'Iron',
+      id: '265',
       name: 'Железо',
       img: 'https://mixicons.zrefio.com/api/items/3631/64/',
       category: 'resurses',
       outputQuantity: 2,
       components: [
-        { id: 'Iron_Ore', count: 1 }
+        { id: '15', count: 1 }
       ],
       recipe: [
         [null, null, null],
-        [null, 'Iron_Ore', null],
+        [null, '15', null],
         [null, null, null]
       ]
     },
     {
-      id: 'Gold',
+      id: '266',
       name: 'Золото',
       img: 'https://mixicons.zrefio.com/api/items/3632/64/',
       category: 'resurses',
       outputQuantity: 2,
       components: [
-        { id: 'Gold_Ore', count: 1 }
+        { id: '14', count: 1 }
       ],
       recipe: [
         [null, null, null],
-        [null, 'Gold_Ore', null],
+        [null, '14', null],
         [null, null, null]
       ]
     },
     
     // Крафты из Industrial Craft (ic)
     {
-      id: 'Windmill_CBH',
+      id: '2790:4',
       name: 'Ветряк СВН',
       img: 'https://mixicons.zrefio.com/api/items/3653/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Windmill_BH', count: 4 },
-        { id: 'Transformer_upgrade', count: 1 }
+        { id: '2790:3', count: 4 },
+        { id: '30125:1', count: 1 }
       ],
       recipe: [
-        [null, 'Windmill_BH', null],
-        ['Windmill_BH', 'Transformer_upgrade', 'Windmill_BH'],
-        [null, 'Windmill_BH', null]
+        [null, '2790:3', null],
+        ['2790:3', '30125:1', '2790:3'],
+        [null, '2790:3', null]
       ]
     },
     {
-      id: 'Windmill_BH',
+      id: '2790:3',
       name: 'Ветряк ВН',
       img: 'https://mixicons.zrefio.com/api/items/3652/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Windmill_CH', count: 4 },
-        { id: 'Transformer_upgrade', count: 1 }
+        { id: '2790:2', count: 4 },
+        { id: '30125:1', count: 1 }
       ],
       recipe: [
-        [null, 'Windmill_CH', null],
-        ['Windmill_CH', 'Transformer_upgrade', 'Windmill_CH'],
-        [null, 'Windmill_CH', null]
+        [null, '2790:2', null],
+        ['2790:2', '30125:1', '2790:2'],
+        [null, '2790:2', null]
       ]
     },
     {
-      id: 'Windmill_CH',
+      id: '2790:2',
       name: 'Ветряк СН',
       img: 'https://mixicons.zrefio.com/api/items/3651/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Windmill_HH', count: 4 },
-        { id: 'Transformer_upgrade', count: 1 }
+        { id: '2790:1', count: 4 },
+        { id: '30125:1', count: 1 }
       ],
       recipe: [
-        [null, 'Windmill_HH', null],
-        ['Windmill_HH', 'Transformer_upgrade', 'Windmill_HH'],
-        [null, 'Windmill_HH', null]
+        [null, '2790:1', null],
+        ['2790:1', '30125:1', '2790:1'],
+        [null, '2790:1', null]
       ]
     },
     {
-      id: 'Windmill_HH',
+      id: '2790:1',
       name: 'Ветряк НН',
       img: 'https://mixicons.zrefio.com/api/items/3650/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Windmill_CHH', count: 4 },
-        { id: 'Transformer_upgrade', count: 1 }
+        { id: '2790', count: 4 },
+        { id: '30125:1', count: 1 }
       ],
       recipe: [
-        [null, 'Windmill_CHH', null],
-        ['Windmill_CHH', 'Transformer_upgrade', 'Windmill_CHH'],
-        [null, 'Windmill_CHH', null]
+        [null, '2790', null],
+        ['2790', '30125:1', '2790'],
+        [null, '2790', null]
       ]
     },
     {
-      id: 'Transformer_upgrade',
+      id: '30125:1',
       name: 'Апгрейд трансформатора',
       img: 'https://mixicons.zrefio.com/api/items/3773/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Glass', count: 5 },
-        { id: 'Gold_Cable', count: 2 },
-        { id: 'Electrical_circuit', count: 1 },
-        { id: 'CH', count: 1 }
+        { id: '20', count: 5 },
+        { id: '30184:4', count: 2 },
+        { id: '30191', count: 1 },
+        { id: '227:4', count: 1 }
       ],
       recipe: [
-        ['Glass', 'Glass', 'Glass'],
-        ['Gold_Cable', 'CH', 'Gold_Cable'],
-        ['Glass', 'Electrical_circuit', 'Glass']
+        ['20', '20', '20'],
+        ['30184:4', '227:4', '30184:4'],
+        ['20', '30191', '20']
       ]
     },
     {
-      id: 'CH',
+      id: '227:4',
       name: 'Трансформатор СН',
       img: 'https://mixicons.zrefio.com/api/items/3575/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Gold_Cable', count: 2 },
-        { id: 'Mechanism', count: 1 }
+        { id: '30184:4', count: 2 },
+        { id: '250', count: 1 }
       ],
       recipe: [
-        [null, 'Gold_Cable', null],
-        [null, 'Mechanism', null],
-        [null, 'Gold_Cable', null]
+        [null, '30184:4', null],
+        [null, '250', null],
+        [null, '30184:4', null]
       ]
     },
     {
-      id: 'Gold_Cable',
+      id: '30184:4',
       name: 'Золотой провод с двойной изоляцией',
       img: 'https://mixicons.zrefio.com/api/items/3874/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Gold', count: 3 }
+        { id: '266', count: 3 }
       ],
       recipe: [
-        ['Rubber', 'Rubber', null],
-        ['The_Golden_Wire', null, null],
+        ['30216', '30216', null],
+        ['30184:2', null, null],
         [null, null, null]
       ]
     },
     {
-      id: 'The_Golden_Wire',
+      id: '30184:2',
       name: 'Золотой провод',
       img: 'https://mixicons.zrefio.com/api/items/3872/64/',
       category: 'ic',
       outputQuantity: 12,
       components: [
-        { id: 'Gold', count: 3 }
+        { id: '266', count: 3 }
       ],
       recipe: [
         [null, null, null],
-        ['Gold', 'Gold', 'Gold'],
+        ['266', '266', '266'],
         [null, null, null]
       ]
     },
     {
-      id: 'Electrical_circuit',
+      id: '30191',
       name: 'Электросхема',
       img: 'https://mixicons.zrefio.com/api/items/3886/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Insulated_Copper_Cable', count: 6 },
-        { id: 'Redstone', count: 2 },
-        { id: 'Steel_Ingot', count: 1 }
+        { id: '30184', count: 6 },
+        { id: '331', count: 2 },
+        { id: '30249', count: 1 }
       ],
       recipe: [
-        ['Insulated_Copper_Cable', 'Insulated_Copper_Cable', 'Insulated_Copper_Cable'],
-        ['Redstone', 'Steel_Ingot', 'Redstone'],
-        ['Insulated_Copper_Cable', 'Insulated_Copper_Cable', 'Insulated_Copper_Cable']
+        ['30184', '30184', '30184'],
+        ['331', '30249', '331'],
+        ['30184', '30184', '30184']
       ]
     },
     {
-      id: 'Windmill_CHH',
+      id: '2790',
       name: 'Ветряк СНН',
       img: 'https://mixicons.zrefio.com/api/items/3649/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Wind_Mill', count: 4 },
-        { id: 'HH', count: 1 }
+        { id: '246:4', count: 4 },
+        { id: '227:3', count: 1 }
       ],
       recipe: [
-        [null, 'Wind_Mill', null],
-        ['Wind_Mill', 'HH', 'Wind_Mill'],
-        [null, 'Wind_Mill', null]
+        [null, '246:4', null],
+        ['246:4', '227:3', '246:4'],
+        [null, '246:4', null]
       ]
     },
     {
-      id: 'HH',
+      id: '227:3',
       name: 'Трансформатор НН',
       img: 'https://mixicons.zrefio.com/api/items/3574/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Wood_Boards', count: 4 },
-        { id: 'Insulated_Copper_Cable', count: 2 },
-        { id: 'Copper_Ingot', count: 3 }
+        { id: '5', count: 4 },
+        { id: '30184', count: 2 },
+        { id: '30248', count: 3 }
       ],
       recipe: [
-        ['Wood_Boards', 'Insulated_Copper_Cable', 'Wood_Boards'],
-        ['Copper_Ingot', 'Copper_Ingot', 'Copper_Ingot'],
-        ['Wood_Boards', 'Insulated_Copper_Cable', 'Wood_Boards']
+        ['5', '30184', '5'],
+        ['30248', '30248', '30248'],
+        ['5', '30184', '5']
       ]
     },
     {
-      id: 'Wind_Mill',
+      id: '246:4',
       name: 'Ветряк',
       img: 'https://mixicons.zrefio.com/api/items/3596/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Iron', count: 4 },
-        { id: 'Generator', count: 1 }
+        { id: '265', count: 4 },
+        { id: '246', count: 1 }
       ],
       recipe: [
-        ['Iron', null, 'Iron'],
-        [null, 'Generator', null],
-        ['Iron', null, 'Iron']
+        ['265', null, '265'],
+        [null, '246', null],
+        ['265', null, '265']
       ]
     },
     {
-      id: 'Generator',
+      id: '246',
       name: 'Генератор',
       img: 'https://mixicons.zrefio.com/api/items/3592/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Battery', count: 1 },
-        { id: 'Mechanism', count: 1 },
-        { id: 'Furnace', count: 1 },
+        { id: '30239', count: 1 },
+        { id: '250', count: 1 },
+        { id: '61', count: 1 },
       ],
       recipe: [
-        [null, 'Battery', null],
-        [null, 'Mechanism', null],
-        [null, 'Furnace', null]
+        [null, '30239', null],
+        [null, '250', null],
+        [null, '61', null]
       ]
     },
     {
-      id: 'Battery',
+      id: '30239',
       name: 'Аккумулятор',
       img: 'https://mixicons.zrefio.com/api/items/3947/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Redstone', count: 2 },
-        { id: 'Tin_Ingot', count: 4 },
-        { id: 'Insulated_Copper_Cable', count: 1 },
+        { id: '331', count: 2 },
+        { id: '30247', count: 4 },
+        { id: '30184', count: 1 },
       ],
       recipe: [
-        [null, 'Insulated_Copper_Cable', null],
-        ['Tin_Ingot', 'Redstone', 'Tin_Ingot'],
-        ['Tin_Ingot', 'Redstone', 'Tin_Ingot']
+        [null, '30184', null],
+        ['30247', '331', '30247'],
+        ['30247', '331', '30247']
       ]
     },
     {
-      id: 'Insulated_Copper_Cable',
+      id: '30184',
       name: 'Изолированный медный провод',
       img: 'https://mixicons.zrefio.com/api/items/3867/64/',
       category: 'ic',
       outputQuantity: 6,
       components: [
-        { id: 'Copper_Ingot', count: 3 },
-        { id: 'Rubber', count: 6 }
+        { id: '30248', count: 3 },
+        { id: '30216', count: 6 }
       ],
       recipe: [
-        ['Rubber', 'Rubber', 'Rubber'],
-        ['Copper_Ingot', 'Copper_Ingot', 'Copper_Ingot'],
-        ['Rubber', 'Rubber', 'Rubber']
+        ['30216', '30216', '30216'],
+        ['30248', '30248', '30248'],
+        ['30216', '30216', '30216']
       ]
     },
     {
-      id: 'Rubber',
+      id: '30216',
       name: 'Резина',
       img: 'https://mixicons.zrefio.com/api/items/3914/64/',
       category: 'ic',
       outputQuantity: 3,
       components: [
-        { id: 'Sticky_Resin', count: 1 }
+        { id: '30217', count: 1 }
       ],
       recipe: [
         [null, null, null],
-        [null, 'Sticky_Resin', null],
+        [null, '30217', null],
         [null, null, null]
       ]
     },
     {
-      id: 'Steel_Ingot',
+      id: '30249',
       name: 'Слиток закаленного железа',
       img: 'https://mixicons.zrefio.com/api/items/3954/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Iron', count: 1 }
+        { id: '265', count: 1 }
       ],
       recipe: [
         [null, null, null],
-        [null, 'Iron', null],
+        [null, '265', null],
         [null, null, null]
       ]
     },
     {
-      id: 'Tin_Ingot',
+      id: '30247',
       name: 'Оловянный слиток',
       img: 'https://mixicons.zrefio.com/api/items/3952/64/',
       category: 'ic',
       outputQuantity: 2,
       components: [
-        { id: 'Tin_ore', count: 1 }
+        { id: '248', count: 1 }
       ],
       recipe: [
         [null, null, null],
-        [null, 'Tin_ore', null],
+        [null, '248', null],
         [null, null, null]
       ]
     },
     {
-      id: 'Copper_Ingot',
+      id: '30248',
       name: 'Медный слиток',
       img: 'https://mixicons.zrefio.com/api/items/3953/64/',
       category: 'ic',
       outputQuantity: 2,
       components: [
-        { id: 'Copper_ore', count: 1 }
+        { id: '249', count: 1 }
       ],
       recipe: [
         [null, null, null],
-        [null, 'Copper_ore', null],
+        [null, '249', null],
         [null, null, null]
       ]
     },
     {
-      id: 'Mechanism',
+      id: '250',
       name: 'Механизм',
       img: 'https://mixicons.zrefio.com/api/items/3604/64/',
       category: 'ic',
       outputQuantity: 1,
       components: [
-        { id: 'Steel_Ingot', count: 8 }
+        { id: '30249', count: 8 }
       ],
       recipe: [
-        ['Steel_Ingot', 'Steel_Ingot', 'Steel_Ingot'],
-        ['Steel_Ingot', null, 'Steel_Ingot'],
-        ['Steel_Ingot', 'Steel_Ingot', 'Steel_Ingot']
+        ['30249', '30249', '30249'],
+        ['30249', null, '30249'],
+        ['30249', '30249', '30249']
       ]
     },
-    // Крафты из материи (matter)
+    // Крафты из материи (30188)
     {
-      id: 'matter',
+      id: '30188',
       name: 'Материя',
       img: 'https://mixicons.zrefio.com/api/items/3883/64/',
       outputQuantity: 1,
@@ -424,43 +421,43 @@
       hidden: true  // <- этот флаг для скрытия из списка выбора
     },
     {
-      id: 'Log',
+      id: '17',
       name: 'Древесина',
       img: 'https://mixicons.zrefio.com/api/items/3311/64/',
       outputQuantity: 8,
       components: [
-        { id: 'matter', count: 1 }
+        { id: '30188', count: 1 }
       ],
       recipe: [
-        [null, 'matter', null], 
+        [null, '30188', null], 
         [null, null, null],
         [null, null, null]
       ]
     },
     {
-      id: 'Stone',
+      id: '1',
       name: 'Камень',
       img: 'https://mixicons.zrefio.com/api/items/3527/64/',
       outputQuantity: 16,
       components: [
-        { id: 'matter', count: 1 }
+        { id: '30188', count: 1 }
       ],
       recipe: [
         [null, null, null],
-        [null, 'matter', null],
+        [null, '30188', null],
         [null, null, null]
       ]
     },
     {
-      id: 'Snow',
+      id: '80',
       name: 'Стег (Блок)',
       img: 'https://mixicons.zrefio.com/api/items/4600/64/',
       outputQuantity: 4,
       components: [
-        { id: 'matter', count: 2 }
+        { id: '30188', count: 2 }
       ],
       recipe: [
-        ['matter', null, 'matter'],
+        ['30188', null, '30188'],
         [null, null, null],
         [null, null, null]
       ]
@@ -471,12 +468,12 @@
       img: 'https://mixicons.zrefio.com/api/items/3713/64/',
       outputQuantity: 16,
       components: [
-        { id: 'matter', count: 2 }
+        { id: '30188', count: 2 }
       ],
       recipe: [
         [null, null, null],
-        ['matter', null, null],
-        ['matter', null, null]
+        ['30188', null, null],
+        ['30188', null, null]
       ]
     },
     {
@@ -485,12 +482,12 @@
       img: 'https://mixicons.zrefio.com/api/items/3601/64/',
       outputQuantity: 16,
       components: [
-        { id: 'matter', count: 2 }
+        { id: '30188', count: 2 }
       ],
       recipe: [
         [null, null, null],
-        [null, null, 'matter'],
-        [null, 'matter', null]
+        [null, null, '30188'],
+        [null, '30188', null]
       ]
     },
     {
@@ -499,12 +496,12 @@
       img: 'https://ru.minecraft.wiki/images/thumb/%D0%92%D0%BE%D0%B4%D0%B0.png/160px-%D0%92%D0%BE%D0%B4%D0%B0.png?be87b',
       outputQuantity: 1,
       components: [
-        { id: 'matter', count: 2 }
+        { id: '30188', count: 2 }
       ],
       recipe: [
         [null, null, null],
-        [null, 'matter', null],
-        [null, 'matter', null]
+        [null, '30188', null],
+        [null, '30188', null]
       ]
     },
     {
@@ -513,428 +510,428 @@
       img: 'https://ru.minecraft.wiki/images/thumb/%D0%9B%D0%B0%D0%B2%D0%B0_JE14.png/160px-%D0%9B%D0%B0%D0%B2%D0%B0_JE14.png?1c545',
       outputQuantity: 1,
       components: [
-        { id: 'matter', count: 3 }
+        { id: '30188', count: 3 }
       ],
       recipe: [
-        [null, 'matter', null],
-        [null, 'matter', null],
-        [null, 'matter', null]
+        [null, '30188', null],
+        [null, '30188', null],
+        [null, '30188', null]
       ]
     },
     {
-      id: 'Mossy_cobblestone',
+      id: 'Mossy_4',
       name: 'Замшелый булыжник',
       img: 'https://mixicons.zrefio.com/api/items/4403/64/',
       outputQuantity: 16,
       components: [
-        { id: 'matter', count: 3 }
+        { id: '30188', count: 3 }
       ],
       recipe: [
         [null, null, null],
-        [null, 'matter', null],
-        ['matter', null, 'matter']
+        [null, '30188', null],
+        ['30188', null, '30188']
       ]
     },
     {
-      id: 'Copper_ore',
+      id: '249',
       name: 'Медная руда',
       img: 'https://mixicons.zrefio.com/api/items/3600/64/',
       outputQuantity: 5,
       components: [
-        { id: 'matter', count: 3 }
+        { id: '30188', count: 3 }
       ],
       recipe: [
-        [null, null, 'matter'],
-        ['matter', null, 'matter'],
+        [null, null, '30188'],
+        ['30188', null, '30188'],
         [null, null, null]
       ]
     },
     {
-      id: 'Tin_ore',
+      id: '248',
       name: 'Оловянная руда',
       img: 'https://mixicons.zrefio.com/api/items/3599/64/',
       outputQuantity: 5,
       components: [
-        { id: 'matter', count: 3 }
+        { id: '30188', count: 3 }
       ],
       recipe: [
         [null, null, null],
-        ['matter', null, 'matter'],
-        [null, null, 'matter']
+        ['30188', null, '30188'],
+        [null, null, '30188']
       ]
     },
     {
-      id: 'Netherrack',
+      id: '87',
       name: 'Адский камень',
       img: 'https://mixicons.zrefio.com/api/items/4606/64/',
       outputQuantity: 16,
       components: [
-        { id: 'matter', count: 3 }
+        { id: '30188', count: 3 }
       ],
       recipe: [
-        [null, null, 'matter'],
-        [null, 'matter', null],
-        ['matter', null, null]
+        [null, null, '30188'],
+        [null, '30188', null],
+        ['30188', null, null]
       ]
     },
     {
-      id: 'Snowball',
+      id: '332',
       name: 'Снежок',
       img: 'https://mixicons.zrefio.com/api/items/4120/64/',
       outputQuantity: 16,
       components: [
-        { id: 'matter', count: 3 }
+        { id: '30188', count: 3 }
       ],
       recipe: [
         [null, null, null],
         [null, null, null],
-        ['matter', 'matter', 'matter']
+        ['30188', '30188', '30188']
       ]
     },
     {
-      id: 'Coal',
+      id: '263',
       name: 'Уголь',
       img: 'https://mixicons.zrefio.com/api/items/3628/64/',
       outputQuantity: 8,
       components: [
-        { id: 'matter', count: 3 }
+        { id: '30188', count: 3 }
       ],
       recipe: [
-        [null, null, 'matter'],
-        ['matter', null, null],
-        [null, null, 'matter']
+        [null, null, '30188'],
+        ['30188', null, null],
+        [null, null, '30188']
       ]
     },
     {
-      id: 'White_wool',
+      id: '35',
       name: 'Белая Шерсть',
       img: 'https://mixicons.zrefio.com/api/items/4164/64/',
       outputQuantity: 12,
       components: [
-        { id: 'matter', count: 3 }
+        { id: '30188', count: 3 }
       ],
       recipe: [
-        ['matter', null, 'matter'],
+        ['30188', null, '30188'],
         [null, null, null],
-        [null, 'matter', null]
+        [null, '30188', null]
       ]
     },
     {
-      id: 'Vines',
+      id: '106',
       name: 'Лианы',
       img: 'https://mixicons.zrefio.com/api/items/2596/64/',
       outputQuantity: 24,
       components: [
-        { id: 'matter', count: 3 }
+        { id: '30188', count: 3 }
       ],
       recipe: [
-        ['matter', null, null],
-        ['matter', null, null],
-        ['matter', null, null]
+        ['30188', null, null],
+        ['30188', null, null],
+        ['30188', null, null]
       ]
     },
     {
-      id: 'Lapis_Lazuli',
+      id: '351:4',
       name: 'Лазурит',
       img: 'https://mixicons.zrefio.com/api/items/4150/64/',
       outputQuantity: 9,
       components: [
-        { id: 'matter', count: 4 }
+        { id: '30188', count: 4 }
       ],
       recipe: [
-        ['matter', null, null],
-        ['matter', null, null],
-        ['matter', 'matter', null]
+        ['30188', null, null],
+        ['30188', null, null],
+        ['30188', '30188', null]
       ]
     },
     {
-      id: 'Bone',
+      id: '352',
       name: 'Кость',
       img: 'https://mixicons.zrefio.com/api/items/4156/64/',
       outputQuantity: 32,
       components: [
-        { id: 'matter', count: 4 }
+        { id: '30188', count: 4 }
       ],
       recipe: [
-        ['matter', null, null],
-        ['matter', 'matter', null],
-        ['matter', null, null]
+        ['30188', null, null],
+        ['30188', '30188', null],
+        ['30188', null, null]
       ]
     },
     {
-      id: 'Obsidian',
+      id: '49',
       name: 'Обсидиан',
       img: 'https://mixicons.zrefio.com/api/items/4404/64/',
       outputQuantity: 12,
       components: [
-        { id: 'matter', count: 4 }
+        { id: '30188', count: 4 }
       ],
       recipe: [
-        ['matter', null, 'matter'],
-        ['matter', null, 'matter'],
+        ['30188', null, '30188'],
+        ['30188', null, '30188'],
         [null, null, null]
       ]
     },
     {
-      id: 'Feather',
+      id: '288',
       name: 'Перо',
       img: 'https://mixicons.zrefio.com/api/items/3665/64/',
       outputQuantity: 32,
       components: [
-        { id: 'matter', count: 4 }
+        { id: '30188', count: 4 }
       ],
       recipe: [
-        [null, 'matter', null],
-        [null, 'matter', null],
-        ['matter', null, 'matter']
+        [null, '30188', null],
+        [null, '30188', null],
+        ['30188', null, '30188']
       ]
     },
     {
-      id: 'Redstone',
+      id: '331',
       name: 'Редстоун',
       img: 'https://mixicons.zrefio.com/api/items/4119/64/',
       outputQuantity: 24,
       components: [
-        { id: 'matter', count: 4 }
+        { id: '30188', count: 4 }
       ],
       recipe: [
         [null, null, null],
-        [null, 'matter', null],
-        ['matter', 'matter', 'matter']
+        [null, '30188', null],
+        ['30188', '30188', '30188']
       ]
     },
     {
-      id: 'Glass',
+      id: '20',
       name: 'Стекло',
       img: 'https://mixicons.zrefio.com/api/items/3541/64/',
       outputQuantity: 32,
       components: [
-        { id: 'matter', count: 4 }
+        { id: '30188', count: 4 }
       ],
       recipe: [
-        [null, 'matter', null],
-        ['matter', null, 'matter'],
-        [null, 'matter', null]
+        [null, '30188', null],
+        ['30188', null, '30188'],
+        [null, '30188', null]
       ]
     },
     {
-      id: 'Sticky_Resin',
+      id: '30217',
       name: 'Латекс',
       img: 'https://mixicons.zrefio.com/api/items/3915/64/',
       outputQuantity: 21,
       components: [
-        { id: 'matter', count: 4 }
+        { id: '30188', count: 4 }
       ],
       recipe: [
-        ['matter', null, 'matter'],
+        ['30188', null, '30188'],
         [null, null, null],
-        ['matter', null, 'matter']
+        ['30188', null, '30188']
       ]
     },
     {
-      id: 'Clay',
+      id: '337',
       name: 'Глина',
       img: 'https://mixicons.zrefio.com/api/items/4125/64/',
       outputQuantity: 48,
       components: [
-        { id: 'matter', count: 5 }
+        { id: '30188', count: 5 }
       ],
       recipe: [
-        ['matter', 'matter', null],
-        ['matter', null, null],
-        ['matter', 'matter', null]
+        ['30188', '30188', null],
+        ['30188', null, null],
+        ['30188', '30188', null]
       ]
     },
     {
-      id: 'Mycelium',
+      id: '110',
       name: 'Мицелий',
       img: 'https://mixicons.zrefio.com/api/items/2601/64/',
       outputQuantity: 24,
       components: [
-        { id: 'matter', count: 5 }
+        { id: '30188', count: 5 }
       ],
       recipe: [
         [null, null, null],
-        ['matter', null, 'matter'],
-        ['matter', 'matter', 'matter']
+        ['30188', null, '30188'],
+        ['30188', '30188', '30188']
       ]
     },
     {
-      id: 'Iron_Ore',
+      id: '15',
       name: 'Железная руда',
       img: 'https://mixicons.zrefio.com/api/items/3309/64/',
       outputQuantity: 2,
       components: [
-        { id: 'matter', count: 5 }
+        { id: '30188', count: 5 }
       ],
       recipe: [
-        ['matter', null, 'matter'],
-        [null, 'matter', null],
-        ['matter', null, 'matter']
+        ['30188', null, '30188'],
+        [null, '30188', null],
+        ['30188', null, '30188']
       ]
     },
     {
-      id: 'Gold_Ore',
+      id: '14',
       name: 'Золотая руда',
       img: 'https://mixicons.zrefio.com/api/items/3274/64/',
       outputQuantity: 2,
       components: [
-        { id: 'matter', count: 5 }
+        { id: '30188', count: 5 }
       ],
       recipe: [
-        [null, 'matter', null],
-        ['matter', 'matter', 'matter'],
-        [null, 'matter', null]
+        [null, '30188', null],
+        ['30188', '30188', '30188'],
+        [null, '30188', null]
       ]
     },
     {
-      id: 'Ink_Sac',
+      id: '351',
       name: 'Чернильный мешок',
       img: 'https://mixicons.zrefio.com/api/items/4140/64/',
       outputQuantity: 48,
       components: [
-        { id: 'matter', count: 5 }
+        { id: '30188', count: 5 }
       ],
       recipe: [
-        [null, 'matter', 'matter'],
-        [null, 'matter', 'matter'],
-        [null, 'matter', null]
+        [null, '30188', '30188'],
+        [null, '30188', '30188'],
+        [null, '30188', null]
       ]
     },
     {
-      id: 'Cocoa_Beans',
+      id: '351:3',
       name: 'Какао-бобы',
       img: 'https://mixicons.zrefio.com/api/items/4149/64/',
       outputQuantity: 32,
       components: [
-        { id: 'matter', count: 5 }
+        { id: '30188', count: 5 }
       ],
       recipe: [
-        ['matter', 'matter', null],
-        [null, null, 'matter'],
-        ['matter', 'matter', null]
+        ['30188', '30188', null],
+        [null, null, '30188'],
+        ['30188', '30188', null]
       ]
     },
     {
-      id: 'Flint',
+      id: '318',
       name: 'Кремень',
       img: 'https://mixicons.zrefio.com/api/items/4103/64/',
       outputQuantity: 32,
       components: [
-        { id: 'matter', count: 5 }
+        { id: '30188', count: 5 }
       ],
       recipe: [
-        [null, 'matter', null],
-        ['matter', 'matter', null],
-        ['matter', 'matter', null]
+        [null, '30188', null],
+        ['30188', '30188', null],
+        ['30188', '30188', null]
       ]
     },
     {
-      id: 'Stone_brick',
+      id: '98',
       name: 'Каменный кирпич',
       img: 'https://mixicons.zrefio.com/api/items/4662/64/',
       outputQuantity: 48,
       components: [
-        { id: 'matter', count: 5 }
+        { id: '30188', count: 5 }
       ],
       recipe: [
-        ['matter', 'matter', null],
-        ['matter', 'matter', null],
-        ['matter', null, null]
+        ['30188', '30188', null],
+        ['30188', '30188', null],
+        ['30188', null, null]
       ]
     },
     {
-      id: 'Glowstone',
+      id: '89',
       name: 'Светокамень',
       img: 'https://mixicons.zrefio.com/api/items/4608/64/',
       outputQuantity: 8,
       components: [
-        { id: 'matter', count: 6 }
+        { id: '30188', count: 6 }
       ],
       recipe: [
-        [null, 'matter', null],
-        ['matter', null, 'matter'],
-        ['matter', 'matter', 'matter']
+        [null, '30188', null],
+        ['30188', null, '30188'],
+        ['30188', '30188', '30188']
       ]
     },
     {
-      id: 'Cactus',
+      id: '81',
       name: 'Кактус',
       img: 'https://mixicons.zrefio.com/api/items/4601/64/',
       outputQuantity: 48,
       components: [
-        { id: 'matter', count: 6 }
+        { id: '30188', count: 6 }
       ],
       recipe: [
-        [null, 'matter', null],
-        ['matter', 'matter', 'matter'],
-        ['matter', null, 'matter']
+        [null, '30188', null],
+        ['30188', '30188', '30188'],
+        ['30188', null, '30188']
       ]
     },
     {
-      id: 'Sugar_Canes',
+      id: '338',
       name: 'Сахарный тростник',
       img: 'https://mixicons.zrefio.com/api/items/4126/64/',
       outputQuantity: 48,
       components: [
-        { id: 'matter', count: 6 }
+        { id: '30188', count: 6 }
       ],
       recipe: [
-        ['matter', null, 'matter'],
-        ['matter', null, 'matter'],
-        ['matter', null, 'matter']
+        ['30188', null, '30188'],
+        ['30188', null, '30188'],
+        ['30188', null, '30188']
       ]
     },
     {
-      id: 'Gunpowder',
+      id: '289',
       name: 'Порох',
       img: 'https://mixicons.zrefio.com/api/items/3666/64/',
       outputQuantity: 15,
       components: [
-        { id: 'matter', count: 7 }
+        { id: '30188', count: 7 }
       ],
       recipe: [
-        ['matter', 'matter', 'matter'],
-        ['matter', null, null],
-        ['matter', 'matter', 'matter']
+        ['30188', '30188', '30188'],
+        ['30188', null, null],
+        ['30188', '30188', '30188']
       ]
     },
     {
-      id: 'Iridium_Ore',
+      id: '30128',
       name: 'Иридий',
       img: 'https://mixicons.zrefio.com/api/items/3800/64/',
       outputQuantity: 1,
       components: [
-        { id: 'matter', count: 7 }
+        { id: '30188', count: 7 }
       ],
       recipe: [
-        ['matter', 'matter', 'matter'],
-        [null, 'matter', null],
-        ['matter', 'matter', 'matter']
+        ['30188', '30188', '30188'],
+        [null, '30188', null],
+        ['30188', '30188', '30188']
       ]
     },
     {
-      id: 'Diamond',
+      id: '264',
       name: 'Алмаз',
       img: 'https://mixicons.zrefio.com/api/items/3630/64/',
       outputQuantity: 1,
       components: [
-        { id: 'matter', count: 9 }
+        { id: '30188', count: 9 }
       ],
       recipe: [
-        ['matter', 'matter', 'matter'],
-        ['matter', 'matter', 'matter'],
-        ['matter', 'matter', 'matter']
+        ['30188', '30188', '30188'],
+        ['30188', '30188', '30188'],
+        ['30188', '30188', '30188']
       ]
     }
   //  {
-  //    id: 'Snow',
+  //    id: '80',
   //    name: '1',
   //    img: '',
-  //    category: 'matter',
+  //    category: '30188',
   //    outputQuantity: 1,
   //    components: [
-  //      { id: 'matter', count: 5 }
+  //      { id: '30188', count: 5 }
   //   ],
   //    recipe: [
   //      [null, null, null],
