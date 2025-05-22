@@ -426,6 +426,7 @@
 </body>
 
     <script>
+      const BASE_RESOURCES = ['30188', 'iron_ore']; // добавляй нужные id
       const selectedItems = [];
       const searchInput = document.getElementById('search-input');
       const autocompleteList = document.getElementById('autocomplete-list');
@@ -594,7 +595,7 @@
       let matterTotal = 0;
       const leftovers = {};
       const resourcesCount = {};
-
+      const baseResources = {};
       const selectedSet = new Set(selectedItems.map(i => i.id));
 
       function accumulate(craft, quantity, isRoot = false) {
@@ -609,8 +610,8 @@
 
         if (craft.components) {
           craft.components.forEach(component => {
-            if (component.id === 'matter') {
-              matterTotal += component.count * craftCount;
+            if (BASE_RESOURCES.includes(component.id)) {
+              baseResources[component.id] = (baseResources[component.id] || 0) + component.count * craftCount;
               return;
             }
 
@@ -665,6 +666,43 @@
 
       if (tree.children.length > 0) {
         resultDiv.appendChild(tree);
+      }
+
+      if (Object.keys(baseResources).length > 0) {
+        const baseTitle = document.createElement('p');
+        baseTitle.style.marginTop = '12px';
+        baseTitle.style.color = '#ffde59';
+        baseTitle.innerHTML = 'Основные ресурсы:';
+        resultDiv.appendChild(baseTitle);
+
+        const ul = document.createElement('ul');
+        ul.style.listStyle = 'none';
+        ul.style.paddingLeft = '20px';
+
+        for (const [id, qty] of Object.entries(baseResources)) {
+          const craft = crafts.find(c => c.id === id);
+          if (!craft) continue;
+
+          const li = document.createElement('li');
+          li.style.display = 'flex';
+          li.style.alignItems = 'center';
+          li.style.gap = '6px';
+
+          const img = document.createElement('img');
+          img.src = craft.img || 'https://via.placeholder.com/20';
+          img.style.width = '20px';
+          img.style.height = '20px';
+          img.style.borderRadius = '4px';
+
+          const text = document.createElement('span');
+          text.textContent = `${craft.name}: ${qty}`;
+
+          li.appendChild(img);
+          li.appendChild(text);
+          ul.appendChild(li);
+        }
+
+        resultDiv.appendChild(ul);
       }
 
       if (matterTotal > 0) {
