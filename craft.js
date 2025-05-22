@@ -418,7 +418,6 @@
       id: 'matter',
       name: 'Материя',
       img: 'https://mixicons.zrefio.com/api/items/3883/64/',
-      category: 'matter',
       outputQuantity: 1,
       components: [],
       recipe: null,
@@ -428,7 +427,6 @@
       id: 'Log',
       name: 'Древесина',
       img: 'https://mixicons.zrefio.com/api/items/3311/64/',
-      category: 'matter',
       outputQuantity: 8,
       components: [
         { id: 'matter', count: 1 }
@@ -443,7 +441,6 @@
       id: 'Stone',
       name: 'Камень',
       img: 'https://mixicons.zrefio.com/api/items/3527/64/',
-      category: 'matter',
       outputQuantity: 16,
       components: [
         { id: 'matter', count: 1 }
@@ -458,7 +455,6 @@
       id: 'Snow',
       name: 'Стег (Блок)',
       img: 'https://mixicons.zrefio.com/api/items/4600/64/',
-      category: 'matter',
       outputQuantity: 4,
       components: [
         { id: 'matter', count: 2 }
@@ -473,7 +469,6 @@
       id: 'Grass',
       name: 'Трава',
       img: 'https://mixicons.zrefio.com/api/items/3713/64/',
-      category: 'matter',
       outputQuantity: 16,
       components: [
         { id: 'matter', count: 2 }
@@ -488,7 +483,6 @@
       id: 'Sandstone',
       name: 'Песчаник',
       img: 'https://mixicons.zrefio.com/api/items/3601/64/',
-      category: 'matter',
       outputQuantity: 16,
       components: [
         { id: 'matter', count: 2 }
@@ -503,7 +497,6 @@
       id: 'Water',
       name: 'Вода',
       img: 'https://ru.minecraft.wiki/images/thumb/%D0%92%D0%BE%D0%B4%D0%B0.png/160px-%D0%92%D0%BE%D0%B4%D0%B0.png?be87b',
-      category: 'matter',
       outputQuantity: 1,
       components: [
         { id: 'matter', count: 2 }
@@ -518,7 +511,6 @@
       id: 'Lava',
       name: 'Лава',
       img: 'https://ru.minecraft.wiki/images/thumb/%D0%9B%D0%B0%D0%B2%D0%B0_JE14.png/160px-%D0%9B%D0%B0%D0%B2%D0%B0_JE14.png?1c545',
-      category: 'matter',
       outputQuantity: 1,
       components: [
         { id: 'matter', count: 3 }
@@ -533,7 +525,6 @@
       id: 'Mossy_cobblestone',
       name: 'Замшелый булыжник',
       img: 'https://mixicons.zrefio.com/api/items/4403/64/',
-      category: 'matter',
       outputQuantity: 16,
       components: [
         { id: 'matter', count: 3 }
@@ -548,7 +539,6 @@
       id: 'Copper_ore',
       name: 'Медная руда',
       img: 'https://mixicons.zrefio.com/api/items/3600/64/',
-      category: 'matter',
       outputQuantity: 5,
       components: [
         { id: 'matter', count: 3 }
@@ -563,7 +553,6 @@
       id: 'Tin_ore',
       name: 'Оловянная руда',
       img: 'https://mixicons.zrefio.com/api/items/3599/64/',
-      category: 'matter',
       outputQuantity: 5,
       components: [
         { id: 'matter', count: 3 }
@@ -578,7 +567,6 @@
       id: 'Netherrack',
       name: 'Адский камень',
       img: 'https://mixicons.zrefio.com/api/items/4606/64/',
-      category: 'matter',
       outputQuantity: 16,
       components: [
         { id: 'matter', count: 3 }
@@ -593,7 +581,6 @@
       id: 'Snowball',
       name: 'Снежок',
       img: 'https://mixicons.zrefio.com/api/items/4120/64/',
-      category: 'matter',
       outputQuantity: 16,
       components: [
         { id: 'matter', count: 3 }
@@ -608,7 +595,6 @@
       id: 'Coal',
       name: 'Уголь',
       img: 'https://mixicons.zrefio.com/api/items/3628/64/',
-      category: 'matter',
       outputQuantity: 8,
       components: [
         { id: 'matter', count: 3 }
@@ -623,7 +609,6 @@
       id: 'White_wool',
       name: 'Белая Шерсть',
       img: 'https://mixicons.zrefio.com/api/items/4164/64/',
-      category: 'matter',
       outputQuantity: 12,
       components: [
         { id: 'matter', count: 3 }
@@ -638,7 +623,6 @@
       id: 'Vines',
       name: 'Лианы',
       img: 'https://mixicons.zrefio.com/api/items/2596/64/',
-      category: 'matter',
       outputQuantity: 24,
       components: [
         { id: 'matter', count: 3 }
@@ -653,7 +637,6 @@
       id: 'Lapis_Lazuli',
       name: 'Лазурит',
       img: 'https://mixicons.zrefio.com/api/items/4150/64/',
-      category: 'matter',
       outputQuantity: 9,
       components: [
         { id: 'matter', count: 4 }
@@ -668,7 +651,6 @@
       id: 'Bone',
       name: 'Кость',
       img: 'https://mixicons.zrefio.com/api/items/4156/64/',
-      category: 'matter',
       outputQuantity: 32,
       components: [
         { id: 'matter', count: 4 }
@@ -683,7 +665,6 @@
       id: 'Obsidian',
       name: 'Обсидиан',
       img: 'https://mixicons.zrefio.com/api/items/4404/64/',
-      category: 'matter',
       outputQuantity: 12,
       components: [
         { id: 'matter', count: 4 }
@@ -698,7 +679,6 @@
       id: 'Feather',
       name: 'Перо',
       img: 'https://mixicons.zrefio.com/api/items/3665/64/',
-      category: 'matter',
       outputQuantity: 32,
       components: [
         { id: 'matter', count: 4 }
@@ -713,7 +693,6 @@
       id: 'Redstone',
       name: 'Редстоун',
       img: 'https://mixicons.zrefio.com/api/items/4119/64/',
-      category: 'matter',
       outputQuantity: 24,
       components: [
         { id: 'matter', count: 4 }
@@ -728,7 +707,6 @@
       id: 'Glass',
       name: 'Стекло',
       img: 'https://mixicons.zrefio.com/api/items/3541/64/',
-      category: 'matter',
       outputQuantity: 32,
       components: [
         { id: 'matter', count: 4 }
@@ -743,7 +721,6 @@
       id: 'Sticky_Resin',
       name: 'Латекс',
       img: 'https://mixicons.zrefio.com/api/items/3915/64/',
-      category: 'matter',
       outputQuantity: 21,
       components: [
         { id: 'matter', count: 4 }
@@ -758,7 +735,6 @@
       id: 'Clay',
       name: 'Глина',
       img: 'https://mixicons.zrefio.com/api/items/4125/64/',
-      category: 'matter',
       outputQuantity: 48,
       components: [
         { id: 'matter', count: 5 }
@@ -773,7 +749,6 @@
       id: 'Mycelium',
       name: 'Мицелий',
       img: 'https://mixicons.zrefio.com/api/items/2601/64/',
-      category: 'matter',
       outputQuantity: 24,
       components: [
         { id: 'matter', count: 5 }
@@ -788,7 +763,6 @@
       id: 'Iron_Ore',
       name: 'Железная руда',
       img: 'https://mixicons.zrefio.com/api/items/3309/64/',
-      category: 'matter',
       outputQuantity: 2,
       components: [
         { id: 'matter', count: 5 }
@@ -803,7 +777,6 @@
       id: 'Gold_Ore',
       name: 'Золотая руда',
       img: 'https://mixicons.zrefio.com/api/items/3274/64/',
-      category: 'matter',
       outputQuantity: 2,
       components: [
         { id: 'matter', count: 5 }
@@ -818,7 +791,6 @@
       id: 'Ink_Sac',
       name: 'Чернильный мешок',
       img: 'https://mixicons.zrefio.com/api/items/4140/64/',
-      category: 'matter',
       outputQuantity: 48,
       components: [
         { id: 'matter', count: 5 }
@@ -833,7 +805,6 @@
       id: 'Cocoa_Beans',
       name: 'Какао-бобы',
       img: 'https://mixicons.zrefio.com/api/items/4149/64/',
-      category: 'matter',
       outputQuantity: 32,
       components: [
         { id: 'matter', count: 5 }
@@ -848,7 +819,6 @@
       id: 'Flint',
       name: 'Кремень',
       img: 'https://mixicons.zrefio.com/api/items/4103/64/',
-      category: 'matter',
       outputQuantity: 32,
       components: [
         { id: 'matter', count: 5 }
@@ -863,7 +833,6 @@
       id: 'Stone_brick',
       name: 'Каменный кирпич',
       img: 'https://mixicons.zrefio.com/api/items/4662/64/',
-      category: 'matter',
       outputQuantity: 48,
       components: [
         { id: 'matter', count: 5 }
@@ -878,7 +847,6 @@
       id: 'Glowstone',
       name: 'Светокамень',
       img: 'https://mixicons.zrefio.com/api/items/4608/64/',
-      category: 'matter',
       outputQuantity: 8,
       components: [
         { id: 'matter', count: 6 }
@@ -893,7 +861,6 @@
       id: 'Cactus',
       name: 'Кактус',
       img: 'https://mixicons.zrefio.com/api/items/4601/64/',
-      category: 'matter',
       outputQuantity: 48,
       components: [
         { id: 'matter', count: 6 }
@@ -908,7 +875,6 @@
       id: 'Sugar_Canes',
       name: 'Сахарный тростник',
       img: 'https://mixicons.zrefio.com/api/items/4126/64/',
-      category: 'matter',
       outputQuantity: 48,
       components: [
         { id: 'matter', count: 6 }
@@ -923,7 +889,6 @@
       id: 'Gunpowder',
       name: 'Порох',
       img: 'https://mixicons.zrefio.com/api/items/3666/64/',
-      category: 'matter',
       outputQuantity: 15,
       components: [
         { id: 'matter', count: 7 }
@@ -938,7 +903,6 @@
       id: 'Iridium_Ore',
       name: 'Иридий',
       img: 'https://mixicons.zrefio.com/api/items/3800/64/',
-      category: 'matter',
       outputQuantity: 1,
       components: [
         { id: 'matter', count: 7 }
@@ -953,7 +917,6 @@
       id: 'Diamond',
       name: 'Алмаз',
       img: 'https://mixicons.zrefio.com/api/items/3630/64/',
-      category: 'matter',
       outputQuantity: 1,
       components: [
         { id: 'matter', count: 9 }
