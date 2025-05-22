@@ -1,16 +1,231 @@
   const crafts = [
     {
-      id: '30241',
-      name: 'Энергокристалл',
-      img: 'https://mixicons.zrefio.com/api/items/4579/64/',
-      outputQuantity: 4,
+      id: '2790:5',
+      name: 'Ветряк КН',
+      img: 'https://mixicons.zrefio.com/api/items/3654/64/',
+      outputQuantity: 1,
       components: [
-        { id: '17', count: 1 }
+        { id: '30475:1', count: 4 },
+        { id: '2790:4', count: 4 },
+        { id: '227:5', count: 1 }
+      ],
+      recipe: [
+        ['30475:1', '2790:4', '30475:1'],
+        ['2790:4', '227:5', '2790:4'],
+        ['30475:1', '2790:4', '30475:1']
+      ]
+    },
+    {
+      id: '30475:1',
+      name: 'Сверхпроводник',
+      img: 'https://mixicons.zrefio.com/api/items/3969/64/',
+      outputQuantity: 3,
+      components: [
+        { id: '30475', count: 6 },
+        { id: '30184:9', count: 2 },
+        { id: '266', count: 1 }
+      ],
+      recipe: [
+        ['30475', '30475', '30475'],
+        ['30184:9', '266', '30184:9'],
+        ['30475', '30475', '30475']
+      ]
+    },
+    {
+      id: '30150',
+      name: 'Углепластик',
+      img: 'https://mixicons.zrefio.com/api/items/3824/64/',
+      outputQuantity: 1,
+      components: [
+        { id: '30151', count: 1 }
       ],
       recipe: [
         [null, null, null],
-        [null, '17', null],
+        [null, '30151', null],
         [null, null, null]
+      ]
+    },
+    {
+      id: '30151',
+      name: 'Углеткань',
+      img: 'https://mixicons.zrefio.com/api/items/3825/64/',
+      outputQuantity: 1,
+      components: [
+        { id: '30152', count: 2 }
+      ],
+      recipe: [
+        ['30152', '30152', null],
+        [null, null, null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: '30152',
+      name: 'Углеволокно',
+      img: 'https://mixicons.zrefio.com/api/items/3826/64/',
+      outputQuantity: 1,
+      components: [
+        { id: '30256', count: 4 }
+      ],
+      recipe: [
+        ['30256', '30256', null],
+        ['30256', '30256', null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: '30256',
+      name: 'Угольная пыль',
+      img: 'https://mixicons.zrefio.com/api/items/3961/64/',
+      outputQuantity: 1,
+      components: [
+        { id: '263', count: 1 }
+      ],
+      recipe: [
+        [null, null, null],
+        [null, '263', null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: '30475',
+      name: 'Изоляция сверхпроводника',
+      img: 'https://mixicons.zrefio.com/api/items/3968/64/',
+      outputQuantity: 2,
+      components: [
+        { id: '30187', count: 4 },
+        { id: '30147', count: 2 },
+        { id: '30150', count: 3 }
+      ],
+      recipe: [
+        ['30187', '30147', '30187'],
+        ['30150', '30150', '30150'],
+        ['30187', '30147', '30187']
+      ]
+    },
+    {
+      id: '30147',
+      name: 'Иридиевая плата',
+      img: 'https://mixicons.zrefio.com/api/items/3820/64/',
+      outputQuantity: 1,
+      components: [
+        { id: '30128', count: 4 },
+        { id: '30187', count: 4 },
+        { id: '264', count: 1 }
+      ],
+      recipe: [
+        ['30128', '30187', '30128'],
+        ['30187', '264', '30187'],
+        ['30128', '30187', '30128']
+      ]
+    },
+    {
+      id: '30187',
+      name: 'Композит',
+      img: 'https://mixicons.zrefio.com/api/items/3882/64/',
+      outputQuantity: 2,
+      components: [
+        { id: '30249', count: 3 },
+        { id: '5261', count: 3 },
+        { id: '30247', count: 3 }
+      ],
+      recipe: [
+        ['30249', '30249', '30249'],
+        ['5261', '5261', '5261'],
+        ['30248', '30248', '30248']
+      ]
+    },
+    {
+      id: '5261',
+      name: 'Бронзовый слиток',
+      img: 'https://mixicons.zrefio.com/api/items/4526/64/',
+      outputQuantity: 4,
+      components: [
+        { id: '30249', count: 3 },
+        { id: '30247', count: 1 },
+        { id: '30248', count: 3 }
+      ],
+      recipe: [
+        ['30249', '30249', '30249'],
+        ['30247', null, null],
+        ['30248', '30248', '30248']
+      ]
+    },
+    {
+      id: '30184:9',
+      name: 'Стекловолокно',
+      img: 'https://mixicons.zrefio.com/api/items/3879/64/',
+      outputQuantity: 4,
+      components: [
+        { id: '20', count: 6 },
+        { id: '264', count: 1 },
+        { id: '331', count: 2 }
+      ],
+      recipe: [
+        ['20', '20', '20'],
+        ['331', '264', '331'],
+        ['20', '20', '20']
+      ]
+    },
+    {
+      id: '227:5',
+      name: 'Трансформатор ВН',
+      img: 'https://mixicons.zrefio.com/api/items/3576/64/',
+      outputQuantity: 1,
+      components: [
+        { id: '30184:8', count: 2 },
+        { id: '227:4', count: 1 },
+        { id: '30241', count: 1 },
+        { id: '30191', count: 1 }
+      ],
+      recipe: [
+        [null, '30184:8', null],
+        ['30191', '227:4', '30241'],
+        [null, '30184:8', null]
+      ]
+    },
+    {
+      id: '30184:8',
+      name: 'Высоковольтный провод тройной изоляции',
+      img: 'https://mixicons.zrefio.com/api/items/3878/64/',
+      outputQuantity: 1,
+      components: [
+        { id: '30216', count: 3 },
+        { id: '30184:5', count: 1 }
+      ],
+      recipe: [
+        ['30249', '30249', '30249'],
+        [null, null, null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: '30184:5',
+      name: 'Высоковольтный провод',
+      img: 'https://mixicons.zrefio.com/api/items/3875/64/',
+      outputQuantity: 1,
+      components: [
+        { id: '30249', count: 3 }
+      ],
+      recipe: [
+        ['30249', '30249', '30249'],
+        [null, null, null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: '30241',
+      name: 'Энергокристалл',
+      img: 'https://mixicons.zrefio.com/api/items/3945/64/',
+      outputQuantity: 1,
+      components: [
+        { id: '331', count: 8 },
+        { id: '264', count: 1 }
+      ],
+      recipe: [
+        ['331', '331', '331'],
+        ['331', '264', '331'],
+        ['331', '331', '331']
       ]
     },
     {
@@ -566,7 +781,7 @@
       id: '263',
       name: 'Уголь',
       img: 'https://mixicons.zrefio.com/api/items/3628/64/',
-      outputQuantity: 8,
+      outputQuantity: 20,
       components: [
         { id: '30188', count: 3 }
       ],
