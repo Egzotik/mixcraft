@@ -6,6 +6,14 @@
   <title>Калькулятор крафтов Minecraft</title>
   <link rel="icon" href="https://minecraft.mix-servers.com/assets/main/img/favicon.ico" />
   <style>
+
+    #modal-img {
+      border: 2px solid #ffffff;
+      border-radius: 6px;
+      background-color: #1e1f22;
+      padding: 4px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -405,13 +413,13 @@
       </div>
       <div class="grid" id="item-grid"></div>
     </div>
-
     <div class="selection-container">
+
       <div id="selected-list-wrapper">
         <div id="selected-list"></div>
       </div>
       <button id="clear-selection" class="clear-btn">🗑 Очистить всё</button>
-      <div id="result">Выберите предметы слева.</div>
+      <div id="result">Выберите предметы слева для расчёта ресурсов</div>
     </div>
 
 
@@ -419,7 +427,6 @@
     <div class="modal-content" onclick="event.stopPropagation()">
       <img id="modal-img" src="" alt="Иконка предмета" />
       <div id="modal-craft" class="craft-grid"></div>
-      <button onclick="closeModal()">Закрыть</button>
     </div>
   </div>
 
@@ -503,15 +510,23 @@
       function renderSelectedList() {
         selectedList.innerHTML = '';
         if (selectedItems.length === 0) {
-          selectedList.innerHTML = '<p style="color:#999;">Нет выбранных предметов</p>';
-          resultDiv.textContent = 'Выберите предметы слева.';
+          selectedList.innerHTML = '<p style="color:#999; text-align: center; padding: 12px 0;">Нет выбранных предметов</p>';
+          resultDiv.textContent = 'Выберите предметы слева для расчёта ресурсов';
           return;
         }
       document.getElementById('clear-selection').addEventListener('click', () => {
         selectedItems.length = 0;
         renderSelectedList();
         calculateResources();
-      });
+      }); 
+        const tip = document.createElement('p');
+        tip.textContent = '💡 Нажмите на предмет, чтобы посмотреть рецепт крафта';
+        tip.style.color = '#ccc';
+        tip.style.fontSize = '13px';
+        tip.style.textAlign = 'center';
+        tip.style.marginBottom = '8px';
+        selectedList.appendChild(tip);
+
 
         selectedItems.forEach(({ id, count }) => {
           const craft = crafts.find(c => c.id === id);
@@ -763,37 +778,100 @@
     }
 
       // Модальное окно с рецептом крафта
-      function showCraftModal(craft) {
-        modalImg.src = craft.img || 'https://via.placeholder.com/64';
-        modalImg.alt = craft.name;
+    const modalHistory = [];
 
-        modalCraft.innerHTML = '';
-        // Отрисуем рецепт 3x3
-        if(!craft.recipe) {
-          modalCraft.textContent = 'Рецепт отсутствует';
-        } else {
-          for(let r = 0; r < 3; r++) {
-            for(let c = 0; c < 3; c++) {
-              const cell = document.createElement('div');
-              cell.className = 'craft-cell';
+    function showCraftModal(craft) {
+      if (!craft) return;
+      if (!craft.recipe) return; // Не открывать модалку, если рецепта нет
+      if (modalHistory.length === 0 || modalHistory[modalHistory.length - 1].id !== craft.id) {
+        modalHistory.push(craft);
+      }
 
-              const itemId = craft.recipe[r][c];
-              if(itemId) {
-                const cellCraft = crafts.find(x => x.id === itemId);
-                if(cellCraft) {
-                  const img = document.createElement('img');
-                  img.src = cellCraft.img || 'https://via.placeholder.com/40';
-                  img.alt = cellCraft.name;
-                  img.title = cellCraft.name;
-                  cell.appendChild(img);
-                }
+      modalImg.src = craft.img || 'https://via.placeholder.com/64';
+      modalImg.alt = craft.name;
+      modalCraft.innerHTML = '';
+
+      // Отрисовка 3x3 рецепта
+      if (!craft.recipe) {
+        modalCraft.textContent = 'Рецепт отсутствует';
+      } else {
+        for (let r = 0; r < 3; r++) {
+          for (let c = 0; c < 3; c++) {
+            const cell = document.createElement('div');
+            cell.className = 'craft-cell';
+            const itemId = craft.recipe[r][c];
+
+            if (itemId) {
+              const cellCraft = crafts.find(x => x.id === itemId);
+              if (cellCraft) {
+                const img = document.createElement('img');
+                img.src = cellCraft.img || 'https://via.placeholder.com/40';
+                img.alt = cellCraft.name;
+                img.title = cellCraft.name;
+                img.style.cursor = 'pointer';
+                img.onclick = () => showCraftModal(cellCraft);
+                cell.appendChild(img);
               }
-              modalCraft.appendChild(cell);
             }
+
+            modalCraft.appendChild(cell);
           }
         }
-        modal.style.display = 'flex';
       }
+
+      // Удаляем старый футер (если есть)
+      const oldFooter = modalCraft.parentElement.querySelector('.modal-footer');
+      if (oldFooter) oldFooter.remove();
+
+      // Создаём футер с кнопками
+      const footer = document.createElement('div');
+      footer.className = 'modal-footer';
+      footer.style.display = 'flex';
+      footer.style.justifyContent = 'space-between';
+      footer.style.gap = '12px';
+      footer.style.marginTop = '20px';
+      footer.style.width = '100%';
+
+      // Кнопка назад
+      const backButton = document.createElement('button');
+      backButton.textContent = '← Назад';
+      backButton.style.flex = '1';
+      backButton.disabled = modalHistory.length <= 1;
+      backButton.onclick = () => {
+        if (modalHistory.length > 1) {
+          modalHistory.pop();
+          const previousCraft = modalHistory[modalHistory.length - 1];
+          showCraftModal(previousCraft);
+        }
+      };
+
+      // Кнопка закрыть
+      const closeButton = document.createElement('button');
+      closeButton.textContent = 'Закрыть';
+      closeButton.style.flex = '1';
+      closeButton.onclick = () => closeModal();
+
+      // Применяем стили, как у .modal-content button
+      [backButton, closeButton].forEach(btn => {
+        btn.style.backgroundColor = '#ff6b6b';
+        btn.style.color = 'white';
+        btn.style.border = 'none';
+        btn.style.padding = '8px 16px';
+        btn.style.borderRadius = '6px';
+        btn.style.cursor = 'pointer';
+        btn.style.fontWeight = '600';
+        btn.style.fontSize = '14px';
+        btn.onmouseenter = () => btn.style.backgroundColor = '#ff4d4d';
+        btn.onmouseleave = () => btn.style.backgroundColor = '#ff6b6b';
+      });
+
+      footer.appendChild(backButton);
+      footer.appendChild(closeButton);
+      modalCraft.parentElement.appendChild(footer);
+
+      modal.style.display = 'flex';
+    }
+
       function closeModal() {
         modal.style.display = 'none';
       }
