@@ -419,7 +419,7 @@
         <div id="selected-list"></div>
       </div>
       <button id="clear-selection" class="clear-btn">🗑 Очистить всё</button>
-      <div id="result">Выберите предметы слева для расчёта ресурсов</div>
+      <div id="result">Выберите предметы для расчёта ресурсов</div>
     </div>
 
 
@@ -511,7 +511,7 @@
         selectedList.innerHTML = '';
         if (selectedItems.length === 0) {
           selectedList.innerHTML = '<p style="color:#999; text-align: center; padding: 12px 0;">Нет выбранных предметов</p>';
-          resultDiv.textContent = 'Выберите предметы слева для расчёта ресурсов';
+          resultDiv.textContent = 'Выберите предметы для расчёта ресурсов';
           return;
         }
       document.getElementById('clear-selection').addEventListener('click', () => {
@@ -594,7 +594,7 @@
           // Рассчёт ресурсов с учётом вложенных крафтов
     function calculateResources() {
       if (selectedItems.length === 0) {
-        resultDiv.innerHTML = '<p style="color:#999;">Выберите предметы слева для расчёта ресурсов.</p>';
+        resultDiv.innerHTML = '<p style="color:#999;">Выберите предметы для расчёта ресурсов.</p>';
         return;
       }
 
