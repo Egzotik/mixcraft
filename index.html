@@ -799,50 +799,11 @@
       }
 
       // Поиск с автодополнением
-      searchInput.addEventListener('input', () => {
-        const val = searchInput.value.toLowerCase();
-        if(val.length === 0) {
-          autocompleteList.hidden = true;
-          renderItemGrid();
-          return;
-        }
+    searchInput.addEventListener('input', () => {
+      const val = searchInput.value.toLowerCase();
+      renderItemGrid(); // просто обновляем сетку
+    });
 
-        const filtered = crafts
-          .filter(c => !c.hidden && c.name.toLowerCase().includes(val))
-          .slice(0, 10);
-
-        autocompleteList.innerHTML = '';
-        if(filtered.length === 0) {
-          autocompleteList.hidden = true;
-          renderItemGrid();
-          return;
-        }
-
-        filtered.forEach(craft => {
-          const div = document.createElement('div');
-          div.className = 'autocomplete-item';
-          div.title = craft.name;
-
-          const img = document.createElement('img');
-          img.src = craft.img || 'https://via.placeholder.com/24';
-          img.alt = craft.name;
-          div.appendChild(img);
-
-          const span = document.createElement('span');
-          span.textContent = craft.name;
-          div.appendChild(span);
-
-          div.onclick = () => {
-            addToSelection(craft.id);
-            clearSearch();
-          };
-
-          autocompleteList.appendChild(div);
-        });
-
-        autocompleteList.hidden = false;
-        renderItemGrid();
-      });
 
       function clearSearch() {
         searchInput.value = '';
