@@ -1,5 +1,423 @@
   const crafts = [
     {
+      id: '250:15',
+      name: 'Терраформер',
+      img: 'https://mixicons.zrefio.com/api/items/3610/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['348', '30146', '348'],
+        ['3', '250:12', '3'],
+        ['348', '3', '348'],
+      ]
+    },
+    {
+      id: '30146',
+      name: 'Чип',
+      img: 'https://mixicons.zrefio.com/api/items/3819/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '30191', null],
+        [null, '30190', null],
+        ['331', null, '331'],
+      ]
+    },
+    {
+      id: '250:14',
+      name: 'Генератор материи',
+      img: 'https://mixicons.zrefio.com/api/items/3609/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['348', '30190', '348'],
+        ['250:12', '30240', '250:12'],
+        ['348', '30190', '348'],
+      ]
+    },
+    {
+      id: '250:13',
+      name: 'Индукционная печь',
+      img: 'https://mixicons.zrefio.com/api/items/3608/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30248', '30248', '30248'],
+        ['30248', '250:2', '30248'],
+        ['30248', '250:12', '30248'],
+      ]
+    },
+    {
+      id: '250:11',
+      name: 'Утилизатор',
+      img: 'https://mixicons.zrefio.com/api/items/3606/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '348', null],
+        ['3', '250:5', '3'],
+        ['30249', '3', '30249'],
+      ]
+    },
+    {
+      id: '3',
+      name: 'Земля',
+      img: 'https://mixicons.zrefio.com/api/items/4307/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, null, null],
+        [null, '30224', null],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '30224',
+      name: 'Биомасса',
+      img: 'https://mixicons.zrefio.com/api/items/3924/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['338', '338', '338'],
+        ['338', null, '338'],
+        ['338', '338', '338'],
+      ]
+    },
+    {
+      id: '250:10',
+      name: 'Электролизёр',
+      img: 'https://mixicons.zrefio.com/api/items/3605/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30184', null, '30184'],
+        ['30184', '30191', '30184'],
+        ['30237', '250', '30237'],
+      ]
+    },
+    {
+      id: '250:9',
+      name: 'Намагничиватель',
+      img: 'https://mixicons.zrefio.com/api/items/3619/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['331', '232', '331'],
+        ['331', '250', '331'],
+        ['331', '232', '331'],
+      ]
+    },
+    {
+      id: '232',
+      name: 'Железный забор',
+      img: 'https://mixicons.zrefio.com/api/items/3580/64/',
+      outputQuantity: 12,
+      recipe: [
+        ['30249', '30249', '30249'],
+        ['30249', '30249', '30249'],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '250:8',
+      name: 'Помпа',
+      img: 'https://mixicons.zrefio.com/api/items/3618/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30237', '30191', '30237'],
+        ['30237', '250', '30237'],
+        ['245', '30212', '245'],
+      ]
+    },
+    {
+      id: '250:7',
+      name: 'Автошахтёр',
+      img: 'https://mixicons.zrefio.com/api/items/3617/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30191', '250', '30191'],
+        [null, '245', null],
+        [null, '245', null],
+      ]
+    },
+    {
+      id: '245',
+      name: 'Буровая труба',
+      img: 'https://mixicons.zrefio.com/api/items/3591/64/',
+      outputQuantity: 8,
+      recipe: [
+        ['30249', null, '30249'],
+        ['30249', null, '30249'],
+        ['30249', '30212', '30249'],
+      ]
+    },
+    {
+      id: '250:5',
+      name: 'Наполнитель',
+      img: 'https://mixicons.zrefio.com/api/items/3616/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30247', '30191', '30247'],
+        ['30247', '250', '30247'],
+        ['30247', '30247', '30247'],
+      ]
+    },
+    {
+      id: '250:5',
+      name: 'Компрессор',
+      img: 'https://mixicons.zrefio.com/api/items/3615/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['1', null, '1'],
+        ['1', '250', '1'],
+        ['1', '30191', '1'],
+      ]
+    },
+    {
+      id: '250:4',
+      name: 'Экстрактор',
+      img: 'https://mixicons.zrefio.com/api/items/3614/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30212', '250', '30212'],
+        ['30212', '30191', '30212'],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '30212',
+      name: 'Краник',
+      img: 'https://mixicons.zrefio.com/api/items/3910/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '5', null],
+        ['5', '5', '5'],
+        ['5', null, null],
+      ]
+    },
+    {
+      id: '250:3',
+      name: 'Дробитель',
+      img: 'https://mixicons.zrefio.com/api/items/3613/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['318', '318', '318'],
+        ['4', '250', '4'],
+        [null, '30191', null],
+      ]
+    },
+    {
+      id: '250:2',
+      name: 'Электропечь',
+      img: 'https://mixicons.zrefio.com/api/items/3612/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '30191', null],
+        ['331', '250:1', '331'],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '250:1',
+      name: 'Железная печь',
+      img: 'https://mixicons.zrefio.com/api/items/3611/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '265', null],
+        ['265', null, '265'],
+        ['265', '61', '265'],
+      ]
+    },
+    {
+      id: '246:5',
+      name: 'Ядерный реактор',
+      img: 'https://mixicons.zrefio.com/api/items/3597/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '30190', null],
+        ['233', '233', '233'],
+        [null, '246', null],
+      ]
+    },
+    {
+      id: '246:2',
+      name: 'Водяная мельница',
+      img: 'https://mixicons.zrefio.com/api/items/3594/64/',
+      outputQuantity: 2,
+      recipe: [
+        ['280', '5', '280'],
+        ['5', '246', '5'],
+        ['280', '5', '280'],
+      ]
+    },
+    {
+      id: '246:1',
+      name: 'Геотермальный генератор',
+      img: 'https://mixicons.zrefio.com/api/items/3593/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['20', '30237', '20'],
+        ['20', '30237', '20'],
+        ['30249', '246', '30249'],
+      ]
+    },
+    {
+      id: '233',
+      name: 'Блок реактора',
+      img: 'https://mixicons.zrefio.com/api/items/3581/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '30084', null],
+        ['30084', '250', '30084'],
+        [null, '30084', null],
+      ]
+    },
+    {
+      id: '227:2',
+      name: 'ЭХО',
+      img: 'https://mixicons.zrefio.com/api/items/3573/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30240', '30190', '30240'],
+        ['30240', '227:1', '30240'],
+        ['30240', '250:12', '30240'],
+      ]
+    },
+    {
+      id: '30240',
+      name: 'Мультикристалл',
+      img: 'https://mixicons.zrefio.com/api/items/3943/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['351:4', '30191', '351:4'],
+        ['351:4', '30241', '351:4'],
+        ['351:4', '30191', '351:4'],
+      ]
+    },
+    {
+      id: '250:12',
+      name: 'Улучшенный механизм',
+      img: 'https://mixicons.zrefio.com/api/items/3607/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '30187', null],
+        ['30150', '250', '30150'],
+        [null, '30187', null],
+      ]
+    },
+    {
+      id: '227:1',
+      name: 'МФЭ',
+      img: 'https://mixicons.zrefio.com/api/items/3572/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30184:4', '30241', '30184:4'],
+        ['30241', '250', '30241'],
+        ['30184:4', '30241', '30184:4'],
+      ]
+    },
+    {
+      id: '227',
+      name: 'Бат-Бокс',
+      img: 'https://mixicons.zrefio.com/api/items/3571/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['5', '30184', '5'],
+        ['30239', '30239', '30239'],
+        ['5', '5', '5'],
+      ]
+    },
+    {
+      id: '225:1',
+      name: 'Торговый автомат',
+      img: 'https://mixicons.zrefio.com/api/items/3561/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['331', '331', '331'],
+        ['54', '250', '54'],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '225',
+      name: 'Сейф',
+      img: 'https://mixicons.zrefio.com/api/items/3560/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30191', null, null],
+        ['250', null, null],
+        ['54', null, null],
+      ]
+    },
+    {
+      id: '224:4',
+      name: 'Концентрированный Урановый блок',
+      img: 'https://mixicons.zrefio.com/api/items/3555/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['224:3', '224:3', '224:3'],
+        ['224:3', '224:3', '224:3'],
+        ['224:3', '224:3', '224:3'],
+      ]
+    },
+    {
+      id: '224:3',
+      name: 'Урановый блок',
+      img: 'https://mixicons.zrefio.com/api/items/3554/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30244', '30244', '30244'],
+        ['30244', '30244', '30244'],
+        ['30244', '30244', '30244'],
+      ]
+    },
+    {
+      id: '223:2',
+      name: 'Автосадовник',
+      img: 'https://mixicons.zrefio.com/api/items/3550/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30191', '54', '30191'],
+        ['218', '250', '218'],
+        ['218', '218', '218'],
+      ]
+    },
+    {
+      id: '218',
+      name: 'Жёрдочки',
+      img: 'https://mixicons.zrefio.com/api/items/3543/64/',
+      outputQuantity: 2,
+      recipe: [
+        ['280', null, '280'],
+        ['280', null, '280'],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '280',
+      name: 'Палки',
+      img: 'https://mixicons.zrefio.com/api/items/3657/64/',
+      outputQuantity: 4,
+      recipe: [
+        ['5', null, null],
+        ['5', null, null],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '54',
+      name: 'Сундук',
+      img: 'https://mixicons.zrefio.com/api/items/4575/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['5', '5', '5'],
+        ['5', null, '5'],
+        ['5', '5', '5'],
+      ]
+    },
+    {
+      id: '5',
+      name: 'Дубовые доски',
+      img: 'https://mixicons.zrefio.com/api/items/4579/64/',
+      outputQuantity: 4,
+      recipe: [
+        ['17', null, null],
+        [null, null, null],
+        [null, null, null],
+      ]
+    },
+    {
       id: '194:7',
       name: 'Eclipse Solar Panel',
       img: 'https://mixicons.zrefio.com/api/items/3513/64/',
@@ -228,6 +646,17 @@
         ['30831:5', '30831:5', '30831:5'],
         ['30831:11', null, '30831:11'],
         ['30831:5', '30831:5', '30831:5']
+      ]
+    },
+    {
+      id: '194:4',
+      name: 'Quantum Solar Panel',
+      img: 'https://mixicons.zrefio.com/api/items/3510/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['194:2', '194:2', '194:2'],
+        ['194:2', '30475:1', '194:2'],
+        ['194:2', '194:2', '194:2'],
       ]
     },
     {
@@ -1335,4 +1764,16 @@
         ['30188', '30188', '30188']
       ]
     }
+  //  {
+  //    id: '80',
+  //    name: '1',
+  //    img: '',
+  //    outputQuantity: 1,
+  //,
+  //    recipe: [
+  //      [null, null, null],
+  //      [null, null, null],
+  //      [null, null, null]
+  //    ]
+  //  },
   ];
