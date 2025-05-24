@@ -1,13 +1,251 @@
   const crafts = [
     {
+      id: '194:7',
+      name: 'Eclipse Solar Panel',
+      img: 'https://mixicons.zrefio.com/api/items/3513/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['194:6', '30831:17', '194:6'],
+        ['30831:15', '194:6', '30831:15'],
+        ['30831:14', '194:6', '30831:14'],
+      ]
+    },
+    {
+      id: '30831:17',
+      name: 'Moonlight Filter',
+      img: 'https://mixicons.zrefio.com/api/items/4072/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30831:12', '30831:13', '30831:12'],
+        ['30831:13', '30831:16', '30831:13'],
+        ['30831:12', '30831:13', '30831:12'],
+      ]
+    },
+    {
+      id: '30831:16',
+      name: 'Photon Buffer',
+      img: 'https://mixicons.zrefio.com/api/items/4071/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30831:11', '30475:2', '30831:11'],
+        ['30475:2', '264', '30475:2'],
+        ['30831:11', '30475:2', '30831:11'],
+      ]
+    },
+    {
+      id: '194:6',
+      name: 'Solaris Titan Panel',
+      img: 'https://mixicons.zrefio.com/api/items/3512/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30831:13', '30831:16', '30831:13'],
+        ['194:4', '30831:15', '194:4'],
+        ['194:4', '30831:14', '194:4'],
+      ]
+    },
+    {
+      id: '30831:15',
+      name: 'Quantum Processor Cooling',
+      img: 'https://mixicons.zrefio.com/api/items/4070/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30094', '30475:2', '30094'],
+        ['30475:2', null, '30475:2'],
+        ['30094', '30475:2', '30094'],
+      ]
+    },
+    {
+      id: '30475:2',
+      name: 'Охлаждающий элемент',
+      img: 'https://mixicons.zrefio.com/api/items/3970/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30099', '30094', '30099'],
+        ['30098', '30147', '30098'],
+        ['30099', '30094', '30099'],
+      ]
+    },
+    {
+      id: '30098',
+      name: 'Теплоёмкая реакторная пластина',
+      img: 'https://mixicons.zrefio.com/api/items/3741/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30205', '30084', null],
+        ['30084', null, null],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '30205',
+      name: 'Реакторная пластина',
+      img: 'https://mixicons.zrefio.com/api/items/3901/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30084', '30187', null],
+        [null, null, null],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '30094',
+      name: 'Продвинутый теплообменник',
+      img: 'https://mixicons.zrefio.com/api/items/3737/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30184:9', '30191', '30184:9'],
+        ['30204', '30084', '30204'],
+        ['30184:9', '30191', '30184:9'],
+      ]
+    },
+    {
+      id: '30204',
+      name: 'Теплообменник',
+      img: 'https://mixicons.zrefio.com/api/items/3900/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '30191', null],
+        ['30247', '30084', '30247'],
+        [null, '30247', null],
+      ]
+    },
+    {
+      id: '30084',
+      name: 'Плотная медная пластина',
+      img: 'https://mixicons.zrefio.com/api/items/3727/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30248', '30248', '30248'],
+        ['30248', '30248', '30248'],
+        ['30248', '30248', null],
+      ]
+    },
+    {
+      id: '30084',
+      name: 'Плотная медная пластина',
+      img: 'https://mixicons.zrefio.com/api/items/3727/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30248', '30248', '30248'],
+        ['30248', '30248', '30248'],
+        ['30248', '30248', null],
+      ]
+    },
+    {
+      id: '30100',
+      name: 'Охлаждающий стержень 30к',
+      img: 'https://mixicons.zrefio.com/api/items/3744/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30247', '30247', '30247'],
+        ['30206', '30206', '30206'],
+        ['30247', '30247', '30247'],
+      ]
+    },
+    {
+      id: '30100',
+      name: 'Охлаждающий стержень 30к',
+      img: 'https://mixicons.zrefio.com/api/items/3744/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30247', '30247', '30247'],
+        ['30206', '30206', '30206'],
+        ['30247', '30247', '30247'],
+      ]
+    },
+    {
+      id: '30206',
+      name: 'Охлаждающий стержень 10к',
+      img: 'https://mixicons.zrefio.com/api/items/3902/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '30247', null],
+        ['30247', '30218', '30247'],
+        [null, '30247', null],
+      ]
+    },
+    {
+      id: '30237',
+      name: 'Пустая капсула',
+      img: 'https://mixicons.zrefio.com/api/items/3940/64/',
+      outputQuantity: 16,
+      recipe: [
+        [null, '30247', null],
+        ['30247', null, '30247'],
+        [null, '30247', null],
+      ]
+    },
+    {
+      id: '30218',
+      name: 'Капсула с водой',
+      img: 'https://mixicons.zrefio.com/api/items/3916/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, null, null],
+        [null, '30237', null],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '30831:14',
+      name: 'Quantum Processor',
+      img: 'https://mixicons.zrefio.com/api/items/4069/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30831:12', '30475:1', '30831:12'],
+        ['30475:1', '30254', '30475:1'],
+        ['30831:12', '30475:1', '30831:12']
+      ]
+    },
+    {
+      id: '4362:9',
+      name: 'Золотая пыль',
+      img: 'https://mixicons.zrefio.com/api/items/3959/64/',
+      outputQuantity: 2,
+      recipe: [
+        [null, null, null],
+        [null, '14', null],
+        [null, null, null]
+      ]
+    },
+    {
+      id: '30831:12',
+      name: 'Titanium Plate',
+      img: 'https://mixicons.zrefio.com/api/items/4067/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '30831:11', null],
+        ['30831:11', null, '30831:11'],
+        [null, '30831:11', null]
+      ]
+    },
+    {
+      id: '30831:13',
+      name: 'Titanium Lense',
+      img: 'https://mixicons.zrefio.com/api/items/4068/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30831:5', '30831:5', '30831:5'],
+        ['30831:11', null, '30831:11'],
+        ['30831:5', '30831:5', '30831:5']
+      ]
+    },
+    {
       id: '194:4',
       name: 'Quantum Solar Panel',
       img: 'https://mixicons.zrefio.com/api/items/3510/64/',
       outputQuantity: 1,
-      components: [
-        { id: '194:2', count: 8 },
-        { id: '30475:1', count: 1 }
-      ],
+      recipe: [
+        ['194:2', '194:2', '194:2'],
+        ['194:2', '30475:1', '194:2'],
+        ['194:2', '194:2', '194:2'],
+      ]
+    },
+    {
+      id: '194:4',
+      name: 'Quantum Solar Panel',
+      img: 'https://mixicons.zrefio.com/api/items/3510/64/',
+      outputQuantity: 1,
       recipe: [
         ['194:2', '194:2', '194:2'],
         ['194:2', '30475:1', '194:2'],
@@ -19,12 +257,6 @@
       name: 'Ultimate Solar Panel',
       img: 'https://mixicons.zrefio.com/api/items/3508/64/',
       outputQuantity: 1,
-      components: [
-        { id: '22', count: 1 },
-        { id: '30136', count: 3 },
-        { id: '194', count: 1 },
-        { id: '30831:4', count: 2 }
-      ],
       recipe: [
         [null, '22', null],
         ['30136', '194', '30136'],
@@ -36,10 +268,6 @@
       name: 'Куб сжатого угля',
       img: 'https://mixicons.zrefio.com/api/items/3808/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30137', count: 8 },
-        { id: '49', count: 1 }
-      ],
       recipe: [
         ['30137', '30137', '30137'],
         ['30137', '49', '30137'],
@@ -51,9 +279,6 @@
       name: 'Выжатая угольная смесь',
       img: 'https://mixicons.zrefio.com/api/items/3809/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30138', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '30138', null],
@@ -65,10 +290,6 @@
       name: 'Угольный шарик',
       img: 'https://mixicons.zrefio.com/api/items/3810/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30256', count: 8 },
-        { id: '318', count: 1 }
-      ],
       recipe: [
         ['30256', '30256', '30256'],
         ['30256', '318', '30256'],
@@ -80,10 +301,6 @@
       name: 'Enriched Sunnarium Alloy',
       img: 'https://mixicons.zrefio.com/api/items/4076/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30831:3', count: 4 },
-        { id: '30831:1', count: 1 }
-      ],
       recipe: [
         [null, '30831:3', null],
         ['30831:3', '30831:1', '30831:3'],
@@ -95,10 +312,6 @@
       name: 'Sunnarium Alloy',
       img: 'https://mixicons.zrefio.com/api/items/4073/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30147', count: 8 },
-        { id: '30831', count: 1 }
-      ],
       recipe: [
         ['30147', '30147', '30147'],
         ['30147', '30831', '30147'],
@@ -110,14 +323,6 @@
       name: 'Hybrid Solar Panel',
       img: 'https://mixicons.zrefio.com/api/items/3507/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30150', count: 2 },
-        { id: '22', count: 1 },
-        { id: '30147', count: 2 },
-        { id: '194', count: 1 },
-        { id: '30190', count: 2 },
-        { id: '30831:3', count: 1 }
-      ],
       recipe: [
         ['30150', '22', '30150'],
         ['30147', '194', '30147'],
@@ -129,9 +334,6 @@
       name: 'Лазуритовый блок',
       img: 'https://mixicons.zrefio.com/api/items/3577/64/',
       outputQuantity: 1,
-      components: [
-        { id: '351:4', count: 9 }
-      ],
       recipe: [
         ['351:4', '351:4', '351:4'],
         ['351:4', '351:4', '351:4'],
@@ -143,10 +345,6 @@
       name: 'Enriched Sunnarium',
       img: 'https://mixicons.zrefio.com/api/items/4075/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30831:2', count: 8 },
-        { id: '30831', count: 1 }
-      ],
       recipe: [
         ['30831:2', '30831:2', '30831:2'],
         ['30831:2', '30831', '30831:2'],
@@ -158,10 +356,6 @@
       name: 'Sunnarium',
       img: 'https://mixicons.zrefio.com/api/items/4064/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30188', count: 6 },
-        { id: '348', count: 3 }
-      ],
       recipe: [
         ['30188', '30188', '30188'],
         ['348', '348', '348'],
@@ -173,13 +367,6 @@
       name: 'Advanced Solar Panel',
       img: 'https://mixicons.zrefio.com/api/items/3506/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30831:5', count: 3 },
-        { id: '30187', count: 2 },
-        { id: '246:3', count: 1 },
-        { id: '30190', count: 2 },
-        { id: '30831:8', count: 1 }
-      ],
       recipe: [
         ['30831:5', '30831:5', '30831:5'],
         ['30187', '246:3', '30187'],
@@ -191,13 +378,6 @@
       name: 'Irradiant Reinforced Plate',
       img: 'https://mixicons.zrefio.com/api/items/4080/64/',
       outputQuantity: 1,
-      components: [
-        { id: '331', count: 4 },
-        { id: '351:4', count: 2 },
-        { id: '264', count: 1 },
-        { id: '30831:9', count: 1 },
-        { id: '30831:7', count: 1 }
-      ],
       recipe: [
         ['331', '30831:9', '331'],
         ['351:4', '30831:7', '351:4'],
@@ -209,10 +389,6 @@
       name: 'Sunnarium part',
       img: 'https://mixicons.zrefio.com/api/items/4081/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30188', count: 2 },
-        { id: '348', count: 1 }
-      ],
       recipe: [
         [null, '30188', null],
         [null, '348', null],
@@ -224,11 +400,6 @@
       name: 'Reinforced Iridium Iron Plate',
       img: 'https://mixicons.zrefio.com/api/items/4079/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30187', count: 4 },
-        { id: '30150', count: 4 },
-        { id: '30831:6', count: 1 }
-      ],
       recipe: [
         ['30187', '30150', '30187'],
         ['30150', '30831:6', '30150'],
@@ -240,10 +411,6 @@
       name: 'Iridium Iron Plate',
       img: 'https://mixicons.zrefio.com/api/items/4078/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30831:10', count: 1 },
-        { id: '30249', count: 8 }
-      ],
       recipe: [
         ['30249', '30249', '30249'],
         ['30249', '30831:10', '30249'],
@@ -255,9 +422,6 @@
       name: 'Iridium Ingot',
       img: 'https://mixicons.zrefio.com/api/items/4065/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30128', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '30128', null],
@@ -269,12 +433,6 @@
       name: 'Улучшенная электросхема',
       img: 'https://mixicons.zrefio.com/api/items/3885/64/',
       outputQuantity: 6,
-      components: [
-        { id: '331', count: 4 },
-        { id: '348', count: 2 },
-        { id: '351:4', count: 2 },
-        { id: '30191', count: 1 }
-      ],
       recipe: [
         ['331', '348', '331'],
         ['351:4', '30191', '351:4'],
@@ -286,11 +444,6 @@
       name: 'Irradiant Glass Pane',
       img: 'https://mixicons.zrefio.com/api/items/4077/64/',
       outputQuantity: 6,
-      components: [
-        { id: '230', count: 6 },
-        { id: '30831:2', count: 2 },
-        { id: '348', count: 1 }
-      ],
       recipe: [
         ['230', '230', '230'],
         ['30831:2', '348', '30831:2'],
@@ -302,10 +455,6 @@
       name: 'Укреплённое стекло',
       img: 'https://mixicons.zrefio.com/api/items/3578/64/',
       outputQuantity: 7,
-      components: [
-        { id: '20', count: 7 },
-        { id: '30187', count: 2 }
-      ],
       recipe: [
         ['20', '30187', '20'],
         ['20', '20', '20'],
@@ -317,10 +466,6 @@
       name: 'Irradiant Uranium',
       img: 'https://mixicons.zrefio.com/api/items/4074/64/',
       outputQuantity: 1,
-      components: [
-        { id: '348', count: 4 },
-        { id: '30244', count: 1 }
-      ],
       recipe: [
         [null, '348', null],
         ['348', '30244', '348'],
@@ -332,9 +477,6 @@
       name: 'Свето-пыль',
       img: 'https://mixicons.zrefio.com/api/items/4137/64/',
       outputQuantity: 4,
-      components: [
-        { id: '89', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '89', null],
@@ -346,7 +488,6 @@
       name: 'Обогащённый уран',
       img: 'https://mixicons.zrefio.com/api/items/3949/64/',
       outputQuantity: 1,
-      components: [],
       recipe: null,
       hidden: true
     },
@@ -355,12 +496,6 @@
       name: 'Солнечная панель',
       img: 'https://mixicons.zrefio.com/api/items/3595/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30256', count: 3 },
-        { id: '20', count: 3 },
-        { id: '246', count: 1 },
-        { id: '30191', count: 2 }
-      ],
       recipe: [
         ['30256', '20', '30256'],
         ['20', '30256', '20'],
@@ -372,11 +507,6 @@
       name: 'Ветряк КН',
       img: 'https://mixicons.zrefio.com/api/items/3654/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30475:1', count: 4 },
-        { id: '2790:4', count: 4 },
-        { id: '227:5', count: 1 }
-      ],
       recipe: [
         ['30475:1', '2790:4', '30475:1'],
         ['2790:4', '227:5', '2790:4'],
@@ -388,11 +518,6 @@
       name: 'Сверхпроводник',
       img: 'https://mixicons.zrefio.com/api/items/3969/64/',
       outputQuantity: 3,
-      components: [
-        { id: '30475', count: 6 },
-        { id: '30184:9', count: 2 },
-        { id: '266', count: 1 }
-      ],
       recipe: [
         ['30475', '30475', '30475'],
         ['30184:9', '266', '30184:9'],
@@ -404,9 +529,6 @@
       name: 'Углепластик',
       img: 'https://mixicons.zrefio.com/api/items/3824/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30151', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '30151', null],
@@ -418,9 +540,6 @@
       name: 'Углеткань',
       img: 'https://mixicons.zrefio.com/api/items/3825/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30152', count: 2 }
-      ],
       recipe: [
         ['30152', '30152', null],
         [null, null, null],
@@ -432,9 +551,6 @@
       name: 'Углеволокно',
       img: 'https://mixicons.zrefio.com/api/items/3826/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30256', count: 4 }
-      ],
       recipe: [
         ['30256', '30256', null],
         ['30256', '30256', null],
@@ -446,9 +562,6 @@
       name: 'Угольная пыль',
       img: 'https://mixicons.zrefio.com/api/items/3961/64/',
       outputQuantity: 1,
-      components: [
-        { id: '263', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '263', null],
@@ -460,11 +573,6 @@
       name: 'Изоляция сверхпроводника',
       img: 'https://mixicons.zrefio.com/api/items/3968/64/',
       outputQuantity: 2,
-      components: [
-        { id: '30187', count: 4 },
-        { id: '30147', count: 2 },
-        { id: '30150', count: 3 }
-      ],
       recipe: [
         ['30187', '30147', '30187'],
         ['30150', '30150', '30150'],
@@ -476,11 +584,6 @@
       name: 'Иридиевая плата',
       img: 'https://mixicons.zrefio.com/api/items/3820/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30128', count: 4 },
-        { id: '30187', count: 4 },
-        { id: '264', count: 1 }
-      ],
       recipe: [
         ['30128', '30187', '30128'],
         ['30187', '264', '30187'],
@@ -492,11 +595,6 @@
       name: 'Композит',
       img: 'https://mixicons.zrefio.com/api/items/3882/64/',
       outputQuantity: 2,
-      components: [
-        { id: '30249', count: 3 },
-        { id: '5261', count: 3 },
-        { id: '30247', count: 3 }
-      ],
       recipe: [
         ['30249', '30249', '30249'],
         ['5261', '5261', '5261'],
@@ -508,11 +606,6 @@
       name: 'Бронзовый слиток',
       img: 'https://mixicons.zrefio.com/api/items/4526/64/',
       outputQuantity: 4,
-      components: [
-        { id: '30249', count: 3 },
-        { id: '30247', count: 1 },
-        { id: '30248', count: 3 }
-      ],
       recipe: [
         ['30249', '30249', '30249'],
         ['30247', null, null],
@@ -524,11 +617,6 @@
       name: 'Стекловолокно',
       img: 'https://mixicons.zrefio.com/api/items/3879/64/',
       outputQuantity: 4,
-      components: [
-        { id: '20', count: 6 },
-        { id: '264', count: 1 },
-        { id: '331', count: 2 }
-      ],
       recipe: [
         ['20', '20', '20'],
         ['331', '264', '331'],
@@ -540,12 +628,6 @@
       name: 'Трансформатор ВН',
       img: 'https://mixicons.zrefio.com/api/items/3576/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30184:8', count: 2 },
-        { id: '227:4', count: 1 },
-        { id: '30241', count: 1 },
-        { id: '30191', count: 1 }
-      ],
       recipe: [
         [null, '30184:8', null],
         ['30191', '227:4', '30241'],
@@ -557,10 +639,6 @@
       name: 'Высоковольтный провод тройной изоляции',
       img: 'https://mixicons.zrefio.com/api/items/3878/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30216', count: 3 },
-        { id: '30184:5', count: 1 }
-      ],
       recipe: [
         ['30249', '30249', '30249'],
         [null, null, null],
@@ -572,9 +650,6 @@
       name: 'Высоковольтный провод',
       img: 'https://mixicons.zrefio.com/api/items/3875/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30249', count: 3 }
-      ],
       recipe: [
         ['30249', '30249', '30249'],
         [null, null, null],
@@ -586,10 +661,6 @@
       name: 'Энергокристалл',
       img: 'https://mixicons.zrefio.com/api/items/3945/64/',
       outputQuantity: 1,
-      components: [
-        { id: '331', count: 8 },
-        { id: '264', count: 1 }
-      ],
       recipe: [
         ['331', '331', '331'],
         ['331', '264', '331'],
@@ -601,9 +672,6 @@
       name: 'Доски',
       img: 'https://mixicons.zrefio.com/api/items/4579/64/',
       outputQuantity: 4,
-      components: [
-        { id: '17', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '17', null],
@@ -615,9 +683,6 @@
       name: 'Булыжник',
       img: 'https://mixicons.zrefio.com/api/items/4405/64/',
       outputQuantity: 1,
-      components: [
-        { id: '1', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '1', null],
@@ -629,9 +694,6 @@
       name: 'Печка',
       img: 'https://mixicons.zrefio.com/api/items/4584/64/',
       outputQuantity: 1,
-      components: [
-        { id: '4', count: 8 },
-      ],
       recipe: [
         ['4', '4', '4'],
         ['4', null, '4'],
@@ -643,9 +705,6 @@
       name: 'Железо',
       img: 'https://mixicons.zrefio.com/api/items/3631/64/',
       outputQuantity: 2,
-      components: [
-        { id: '15', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '15', null],
@@ -657,9 +716,6 @@
       name: 'Золото',
       img: 'https://mixicons.zrefio.com/api/items/3632/64/',
       outputQuantity: 2,
-      components: [
-        { id: '14', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '14', null],
@@ -673,10 +729,6 @@
       name: 'Ветряк СВН',
       img: 'https://mixicons.zrefio.com/api/items/3653/64/',
       outputQuantity: 1,
-      components: [
-        { id: '2790:3', count: 4 },
-        { id: '30125:1', count: 1 }
-      ],
       recipe: [
         [null, '2790:3', null],
         ['2790:3', '30125:1', '2790:3'],
@@ -688,10 +740,6 @@
       name: 'Ветряк ВН',
       img: 'https://mixicons.zrefio.com/api/items/3652/64/',
       outputQuantity: 1,
-      components: [
-        { id: '2790:2', count: 4 },
-        { id: '30125:1', count: 1 }
-      ],
       recipe: [
         [null, '2790:2', null],
         ['2790:2', '30125:1', '2790:2'],
@@ -703,10 +751,6 @@
       name: 'Ветряк СН',
       img: 'https://mixicons.zrefio.com/api/items/3651/64/',
       outputQuantity: 1,
-      components: [
-        { id: '2790:1', count: 4 },
-        { id: '30125:1', count: 1 }
-      ],
       recipe: [
         [null, '2790:1', null],
         ['2790:1', '30125:1', '2790:1'],
@@ -718,10 +762,6 @@
       name: 'Ветряк НН',
       img: 'https://mixicons.zrefio.com/api/items/3650/64/',
       outputQuantity: 1,
-      components: [
-        { id: '2790', count: 4 },
-        { id: '30125:1', count: 1 }
-      ],
       recipe: [
         [null, '2790', null],
         ['2790', '30125:1', '2790'],
@@ -733,12 +773,6 @@
       name: 'Апгрейд трансформатора',
       img: 'https://mixicons.zrefio.com/api/items/3773/64/',
       outputQuantity: 1,
-      components: [
-        { id: '20', count: 5 },
-        { id: '30184:4', count: 2 },
-        { id: '30191', count: 1 },
-        { id: '227:4', count: 1 }
-      ],
       recipe: [
         ['20', '20', '20'],
         ['30184:4', '227:4', '30184:4'],
@@ -750,10 +784,6 @@
       name: 'Трансформатор СН',
       img: 'https://mixicons.zrefio.com/api/items/3575/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30184:4', count: 2 },
-        { id: '250', count: 1 }
-      ],
       recipe: [
         [null, '30184:4', null],
         [null, '250', null],
@@ -765,9 +795,6 @@
       name: 'Золотой провод с двойной изоляцией',
       img: 'https://mixicons.zrefio.com/api/items/3874/64/',
       outputQuantity: 1,
-      components: [
-        { id: '266', count: 3 }
-      ],
       recipe: [
         ['30216', '30216', null],
         ['30184:2', null, null],
@@ -779,9 +806,6 @@
       name: 'Золотой провод',
       img: 'https://mixicons.zrefio.com/api/items/3872/64/',
       outputQuantity: 12,
-      components: [
-        { id: '266', count: 3 }
-      ],
       recipe: [
         [null, null, null],
         ['266', '266', '266'],
@@ -793,11 +817,6 @@
       name: 'Электросхема',
       img: 'https://mixicons.zrefio.com/api/items/3886/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30184', count: 6 },
-        { id: '331', count: 2 },
-        { id: '30249', count: 1 }
-      ],
       recipe: [
         ['30184', '30184', '30184'],
         ['331', '30249', '331'],
@@ -809,10 +828,6 @@
       name: 'Ветряк СНН',
       img: 'https://mixicons.zrefio.com/api/items/3649/64/',
       outputQuantity: 1,
-      components: [
-        { id: '246:4', count: 4 },
-        { id: '227:3', count: 1 }
-      ],
       recipe: [
         [null, '246:4', null],
         ['246:4', '227:3', '246:4'],
@@ -824,11 +839,6 @@
       name: 'Трансформатор НН',
       img: 'https://mixicons.zrefio.com/api/items/3574/64/',
       outputQuantity: 1,
-      components: [
-        { id: '5', count: 4 },
-        { id: '30184', count: 2 },
-        { id: '30248', count: 3 }
-      ],
       recipe: [
         ['5', '30184', '5'],
         ['30248', '30248', '30248'],
@@ -840,10 +850,6 @@
       name: 'Ветряк',
       img: 'https://mixicons.zrefio.com/api/items/3596/64/',
       outputQuantity: 1,
-      components: [
-        { id: '265', count: 4 },
-        { id: '246', count: 1 }
-      ],
       recipe: [
         ['265', null, '265'],
         [null, '246', null],
@@ -855,11 +861,6 @@
       name: 'Генератор',
       img: 'https://mixicons.zrefio.com/api/items/3592/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30239', count: 1 },
-        { id: '250', count: 1 },
-        { id: '61', count: 1 },
-      ],
       recipe: [
         [null, '30239', null],
         [null, '250', null],
@@ -871,11 +872,6 @@
       name: 'Аккумулятор',
       img: 'https://mixicons.zrefio.com/api/items/3947/64/',
       outputQuantity: 1,
-      components: [
-        { id: '331', count: 2 },
-        { id: '30247', count: 4 },
-        { id: '30184', count: 1 },
-      ],
       recipe: [
         [null, '30184', null],
         ['30247', '331', '30247'],
@@ -887,10 +883,6 @@
       name: 'Изолированный медный провод',
       img: 'https://mixicons.zrefio.com/api/items/3867/64/',
       outputQuantity: 6,
-      components: [
-        { id: '30248', count: 3 },
-        { id: '30216', count: 6 }
-      ],
       recipe: [
         ['30216', '30216', '30216'],
         ['30248', '30248', '30248'],
@@ -902,9 +894,6 @@
       name: 'Резина',
       img: 'https://mixicons.zrefio.com/api/items/3914/64/',
       outputQuantity: 3,
-      components: [
-        { id: '30217', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '30217', null],
@@ -916,9 +905,6 @@
       name: 'Слиток закаленного железа',
       img: 'https://mixicons.zrefio.com/api/items/3954/64/',
       outputQuantity: 1,
-      components: [
-        { id: '265', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '265', null],
@@ -930,9 +916,6 @@
       name: 'Оловянный слиток',
       img: 'https://mixicons.zrefio.com/api/items/3952/64/',
       outputQuantity: 2,
-      components: [
-        { id: '248', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '248', null],
@@ -944,9 +927,6 @@
       name: 'Медный слиток',
       img: 'https://mixicons.zrefio.com/api/items/3953/64/',
       outputQuantity: 2,
-      components: [
-        { id: '249', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '249', null],
@@ -958,9 +938,6 @@
       name: 'Механизм',
       img: 'https://mixicons.zrefio.com/api/items/3604/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30249', count: 8 }
-      ],
       recipe: [
         ['30249', '30249', '30249'],
         ['30249', null, '30249'],
@@ -969,11 +946,18 @@
     },
     // Крафты из материи (30188)
     {
+      id: '30831:11',
+      name: 'Слиток титана',
+      img: 'https://mixicons.zrefio.com/api/items/4066/64/',
+      outputQuantity: 1,
+      recipe: null,
+      hidden: true  // <- этот флаг для скрытия из списка выбора
+    },
+    {
       id: '30188',
       name: 'Материя',
       img: 'https://mixicons.zrefio.com/api/items/3883/64/',
       outputQuantity: 1,
-      components: [],
       recipe: null,
       hidden: true  // <- этот флаг для скрытия из списка выбора
     },
@@ -982,9 +966,6 @@
       name: 'Древесина',
       img: 'https://mixicons.zrefio.com/api/items/3311/64/',
       outputQuantity: 8,
-      components: [
-        { id: '30188', count: 1 }
-      ],
       recipe: [
         [null, '30188', null], 
         [null, null, null],
@@ -996,9 +977,6 @@
       name: 'Камень',
       img: 'https://mixicons.zrefio.com/api/items/3527/64/',
       outputQuantity: 16,
-      components: [
-        { id: '30188', count: 1 }
-      ],
       recipe: [
         [null, null, null],
         [null, '30188', null],
@@ -1010,9 +988,6 @@
       name: 'Стег (Блок)',
       img: 'https://mixicons.zrefio.com/api/items/4600/64/',
       outputQuantity: 4,
-      components: [
-        { id: '30188', count: 2 }
-      ],
       recipe: [
         ['30188', null, '30188'],
         [null, null, null],
@@ -1024,9 +999,6 @@
       name: 'Трава',
       img: 'https://mixicons.zrefio.com/api/items/3713/64/',
       outputQuantity: 16,
-      components: [
-        { id: '30188', count: 2 }
-      ],
       recipe: [
         [null, null, null],
         ['30188', null, null],
@@ -1038,9 +1010,6 @@
       name: 'Песчаник',
       img: 'https://mixicons.zrefio.com/api/items/3601/64/',
       outputQuantity: 16,
-      components: [
-        { id: '30188', count: 2 }
-      ],
       recipe: [
         [null, null, null],
         [null, null, '30188'],
@@ -1052,9 +1021,6 @@
       name: 'Гравий',
       img: 'https://mixicons.zrefio.com/api/items/3207/64/',
       outputQuantity: 32,
-      components: [
-        { id: '30188', count: 6 }
-      ],
       recipe: [
         ['30188', '30188', null],
         ['30188', null, '30188'],
@@ -1066,9 +1032,6 @@
       name: 'Булыжник с мхом',
       img: 'https://mixicons.zrefio.com/api/items/4403/64/',
       outputQuantity: 16,
-      components: [
-        { id: '30188', count: 3 }
-      ],
       recipe: [
         [null, null, null],
         [null, '30188', null],
@@ -1080,9 +1043,6 @@
       name: 'Медная руда',
       img: 'https://mixicons.zrefio.com/api/items/3600/64/',
       outputQuantity: 5,
-      components: [
-        { id: '30188', count: 3 }
-      ],
       recipe: [
         [null, null, '30188'],
         ['30188', null, '30188'],
@@ -1094,9 +1054,6 @@
       name: 'Оловянная руда',
       img: 'https://mixicons.zrefio.com/api/items/3599/64/',
       outputQuantity: 5,
-      components: [
-        { id: '30188', count: 3 }
-      ],
       recipe: [
         [null, null, null],
         ['30188', null, '30188'],
@@ -1108,9 +1065,6 @@
       name: 'Адский камень',
       img: 'https://mixicons.zrefio.com/api/items/4606/64/',
       outputQuantity: 16,
-      components: [
-        { id: '30188', count: 3 }
-      ],
       recipe: [
         [null, null, '30188'],
         [null, '30188', null],
@@ -1122,9 +1076,6 @@
       name: 'Снежок',
       img: 'https://mixicons.zrefio.com/api/items/4120/64/',
       outputQuantity: 16,
-      components: [
-        { id: '30188', count: 3 }
-      ],
       recipe: [
         [null, null, null],
         [null, null, null],
@@ -1136,9 +1087,6 @@
       name: 'Уголь',
       img: 'https://mixicons.zrefio.com/api/items/3628/64/',
       outputQuantity: 20,
-      components: [
-        { id: '30188', count: 3 }
-      ],
       recipe: [
         [null, null, '30188'],
         ['30188', null, null],
@@ -1150,9 +1098,6 @@
       name: 'Белая Шерсть',
       img: 'https://mixicons.zrefio.com/api/items/4164/64/',
       outputQuantity: 12,
-      components: [
-        { id: '30188', count: 3 }
-      ],
       recipe: [
         ['30188', null, '30188'],
         [null, null, null],
@@ -1164,9 +1109,6 @@
       name: 'Лианы',
       img: 'https://mixicons.zrefio.com/api/items/2596/64/',
       outputQuantity: 24,
-      components: [
-        { id: '30188', count: 3 }
-      ],
       recipe: [
         ['30188', null, null],
         ['30188', null, null],
@@ -1178,9 +1120,6 @@
       name: 'Лазурит',
       img: 'https://mixicons.zrefio.com/api/items/4150/64/',
       outputQuantity: 9,
-      components: [
-        { id: '30188', count: 4 }
-      ],
       recipe: [
         ['30188', null, null],
         ['30188', null, null],
@@ -1192,9 +1131,6 @@
       name: 'Кость',
       img: 'https://mixicons.zrefio.com/api/items/4156/64/',
       outputQuantity: 32,
-      components: [
-        { id: '30188', count: 4 }
-      ],
       recipe: [
         ['30188', null, null],
         ['30188', '30188', null],
@@ -1206,9 +1142,6 @@
       name: 'Обсидиан',
       img: 'https://mixicons.zrefio.com/api/items/4404/64/',
       outputQuantity: 12,
-      components: [
-        { id: '30188', count: 4 }
-      ],
       recipe: [
         ['30188', null, '30188'],
         ['30188', null, '30188'],
@@ -1220,9 +1153,6 @@
       name: 'Перо',
       img: 'https://mixicons.zrefio.com/api/items/3665/64/',
       outputQuantity: 32,
-      components: [
-        { id: '30188', count: 4 }
-      ],
       recipe: [
         [null, '30188', null],
         [null, '30188', null],
@@ -1234,9 +1164,6 @@
       name: 'Редстоун',
       img: 'https://mixicons.zrefio.com/api/items/4119/64/',
       outputQuantity: 24,
-      components: [
-        { id: '30188', count: 4 }
-      ],
       recipe: [
         [null, null, null],
         [null, '30188', null],
@@ -1248,9 +1175,6 @@
       name: 'Стекло',
       img: 'https://mixicons.zrefio.com/api/items/3541/64/',
       outputQuantity: 32,
-      components: [
-        { id: '30188', count: 4 }
-      ],
       recipe: [
         [null, '30188', null],
         ['30188', null, '30188'],
@@ -1262,9 +1186,6 @@
       name: 'Латекс',
       img: 'https://mixicons.zrefio.com/api/items/3915/64/',
       outputQuantity: 21,
-      components: [
-        { id: '30188', count: 4 }
-      ],
       recipe: [
         ['30188', null, '30188'],
         [null, null, null],
@@ -1276,9 +1197,6 @@
       name: 'Глина',
       img: 'https://mixicons.zrefio.com/api/items/4125/64/',
       outputQuantity: 48,
-      components: [
-        { id: '30188', count: 5 }
-      ],
       recipe: [
         ['30188', '30188', null],
         ['30188', null, null],
@@ -1290,9 +1208,6 @@
       name: 'Мицелий',
       img: 'https://mixicons.zrefio.com/api/items/2601/64/',
       outputQuantity: 24,
-      components: [
-        { id: '30188', count: 5 }
-      ],
       recipe: [
         [null, null, null],
         ['30188', null, '30188'],
@@ -1304,9 +1219,6 @@
       name: 'Железная руда',
       img: 'https://mixicons.zrefio.com/api/items/3309/64/',
       outputQuantity: 2,
-      components: [
-        { id: '30188', count: 5 }
-      ],
       recipe: [
         ['30188', null, '30188'],
         [null, '30188', null],
@@ -1318,9 +1230,6 @@
       name: 'Золотая руда',
       img: 'https://mixicons.zrefio.com/api/items/3274/64/',
       outputQuantity: 2,
-      components: [
-        { id: '30188', count: 5 }
-      ],
       recipe: [
         [null, '30188', null],
         ['30188', '30188', '30188'],
@@ -1332,9 +1241,6 @@
       name: 'Чернильный мешок',
       img: 'https://mixicons.zrefio.com/api/items/4140/64/',
       outputQuantity: 48,
-      components: [
-        { id: '30188', count: 5 }
-      ],
       recipe: [
         [null, '30188', '30188'],
         [null, '30188', '30188'],
@@ -1346,9 +1252,6 @@
       name: 'Какао-бобы',
       img: 'https://mixicons.zrefio.com/api/items/4149/64/',
       outputQuantity: 32,
-      components: [
-        { id: '30188', count: 5 }
-      ],
       recipe: [
         ['30188', '30188', null],
         [null, null, '30188'],
@@ -1360,9 +1263,6 @@
       name: 'Кремень',
       img: 'https://mixicons.zrefio.com/api/items/4103/64/',
       outputQuantity: 32,
-      components: [
-        { id: '30188', count: 5 }
-      ],
       recipe: [
         [null, '30188', null],
         ['30188', '30188', null],
@@ -1374,9 +1274,6 @@
       name: 'Каменный кирпич',
       img: 'https://mixicons.zrefio.com/api/items/4662/64/',
       outputQuantity: 48,
-      components: [
-        { id: '30188', count: 5 }
-      ],
       recipe: [
         ['30188', '30188', null],
         ['30188', '30188', null],
@@ -1388,9 +1285,6 @@
       name: 'Светокамень',
       img: 'https://mixicons.zrefio.com/api/items/4608/64/',
       outputQuantity: 8,
-      components: [
-        { id: '30188', count: 6 }
-      ],
       recipe: [
         [null, '30188', null],
         ['30188', null, '30188'],
@@ -1402,9 +1296,6 @@
       name: 'Кактус',
       img: 'https://mixicons.zrefio.com/api/items/4601/64/',
       outputQuantity: 48,
-      components: [
-        { id: '30188', count: 6 }
-      ],
       recipe: [
         [null, '30188', null],
         ['30188', '30188', '30188'],
@@ -1416,9 +1307,6 @@
       name: 'Сахарный тростник',
       img: 'https://mixicons.zrefio.com/api/items/4126/64/',
       outputQuantity: 48,
-      components: [
-        { id: '30188', count: 6 }
-      ],
       recipe: [
         ['30188', null, '30188'],
         ['30188', null, '30188'],
@@ -1430,9 +1318,6 @@
       name: 'Порох',
       img: 'https://mixicons.zrefio.com/api/items/3666/64/',
       outputQuantity: 15,
-      components: [
-        { id: '30188', count: 7 }
-      ],
       recipe: [
         ['30188', '30188', '30188'],
         ['30188', null, null],
@@ -1444,9 +1329,6 @@
       name: 'Иридий',
       img: 'https://mixicons.zrefio.com/api/items/3800/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30188', count: 7 }
-      ],
       recipe: [
         ['30188', '30188', '30188'],
         [null, '30188', null],
@@ -1458,27 +1340,10 @@
       name: 'Алмаз',
       img: 'https://mixicons.zrefio.com/api/items/3630/64/',
       outputQuantity: 1,
-      components: [
-        { id: '30188', count: 9 }
-      ],
       recipe: [
         ['30188', '30188', '30188'],
         ['30188', '30188', '30188'],
         ['30188', '30188', '30188']
       ]
     }
-  //  {
-  //    id: '80',
-  //    name: '1',
-  //    img: '',
-  //    outputQuantity: 1,
-  //    components: [
-  //      { id: '30188', count: 5 }
-  //   ],
-  //    recipe: [
-  //      [null, null, null],
-  //      [null, null, null],
-  //      [null, null, null]
-  //    ]
-  //  },
   ];
