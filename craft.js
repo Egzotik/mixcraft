@@ -649,17 +649,6 @@
       ]
     },
     {
-      id: '194:4',
-      name: 'Quantum Solar Panel',
-      img: 'https://mixicons.zrefio.com/api/items/3510/64/',
-      outputQuantity: 1,
-      recipe: [
-        ['194:2', '194:2', '194:2'],
-        ['194:2', '30475:1', '194:2'],
-        ['194:2', '194:2', '194:2'],
-      ]
-    },
-    {
       id: '194:2',
       name: 'Ultimate Solar Panel',
       img: 'https://mixicons.zrefio.com/api/items/3508/64/',
