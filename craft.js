@@ -539,17 +539,6 @@
       ]
     },
     {
-      id: '30084',
-      name: 'Плотная медная пластина',
-      img: 'https://mixicons.zrefio.com/api/items/3727/64/',
-      outputQuantity: 1,
-      recipe: [
-        ['30248', '30248', '30248'],
-        ['30248', '30248', '30248'],
-        ['30248', '30248', null],
-      ]
-    },
-    {
       id: '30100',
       name: 'Охлаждающий стержень 30к',
       img: 'https://mixicons.zrefio.com/api/items/3744/64/',
