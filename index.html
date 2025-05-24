@@ -433,7 +433,7 @@
 </body>
 
     <script>
-      const BASE_RESOURCES = ['30188', '30244']; // добавляй нужные id
+      const BASE_RESOURCES = ['30188', '30244', '30831:11']; // добавляй нужные id
       const selectedItems = [];
       const searchInput = document.getElementById('search-input');
       const autocompleteList = document.getElementById('autocomplete-list');
@@ -590,6 +590,16 @@
           selectedList.appendChild(div);
         });
       }
+    function getComponentsFromRecipe(recipe) {
+      const components = {};
+      for (const row of recipe) {
+        for (const id of row) {
+          if (!id) continue;
+          components[id] = (components[id] || 0) + 1;
+        }
+      }
+      return Object.entries(components).map(([id, count]) => ({ id, count }));
+    }
 
           // Рассчёт ресурсов с учётом вложенных крафтов
     function calculateResources() {
@@ -606,36 +616,35 @@
       const baseResources = {};
       const selectedSet = new Set(selectedItems.map(i => i.id));
 
-      function accumulate(craft, quantity, isRoot = false) {
-        const output = craft.outputQuantity || 1;
-        const craftCount = Math.ceil(quantity / output);
-        const totalOutput = craftCount * output;
-        const extra = totalOutput - quantity;
+    function accumulate(craft, quantity, isRoot = false) {
+      const output = craft.outputQuantity || 1;
+      const craftCount = Math.ceil(quantity / output);
+      const totalOutput = craftCount * output;
+      const extra = totalOutput - quantity;
 
-        if (extra > 0 && !isRoot) {
-          leftovers[craft.id] = (leftovers[craft.id] || 0) + extra;
-        }
-
-        if (craft.components) {
-          craft.components.forEach(component => {
-            if (BASE_RESOURCES.includes(component.id)) {
-              baseResources[component.id] = (baseResources[component.id] || 0) + component.count * craftCount;
-              return;
-            }
-
-            const subCraft = crafts.find(c => c.id === component.id);
-            if (subCraft) {
-              accumulate(subCraft, component.count * craftCount);
-            } else {
-              resourcesCount[component.id] = (resourcesCount[component.id] || 0) + component.count * craftCount;
-            }
-          });
-        }
-
-        if (!isRoot) {
-          resourcesCount[craft.id] = (resourcesCount[craft.id] || 0) + quantity;
-        }
+      if (extra > 0 && !isRoot) {
+        leftovers[craft.id] = (leftovers[craft.id] || 0) + extra;
       }
+
+      const components = getComponentsFromRecipe(craft.recipe || []);
+      components.forEach(component => {
+        if (BASE_RESOURCES.includes(component.id)) {
+          baseResources[component.id] = (baseResources[component.id] || 0) + component.count * craftCount;
+          return;
+        }
+
+        const subCraft = crafts.find(c => c.id === component.id);
+        if (subCraft) {
+          accumulate(subCraft, component.count * craftCount);
+        } else {
+          resourcesCount[component.id] = (resourcesCount[component.id] || 0) + component.count * craftCount;
+        }
+      });
+
+      if (!isRoot) {
+        resourcesCount[craft.id] = (resourcesCount[craft.id] || 0) + quantity;
+      }
+    }
 
       selectedItems.forEach(({ id, count }) => {
         const craft = crafts.find(c => c.id === id);
