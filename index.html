@@ -464,7 +464,10 @@
 
         const filtered = crafts
           .filter(craft => !craft.hidden)
-          .filter(craft => craft.name.toLowerCase().includes(searchValue));
+          .filter(craft => 
+            craft.name.toLowerCase().includes(searchValue) || 
+            craft.id.toLowerCase().includes(searchValue)
+          );
 
         filtered.forEach(craft => {
           const div = document.createElement('div');
@@ -476,9 +479,7 @@
           img.alt = craft.name;
 
           div.appendChild(img);
-          
 
-          // Если outputQuantity больше 1 — показываем маленький счетчик рядом с иконкой
           if (craft.outputQuantity && craft.outputQuantity > 1) {
             const qtyBadge = document.createElement('div');
             qtyBadge.textContent = craft.outputQuantity;
@@ -493,7 +494,7 @@
             qtyBadge.style.pointerEvents = 'none';
             qtyBadge.style.userSelect = 'none';
 
-            div.style.position = 'relative'; // для позиционирования
+            div.style.position = 'relative';
             div.appendChild(qtyBadge);
           }
 
@@ -506,6 +507,7 @@
           itemGrid.innerHTML = '<p style="color:#999; grid-column: span 4;">Предметы не найдены</p>';
         }
       }
+
 
       function renderSelectedList() {
         selectedList.innerHTML = '';
@@ -910,6 +912,5 @@
       renderItemGrid();
       renderSelectedList();
     </script>
-
   </body>
   </html>
