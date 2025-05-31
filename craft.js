@@ -1,5 +1,678 @@
   const crafts = [
     {
+      id: '4362:5',
+      name: 'Усилитель сигнала',
+      img: 'https://mixicons.zrefio.com/api/items/4363/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['4362:6', '331', null],
+        ['265', '265', null],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '4362:16',
+      name: 'МЭ шаблон крафта',
+      img: 'https://mixicons.zrefio.com/api/items/4350/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['20', '348', '20'],
+        ['348', '4362:6', '348'],
+        ['265', '265', '265'],
+      ]
+    },
+    {
+      id: '4361:8',
+      name: 'МЭ 512k Хранилище материи',
+      img: 'https://mixicons.zrefio.com/api/items/4343/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['4361:2', '331', '4361:2'],
+        ['331', '30188', '331'],
+        ['4361:2', '331', '4361:2'],
+      ]
+    },
+    {
+      id: '4361:7',
+      name: 'МЭ 4k хранилище',
+      img: 'https://mixicons.zrefio.com/api/items/4342/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['20', '331', '20'],
+        ['331', '4362:17', '331'],
+        ['265', '265', '265'],
+      ]
+    },
+    {
+      id: '4361:5',
+      name: 'МЭ Беспроводная точка доступа',
+      img: 'https://mixicons.zrefio.com/api/items/4341/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '4362:4', null],
+        [null, '900:6', null],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '4361:2',
+      name: 'МЭ 64k хранилище',
+      img: 'https://mixicons.zrefio.com/api/items/4339/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['20', '331', '20'],
+        ['331', '4362:3', '331'],
+        ['265', '265', '265'],
+      ]
+    },
+    {
+      id: '4362:3',
+      name: 'Кластер памяти',
+      img: 'https://mixicons.zrefio.com/api/items/4361/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['348', '4362:19', '348'],
+        ['4362:2', '20', '4362:2'],
+        ['348', '4362:2', '348'],
+      ],
+      hidden: true
+    },
+    {
+      id: '4361',
+      name: 'МЭ 16k хранилище',
+      img: 'https://mixicons.zrefio.com/api/items/4338/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['20', '331', '20'],
+        ['331', '4362:2', '331'],
+        ['265', '265', '265'],
+      ]
+    },
+    {
+      id: '4362:2',
+      name: 'Блок памяти',
+      img: 'https://mixicons.zrefio.com/api/items/4360/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['348', '4362:19', '348'],
+        ['4362:17', '20', '4362:17'],
+        ['348', '4362:17', '348'],
+      ],
+      hidden: true
+    },
+    {
+      id: '4362:17',
+      name: 'Сегмент памяти',
+      img: 'https://mixicons.zrefio.com/api/items/4351/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['331', '4362:18', '331'],
+        ['4362:1', '20', '4362:1'],
+        ['331', '4362:1', '331'],
+      ],
+      hidden: true
+    },
+    {
+      id: '4361',
+      name: 'МЭ 1k хранилище',
+      img: 'https://mixicons.zrefio.com/api/items/4337/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['20', '331', '20'],
+        ['331', '4362:1', '331'],
+        ['265', '265', '265'],
+      ]
+    },
+    {
+      id: '903:1',
+      name: 'МЭ интерактивная импортирующая шина',
+      img: 'https://mixicons.zrefio.com/api/items/4644/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['903:3', '4362:19', null],
+        [null, null, null],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '903',
+      name: 'МЭ интерактивная экспортирующая шина',
+      img: 'https://mixicons.zrefio.com/api/items/4643/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['903:2', '4362:19', null],
+        [null, null, null],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '901:15',
+      name: 'МЭ интерактивная шина взаимодействия',
+      img: 'https://mixicons.zrefio.com/api/items/4632/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '35', null],
+        ['35', '901:9', '35'],
+        [null, '35', null],
+      ]
+    },
+    {
+      id: '901:13',
+      name: 'МЭ замаскированный кабель',
+      img: 'https://mixicons.zrefio.com/api/items/4630/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['901:14', '35', null],
+        [null, null, null],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '901:12',
+      name: 'МЭ монитор',
+      img: 'https://mixicons.zrefio.com/api/items/4629/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '265', '20'],
+        ['901:14', '901:4', '20'],
+        ['265', '265', '20'],
+      ]
+    },
+    {
+      id: '901:11',
+      name: 'МЭ сборочный монитор',
+      img: 'https://mixicons.zrefio.com/api/items/4628/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '265', '20'],
+        ['901:14', '4362:18', '20'],
+        ['265', '265', '20'],
+      ]
+    },
+    {
+      id: '901:10',
+      name: 'МЭ IO порт',
+      img: 'https://mixicons.zrefio.com/api/items/4627/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['20', '20', '20'],
+        ['900:3', '901:14', '900:3'],
+        ['265', '4362:18', '265'],
+      ]
+    },
+    {
+      id: '901:9',
+      name: 'МЭ шина взаимодействия',
+      img: 'https://mixicons.zrefio.com/api/items/4640/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '901:14', null],
+        [null, '900:8', null],
+        ['265', '265', '265'],
+      ]
+    },
+    {
+      id: '901:7',
+      name: 'МЭ корпус сборочного цеха',
+      img: 'https://mixicons.zrefio.com/api/items/4638/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '266', '265'],
+        ['266', '4362:6', '266'],
+        ['265', '266', '265'],
+      ]
+    },
+    {
+      id: '901:6',
+      name: 'МЭ тепловыводящий элемент',
+      img: 'https://mixicons.zrefio.com/api/items/4637/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '101', '265'],
+        ['101', '901:14', '101'],
+        ['265', '101', '265'],
+      ]
+    },
+    {
+      id: '101',
+      name: 'Железный забор',
+      img: 'https://mixicons.zrefio.com/api/items/2593/64/',
+      outputQuantity: 16,
+      recipe: [
+        ['265', '265', '265'],
+        ['265', '265', '265'],
+        [null, null, null],
+      ],
+      hidden: true
+    },
+    {
+      id: '901:15',
+      name: 'МЭ сборочный процессор',
+      img: 'https://mixicons.zrefio.com/api/items/4636/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '4362:6', '265'],
+        ['348', '4362:19', '348'],
+        ['265', '4362:6', '265'],
+      ]
+    },
+    {
+      id: '76',
+      name: 'Красный факел',
+      img: 'https://mixicons.zrefio.com/api/items/4596/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['331', null, null],
+        ['280', null, null],
+        [null, null, null],
+      ],
+      hidden: true
+    },
+    {
+      id: '901:4',
+      name: 'МЭ излучатель сигнала',
+      img: 'https://mixicons.zrefio.com/api/items/4635/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '265', null],
+        ['901:14', '4362:18', '76'],
+        [null, '265', null],
+      ]
+    },
+    {
+      id: '901:3',
+      name: 'МЭ сборочный терминал',
+      img: 'https://mixicons.zrefio.com/api/items/4634/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '265', '20'],
+        ['58', '4362:1', '900:6'],
+        ['265', '265', '20'],
+      ]
+    },
+    {
+      id: '901:1',
+      name: 'МЭ точная импортирующая шина',
+      img: 'https://mixicons.zrefio.com/api/items/4633/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['903:3', '4362:18', null],
+        [null, null, null],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '903:3',
+      name: 'МЭ импортирующая шина',
+      img: 'https://mixicons.zrefio.com/api/items/4646/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '901:14', null],
+        ['265', '900:8', '265'],
+        [null, '29', null],
+      ]
+    },
+    {
+      id: '901',
+      name: 'МЭ точная экспортирующая шина',
+      img: 'https://mixicons.zrefio.com/api/items/4626/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['903:2', '4362:18', null],
+        [null, null, null],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '903:2',
+      name: 'МЭ основная экспортирующая шина',
+      img: 'https://mixicons.zrefio.com/api/items/4645/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '901:14', null],
+        ['265', '900:8', '265'],
+        [null, '33', null],
+      ]
+    },
+    {
+      id: '29',
+      name: 'Липкий поршень',
+      img: 'https://mixicons.zrefio.com/api/items/3712/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30217', null, null],
+        ['33', null, null],
+        [null, null, null],
+      ],
+      hidden: true
+    },
+    {
+      id: '33',
+      name: 'Поршень',
+      img: 'https://mixicons.zrefio.com/api/items/4128/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['5', '5', '5'],
+        ['4', '265', '4'],
+        ['4', '331', '4'],
+      ],
+      hidden: true
+    },
+    {
+      id: '900:9',
+      name: 'МЭ сундук',
+      img: 'https://mixicons.zrefio.com/api/items/4625/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['20', '4362', '20'],
+        ['265', '58', '265'],
+        ['265', '265', '265'],
+      ]
+    },
+    {
+      id: '900:8',
+      name: 'МЭ интерфейс',
+      img: 'https://mixicons.zrefio.com/api/items/4624/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '20', '265'],
+        ['901:14', '4362', '20'],
+        ['265', '20', '265'],
+      ]
+    },
+    {
+      id: '900:7',
+      name: 'МЭ сундук',
+      img: 'https://mixicons.zrefio.com/api/items/4623/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['20', '4362', '20'],
+        ['265', '54', '265'],
+        ['265', '265', '265'],
+      ]
+    },
+    {
+      id: '900:6',
+      name: 'МЭ терминал доступа',
+      img: 'https://mixicons.zrefio.com/api/items/4622/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '265', '20'],
+        ['901:14', '4362', '20'],
+        ['265', '265', '20'],
+      ]
+    },
+    {
+      id: '900:5',
+      name: 'МЭ точка беспроводного доступа',
+      img: 'https://mixicons.zrefio.com/api/items/4621/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '20', '265'],
+        ['901:14', '4362:4', '20'],
+        ['265', '20', '265'],
+      ]
+    },
+    {
+      id: '4362:4',
+      name: 'Беспроводной приёмник',
+      img: 'https://mixicons.zrefio.com/api/items/4362/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '4362:24', null],
+        ['265', '280', '265'],
+        [null, '265', null],
+      ],
+      hidden: true
+    },
+    {
+      id: '4362:24',
+      name: 'Аметистовая жемчужина',
+      img: 'https://mixicons.zrefio.com/api/items/4359/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['4362:14', '4362:23', '4362:14'],
+        ['4362:23', '368', '4362:23'],
+        ['4362:14', '4362:23', '4362:14'],
+      ],
+      hidden: true
+    },
+    {
+      id: '368',
+      name: 'Жемчужина Эндермана',
+      img: 'https://mixicons.zrefio.com/api/items/4188/64/',
+      outputQuantity: 1,
+      recipe: null,
+      hidden: true
+    },
+    {
+      id: '900:4',
+      name: 'МЭ кодировщик шаблонов',
+      img: 'https://mixicons.zrefio.com/api/items/4620/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '4362', '265'],
+        ['265', '58', '265'],
+        ['265', '265', '265'],
+      ]
+    },
+    {
+      id: '900:3',
+      name: 'МЭ привод',
+      img: 'https://mixicons.zrefio.com/api/items/4619/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '4362:18', '265'],
+        ['20', '54', '20'],
+        ['265', '4362:18', '265'],
+      ]
+    },
+    {
+      id: '900:2',
+      name: 'МЭ контроллер',
+      img: 'https://mixicons.zrefio.com/api/items/4618/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '4362:23', '265'],
+        ['4362:23', '4362:19', '4362:23'],
+        ['265', '4362:23', '265'],
+      ]
+    },
+    {
+      id: '4362:23',
+      name: 'Аметистовый кристалл',
+      img: 'https://mixicons.zrefio.com/api/items/4358/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['4362:6', '406', null],
+        ['331', null, null],
+        [null, null, null],
+      ],
+      hidden: true
+    },
+    {
+      id: '900:1',
+      name: 'МЭ поставщик шаблонов',
+      img: 'https://mixicons.zrefio.com/api/items/4617/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '58', '265'],
+        ['4362', '4362:19', '4362'],
+        ['265', '4362:1', '265'],
+      ]
+    },
+    {
+      id: '4362:1',
+      name: 'Ячейка памяти',
+      img: 'https://mixicons.zrefio.com/api/items/4354/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['331', '4362:6', '331'],
+        ['4362:6', '4362:18', '4362:6'],
+        ['331', '4362:6', '331'],
+      ],
+      hidden: true
+    },
+    {
+      id: '58',
+      name: 'Верстак',
+      img: 'https://mixicons.zrefio.com/api/items/4578/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['5', '5', null],
+        ['5', '5', null],
+        [null, null, null],
+      ],
+      hidden: true
+    },
+    {
+      id: '4362',
+      name: 'Конвертирующая матрица',
+      img: 'https://mixicons.zrefio.com/api/items/4344/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['265', '406', '265'],
+        ['4362:14', '4362:18', '4362:14'],
+        ['265', '4362:6', '265'],
+      ],
+      hidden: true
+    },
+    {
+      id: '4362:19',
+      name: 'МЭ улучшенный процессор',
+      img: 'https://mixicons.zrefio.com/api/items/4353/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, null, null],
+        [null, '4362:21', null],
+        [null, null, null],
+      ],
+      hidden: true
+    },
+    {
+      id: '4362:18',
+      name: 'МЭ стандартный процессор',
+      img: 'https://mixicons.zrefio.com/api/items/4352/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, null, null],
+        [null, '4362:20', null],
+        [null, null, null],
+      ],
+      hidden: true
+    },
+    {
+      id: '4362:21',
+      name: 'Незаконченный улучшенный процессор',
+      img: 'https://mixicons.zrefio.com/api/items/4356/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '4371', null],
+        ['331', '264', '331'],
+        [null, '4362:13', null],
+      ],
+      hidden: true
+    },
+    {
+      id: '4362:20',
+      name: 'Незаконченный стандартный процессор',
+      img: 'https://mixicons.zrefio.com/api/items/4355/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '4371', null],
+        ['331', '266', '331'],
+        [null, '4362:13', null],
+      ],
+      hidden: true
+    },
+    {
+      id: '4371',
+      name: 'Кварцевый резец',
+      img: 'https://mixicons.zrefio.com/api/items/4376/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, null, '280'],
+        ['265', '280', null],
+        ['4362:6', '4362:6', null],
+      ],
+      hidden: true
+    },
+    {
+      id: '4362:13',
+      name: 'Кремний',
+      img: 'https://mixicons.zrefio.com/api/items/4347/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, null, null],
+        [null, '4362:7', null],
+        [null, null, null],
+      ],
+      hidden: true
+    },
+    {
+      id: '901:14',
+      name: 'МЭ кабель',
+      img: 'https://mixicons.zrefio.com/api/items/4631/64/',
+      outputQuantity: 3,
+      recipe: [
+        ['20', '20', '20'],
+        ['4362:14', '4362:14', '4362:14'],
+        ['20', '20', '20'],
+      ]
+    },
+    {
+      id: '4362:14',
+      name: 'Аметистовая пыль',
+      img: 'https://mixicons.zrefio.com/api/items/4348/64/',
+      outputQuantity: 2,
+      recipe: [
+        ['4362:7', '4362:22', null],
+        ['331', null, null],
+        [null, null, null],
+      ],
+      hidden: true
+    },
+    {
+      id: '4362:22',
+      name: 'Адская кварцеввая пыль',
+      img: 'https://mixicons.zrefio.com/api/items/4357/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, null, null],
+        [null, '406', null],
+        [null, null, null],
+      ],
+      hidden: true
+    },
+    {
+      id: '4362:7',
+      name: 'Кварцевая пыль',
+      img: 'https://mixicons.zrefio.com/api/items/4365/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, null, null],
+        [null, '4362:6', null],
+        [null, null, null],
+      ],
+      hidden: true
+    },
+    {
+      id: '4362:6',
+      name: 'Кристалл кварца',
+      img: 'https://mixicons.zrefio.com/api/items/4364/64/',
+      outputQuantity: 1,
+      recipe: null,
+      hidden: true
+    },
+    {
+      id: '406',
+      name: 'Кварц',
+      img: 'https://mixicons.zrefio.com/api/items/4315/64/',
+      outputQuantity: 1,
+      recipe: null,
+      hidden: true
+    },
+    {
       id: '250:15',
       name: 'Терраформер',
       img: 'https://mixicons.zrefio.com/api/items/3610/64/',
