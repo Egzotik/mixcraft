@@ -1,5 +1,51 @@
   const crafts = [
     {
+      id: '3099:3',
+      name: 'Fission Charge Pad',
+      img: 'https://mixicons.zrefio.com/api/items/4092/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30147', '3099:2', '30147'],
+        ['30143', '246:5', '30143'],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '3099:2',
+      name: 'Lapotronic Charge Pad',
+      img: 'https://mixicons.zrefio.com/api/items/4091/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['30150', '70', '30150'],
+        ['30190', '227:2', '30190'],
+        [null, null, null],
+      ]
+    },
+    {
+      id: '70',
+      name: 'Нажимная плита',
+      img: 'https://mixicons.zrefio.com/api/items/4593/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['1', '1', null],
+        [null, null, null],
+        [null, null, null],
+      ],
+      hidden: true
+    },
+    {
+      id: '30143',
+      name: 'Чип Охлаждение',
+      img: 'https://mixicons.zrefio.com/api/items/3816/64/',
+      outputQuantity: 1,
+      recipe: [
+        [null, '332', null],
+        ['332', '30146', '332'],
+        [null, '332', null],
+      ],
+      hidden: true
+    },
+    {
       id: '4362:5',
       name: 'Усилитель сигнала',
       img: 'https://mixicons.zrefio.com/api/items/4363/64/',
