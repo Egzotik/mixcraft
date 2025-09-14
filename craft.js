@@ -1057,6 +1057,17 @@
       ]
     },
     {
+      id: '550',
+      name: 'Торговый автомат',
+      img: 'https://mixicons.zrefio.com/api/items/3561/64/',
+      outputQuantity: 1,
+      recipe: [
+        ['20', '20', '20'],
+        ['331', '54', '331'],
+        ['102', '42', '102'],
+      ]
+    },
+    {
       id: '225',
       name: 'Сейф',
       img: 'https://mixicons.zrefio.com/api/items/3560/64/',
@@ -2538,3 +2549,4 @@
       ]
     }
   ];
+
