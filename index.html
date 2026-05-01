@@ -2,193 +2,170 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Калькулятор крафтов Minecraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MixCraft — Mix Industrial</title>
   <link rel="icon" href="https://minecraft.mix-servers.com/assets/main/img/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-
-    #modal-img {
-      border: 2px solid #ffffff;
-      border-radius: 6px;
-      background-color: #1e1f22;
-      padding: 4px;
+    :root {
+      --bg: #0a0b0f;
+      --card-bg: #1a1c22;
+      --accent-orange: #ffb800;
+      --border: rgba(255,255,255,0.06);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: #2b2d31;
-      color: #ffffff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
       min-height: 100vh;
-      padding: 0 20px 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      user-select: none;
-    }
-
-    header {
-      width: 100%;
-      background-color: #313338;
-      padding: 16px 0;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 0 0 16px 16px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-
-    header img {
-      height: 48px;
-    }
-
-    main {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 40px;
-      width: 100%;
-      max-width: 1400px;
-      flex-wrap: wrap;
-    }
-
-    .grid-container, .selection-container {
-      background: #313338;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 0 24px rgba(0,0,0,0.2);
-      display: flex;
-      flex-direction: column;
-      width: 640px;
-    }
-
-    #search-container {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 16px;
-    }
-
-    #search-input {
-      width: 80%;
-      padding: 10px 14px;
-      border-radius: 8px;
-      border: 1px solid #444;
-      background: #1e1f22;
-      color: white;
-      font-size: 14px;
-    }
-
-    #autocomplete-list {
-      background-color: #232428;
-      border-radius: 8px;
-      max-height: 200px;
-      overflow-y: auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
-      z-index: 1000;
-      margin-top: 4px;
-      position: absolute;
-      width: 80%;
-      left: 10%;
-    }
-
-    .autocomplete-item {
-      padding: 8px 12px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: background-color 0.15s ease;
-      font-size: 14px;
-    }
-
-    .autocomplete-item:hover {
-      background-color: #5865f2;
-      color: white;
-    }
-
-    .autocomplete-item img {
-      width: 24px;
-      height: 24px;
-      border-radius: 4px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(8, 64px);
-      gap: 12px;
-      justify-content: center; /* центрируем сетку */
-    }
-
-    .grid-item {
-      width: 64px;
-      height: 64px;
-      background-color: #1e1f22;
-      border-radius: 8px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s ease;
+      padding: 15px;
       position: relative;
       user-select: none;
     }
 
-    .grid-item:hover {
-      transform: scale(1.05);
-    }
-
-    .grid-item img {
-      max-width: 48px;
-      max-height: 48px;
+    #particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       pointer-events: none;
+      z-index: 1;
     }
 
-    .clear-btn {
-      background-color: #ff6b6b;
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 600;
-      align-self: center;
-      transition: background-color 0.2s ease;
-      margin-top: 16px;   /* ← отступ сверху */
-      margin-bottom: 16px; /* ← отступ снизу */
+    .card {
+      background: var(--card-bg);
+      border-radius: 28px;
+      padding: 35px 25px 40px;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+      border: 1px solid var(--border);
+      position: relative;
+      z-index: 2;
     }
 
-    .clear-btn:hover {
-      background-color: #ff4d4d;
-    }
-
-    #result {
-      background: #232428;
-      padding: 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      user-select: none;
-      white-space: normal;
+    .header {
       display: flex;
-      flex-direction: column;
-      gap: 4px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .main-title h1 {
+      font-size: clamp(38px, 9vw, 68px);
+      font-weight: 900;
+      color: var(--accent-orange);
+      letter-spacing: -2px;
+      text-shadow: 0 0 30px #ffb800, 0 0 60px #ffb800;
+      animation: glowPulse 4s ease-in-out infinite;
+      margin: 0;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { text-shadow: 0 0 30px #ffb800, 0 0 60px #ffb800; }
+      50% { text-shadow: 0 0 45px #ffb800, 0 0 85px #ffb800; }
+    }
+
+    .back-btn {
+      background: linear-gradient(135deg, #5865f2, #4752c4);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      font-size: 15px;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(88, 101, 242, 0.3);
+    }
+
+    .content {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .grid-container, .selection-container {
+      background: rgba(0,0,0,0.3);
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      flex: 1;
+      min-width: 340px;
+    }
+
+    #search-input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid #333;
+      background: #111318;
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+    }
+
+    #search-input:focus {
+      border-color: var(--accent-orange);
+      box-shadow: 0 0 0 4px rgba(255,184,0,0.15);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .grid-item {
+      width: 64px; height: 64px;
+      background: #111318;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .grid-item:hover {
+      transform: scale(1.08);
+      border-color: var(--accent-orange);
+    }
+
+    .grid-item img { max-width: 46px; max-height: 46px; }
+
+    .qty-badge {
+      position: absolute;
+      bottom: 4px; right: 4px;
+      background: rgba(0,0,0,0.75);
+      color: white;
+      font-size: 11px;
+      padding: 1px 5px;
+      border-radius: 6px;
+      font-weight: 600;
     }
 
     .selected-item {
-      background: #232428;
-      padding: 8px;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 8px;
+      background: rgba(0,0,0,0.4);
+      padding: 12px;
+      border-radius: 14px;
+      margin-bottom: 10px;
     }
 
     .selected-item-header {
@@ -201,412 +178,310 @@
     .selected-item-info {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       flex-grow: 1;
     }
 
     .selected-item img {
-      width: 32px;
-      height: 32px;
-      border-radius: 4px;
+      width: 36px; height: 36px;
+      border-radius: 8px;
       cursor: pointer;
-      border: 1px solid #888;
-      padding: 2px;
-      background-color: #2b2d31;
+      border: 1px solid #444;
     }
 
     .selected-item input {
-      width: 50px;
-      background: #1e1f22;
+      width: 60px;
+      background: #111318;
       border: 1px solid #444;
       color: #fff;
-      padding: 4px;
+      padding: 6px;
       text-align: center;
-      border-radius: 6px;
-      font-size: 14px;
+      border-radius: 8px;
     }
 
     .remove-btn {
       background: none;
       border: none;
-      color: #ff6b6b;
-      font-size: 18px;
+      color: #ed4245;
+      font-size: 22px;
       cursor: pointer;
-      transition: color 0.2s ease;
     }
 
-    .remove-btn:hover {
-      color: #ff4d4d;
+    #selected-list, #result {
+      max-height: 380px;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+
+    #result {
+      background: rgba(0,0,0,0.4);
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      margin-top: 15px;
+    }
+
+    #result::-webkit-scrollbar, #selected-list::-webkit-scrollbar {
+      width: 6px;
+    }
+    #result::-webkit-scrollbar-thumb, #selected-list::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 10px;
+    }
+
+    .clear-btn {
+      background: linear-gradient(135deg, #ed4245, #c72c2f);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      margin: 12px auto 0;
+      display: block;
     }
 
     .modal {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.7);
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
       justify-content: center;
       align-items: center;
-      z-index: 9999;
+      padding: 15px;
     }
 
     .modal-content {
-      background: #313338;
-      padding: 24px 32px;
-      border-radius: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      min-width: 320px;
-      max-width: 90vw;
-      user-select: none;
-    }
-
-    .modal-content img {
-      max-width: 64px;
-      max-height: 64px;
+      background: #1a1c22;
+      border-radius: 24px;
+      padding: 28px 24px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
     }
 
     .craft-grid {
       display: grid;
-      grid-template-columns: repeat(3, 44px);
-      grid-template-rows: repeat(3, 44px);
-      gap: 6px;
-      margin-top: 12px;
+      grid-template-columns: repeat(3, 52px);
+      grid-template-rows: repeat(3, 52px);
+      gap: 8px;
       justify-content: center;
+      margin: 20px 0;
     }
 
     .craft-cell {
-      background: #1e1f22;
-      border-radius: 6px;
+      background: #111318;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .craft-cell img {
-      max-width: 40px;
-      max-height: 40px;
+    .craft-cell img { max-width: 42px; max-height: 42px; }
+
+    @media (max-width: 900px) {
+      .card { padding: 25px 18px 35px; }
+      .header { justify-content: center; }
+      .content { gap: 20px; }
+      .grid-container, .selection-container { min-width: 100%; }
+      .grid { grid-template-columns: repeat(auto-fill, minmax(58px, 1fr)); gap: 10px; }
+      .grid-item { width: 58px; height: 58px; }
     }
 
-    .modal-content button {
-      background-color: #ff6b6b;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 14px;
-      transition: background-color 0.2s ease;
+    @media (max-width: 480px) {
+      body { padding: 10px; }
+      .main-title h1 { font-size: 48px; }
     }
-
-    .modal-content button:hover {
-      background-color: #ff4d4d;
-    }
-
-    @media (max-width: 768px) {
-      main {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-      }
-
-      .grid-container, .selection-container {
-        width: 100%;
-        max-width: 100%;
-      }
-
-      #search-input {
-        width: 90%;
-        font-size: 13px;
-        padding: 8px 10px;
-      }
-
-      .grid {
-        grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
-        gap: 8px;
-      }
-
-      .grid-item {
-        width: 48px;
-        height: 48px;
-      }
-
-      .grid-item img {
-        max-width: 36px;
-        max-height: 36px;
-      }
-
-      .selected-item img {
-        width: 28px;
-        height: 28px;
-      }
-
-      .selected-item input {
-        width: 40px;
-        font-size: 13px;
-      }
-
-      #result {
-        font-size: 13px;
-      }
-
-      .modal-content {
-        padding: 16px 20px;
-      }
-
-      .modal-content img {
-        max-width: 48px;
-        max-height: 48px;
-      }
-
-      .craft-cell {
-        width: 40px;
-        height: 40px;
-      }
-
-      .craft-cell img {
-        max-width: 32px;
-        max-height: 32px;
-      }
-
-      .modal-content button {
-        padding: 6px 12px;
-        font-size: 13px;
-      }
-    }
-      #selected-list-wrapper {
-        max-height: 150px;
-        overflow-y: auto;
-        padding-right: 4px; /* чтобы скролл не сдвигал контент */
-      }
-
-      #selected-list-wrapper::-webkit-scrollbar {
-        width: 6px;
-      }
-      #selected-list-wrapper::-webkit-scrollbar-thumb {
-        background-color: #555;
-        border-radius: 4px;
-      }
-      #selected-list-wrapper::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      .header-btn {
-        background-color: #5865f2;
-        color: white;
-        padding: 8px 14px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: background-color 0.2s ease;
-        margin-left: 20px;
-      }
-
-      .header-btn:hover {
-        background-color: #4752c4;
-      }
-
   </style>
-  <script src="craft.js"></script>
 </head>
 <body>
+  <canvas id="particles"></canvas>
 
-  <header>
-    <img src="logo.png" alt="Логотип">
-    <a href="https://egzotik.github.io/mixmonitoring/" class="header-btn">Мониторинг сервера</a>
-  </header>
-
-  <main>
-    <div class="grid-container">
-      <div id="search-container">
-        <input type="text" id="search-input" placeholder="Поиск..." autocomplete="off">
-        <div id="autocomplete-list" hidden></div>
+  <div class="card">
+    <div class="header">
+      <div class="main-title">
+        <h1>MixCraft</h1>
       </div>
-      <div class="grid" id="item-grid"></div>
+      <a href="https://egzotik.github.io/mixmonitoring/" class="back-btn">
+        ← Назад к мониторингу
+      </a>
     </div>
-    <div class="selection-container">
 
-      <div id="selected-list-wrapper">
+    <div class="content">
+      <div class="grid-container">
+        <div id="search-container">
+          <input type="text" id="search-input" placeholder="Поиск предметов..." autocomplete="off">
+        </div>
+        <div class="grid" id="item-grid"></div>
+      </div>
+
+      <div class="selection-container">
         <div id="selected-list"></div>
+        <button id="clear-selection" class="clear-btn">🗑 Очистить всё</button>
+        <div id="result">Выберите предметы для расчёта ресурсов</div>
       </div>
-      <button id="clear-selection" class="clear-btn">🗑 Очистить всё</button>
-      <div id="result">Выберите предметы для расчёта ресурсов</div>
-    </div>
-
-
-  <div class="modal" id="modal" onclick="closeModal()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <img id="modal-img" src="" alt="Иконка предмета" />
-      <div id="modal-craft" class="craft-grid"></div>
     </div>
   </div>
 
-</body>
+  <!-- Модальное окно -->
+  <div class="modal" id="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <img id="modal-img" style="width:80px;height:80px;border-radius:12px;margin-bottom:16px;" src="" alt="">
+      <h2 id="modal-name" style="color:#ffb800; margin-bottom:20px;"></h2>
+      <div id="modal-craft" class="craft-grid"></div>
+      <button onclick="closeModal()" style="margin-top:24px; padding:12px 32px; background:#ed4245; color:white; border:none; border-radius:12px; font-weight:600; cursor:pointer;">
+        Закрыть
+      </button>
+    </div>
+  </div>
 
-    <script>
-      const BASE_RESOURCES = ['30188', '30244', '30831:11', '4362:6', '406']; // добавляй нужные id
-      const selectedItems = [];
-      const searchInput = document.getElementById('search-input');
-      const autocompleteList = document.getElementById('autocomplete-list');
-      const itemGrid = document.getElementById('item-grid');
-      const selectedList = document.getElementById('selected-list');
-      const resultDiv = document.getElementById('result');
-      const modal = document.getElementById('modal');
-      const modalImg = document.getElementById('modal-img');
-      const modalCraft = document.getElementById('modal-craft');
+  <script src="craft.js"></script>
+  <script>
+    // ==================== Частицы ====================
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mouseX = 0, mouseY = 0;
 
-      // Навесим события на табы
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
 
-      function addToSelection(id) {
-        const existing = selectedItems.find(item => item.id === id);
-        if (existing) {
-          existing.count++;
-        } else {
-          selectedItems.push({ id, count: 1 });
+    class Particle {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = canvas.height + Math.random() * 100;
+        this.size = Math.random() * 4 + 2;
+        this.speed = Math.random() * 2.5 + 1.2;
+        this.opacity = Math.random() * 0.6 + 0.3;
+        this.color = ['#ffb800', '#ffdd88', '#ffffff', '#a0d8ff'][Math.floor(Math.random()*4)];
+      }
+      update() {
+        const dx = mouseX - this.x;
+        const dy = mouseY - this.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 220) {
+          this.x += dx * 0.018;
+          this.y += dy * 0.018;
         }
-        renderSelectedList();
-        calculateResources();
+        this.y -= this.speed;
+        this.opacity -= 0.005;
+        if (this.opacity <= 0 || this.y < -50) this.reset();
+      }
+      draw() {
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = this.color;
+        ctx.fillRect(this.x - this.size/2, this.y - this.size/2, this.size, this.size);
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < 90; i++) particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animate);
+    }
+
+    // ==================== Логика калькулятора ====================
+    const selectedItems = [];
+    const searchInput = document.getElementById('search-input');
+    const itemGrid = document.getElementById('item-grid');
+    const selectedList = document.getElementById('selected-list');
+    const resultDiv = document.getElementById('result');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalName = document.getElementById('modal-name');
+    const modalCraft = document.getElementById('modal-craft');
+
+    const BASE_RESOURCES = ['30188', '30244', '30831:11', '4362:6', '406'];
+
+    function addToSelection(id) {
+      const existing = selectedItems.find(item => item.id === id);
+      if (existing) existing.count++;
+      else selectedItems.push({ id, count: 1 });
+      renderSelectedList();
+      calculateResources();
+    }
+
+    function renderItemGrid() {
+      itemGrid.innerHTML = '';
+      const searchValue = searchInput.value.toLowerCase();
+
+      const filtered = crafts
+        .filter(c => !c.hidden)
+        .filter(c => c.name.toLowerCase().includes(searchValue) || c.id.toLowerCase().includes(searchValue));
+
+      filtered.forEach(craft => {
+        const div = document.createElement('div');
+        div.className = 'grid-item';
+        div.title = craft.name;
+
+        const img = document.createElement('img');
+        img.src = craft.img || 'https://via.placeholder.com/48';
+        div.appendChild(img);
+
+        if (craft.outputQuantity && craft.outputQuantity > 1) {
+          const badge = document.createElement('div');
+          badge.className = 'qty-badge';
+          badge.textContent = craft.outputQuantity;
+          div.appendChild(badge);
+        }
+
+        div.onclick = () => addToSelection(craft.id);
+        itemGrid.appendChild(div);
+      });
+    }
+
+    function renderSelectedList() {
+      selectedList.innerHTML = '';
+      if (selectedItems.length === 0) {
+        selectedList.innerHTML = `<p style="text-align:center; color:#888; padding:40px 0;">Выберите предметы слева</p>`;
+        return;
       }
 
-      // Отрисовка сетки предметов по фильтру категории и поиска
-      function renderItemGrid() {
-        itemGrid.innerHTML = '';
-        const searchValue = searchInput.value.toLowerCase();
+      selectedItems.forEach(({id, count}, index) => {
+        const craft = crafts.find(c => c.id === id);
+        if (!craft) return;
 
-        const filtered = crafts
-          .filter(craft => !craft.hidden)
-          .filter(craft => 
-            craft.name.toLowerCase().includes(searchValue) || 
-            craft.id.toLowerCase().includes(searchValue)
-          );
+        const div = document.createElement('div');
+        div.className = 'selected-item';
+        div.innerHTML = `
+          <div class="selected-item-header">
+            <div class="selected-item-info">
+              <img src="${craft.img}" onclick="showCraftModal('${id}')" title="Рецепт">
+              <span>${craft.name}</span>
+            </div>
+            <input type="number" value="${count}" min="1" onchange="updateCount(${index}, this.value)">
+            <button class="remove-btn" onclick="removeItem(${index})">×</button>
+          </div>
+        `;
+        selectedList.appendChild(div);
+      });
+    }
 
-        filtered.forEach(craft => {
-          const div = document.createElement('div');
-          div.className = 'grid-item';
-          div.title = craft.name;
+    window.updateCount = (index, val) => {
+      let num = parseInt(val);
+      if (isNaN(num) || num < 1) num = 1;
+      selectedItems[index].count = num;
+      renderSelectedList();
+      calculateResources();
+    };
 
-          const img = document.createElement('img');
-          img.src = craft.img || 'https://via.placeholder.com/48';
-          img.alt = craft.name;
+    window.removeItem = (index) => {
+      selectedItems.splice(index, 1);
+      renderSelectedList();
+      calculateResources();
+    };
 
-          div.appendChild(img);
-
-          if (craft.outputQuantity && craft.outputQuantity > 1) {
-            const qtyBadge = document.createElement('div');
-            qtyBadge.textContent = craft.outputQuantity;
-            qtyBadge.style.position = 'absolute';
-            qtyBadge.style.bottom = '4px';
-            qtyBadge.style.right = '4px';
-            qtyBadge.style.background = 'rgba(0,0,0,0.6)';
-            qtyBadge.style.color = 'white';
-            qtyBadge.style.fontSize = '11px';
-            qtyBadge.style.padding = '1px 4px';
-            qtyBadge.style.borderRadius = '6px';
-            qtyBadge.style.pointerEvents = 'none';
-            qtyBadge.style.userSelect = 'none';
-
-            div.style.position = 'relative';
-            div.appendChild(qtyBadge);
-          }
-
-          div.onclick = () => addToSelection(craft.id);
-
-          itemGrid.appendChild(div);
-        });
-
-        if (filtered.length === 0) {
-          itemGrid.innerHTML = '<p style="color:#999; grid-column: span 4;">Предметы не найдены</p>';
-        }
-      }
-
-
-      function renderSelectedList() {
-        selectedList.innerHTML = '';
-        if (selectedItems.length === 0) {
-          selectedList.innerHTML = '<p style="color:#999; text-align: center; padding: 12px 0;">Нет выбранных предметов</p>';
-          resultDiv.textContent = 'Выберите предметы для расчёта ресурсов';
-          return;
-        }
-      document.getElementById('clear-selection').addEventListener('click', () => {
-        selectedItems.length = 0;
-        renderSelectedList();
-        calculateResources();
-      }); 
-        const tip = document.createElement('p');
-        tip.textContent = '💡 Нажмите на предмет, чтобы посмотреть рецепт крафта';
-        tip.style.color = '#ccc';
-        tip.style.fontSize = '13px';
-        tip.style.textAlign = 'center';
-        tip.style.marginBottom = '8px';
-        selectedList.appendChild(tip);
-
-
-        selectedItems.forEach(({ id, count }) => {
-          const craft = crafts.find(c => c.id === id);
-          if (!craft) return;
-
-          const div = document.createElement('div');
-          div.className = 'selected-item';
-
-          const header = document.createElement('div');
-          header.className = 'selected-item-header';
-
-          const info = document.createElement('div');
-          info.className = 'selected-item-info';
-
-          const img = document.createElement('img');
-          img.src = craft.img || 'https://via.placeholder.com/32';
-          img.alt = craft.name;
-          img.title = 'Показать рецепт крафта';
-          img.onclick = () => showCraftModal(craft);
-
-          const nameSpan = document.createElement('span');
-          nameSpan.textContent = craft.name;
-
-          info.appendChild(img);
-          info.appendChild(nameSpan);
-
-          const countInput = document.createElement('input');
-          countInput.type = 'number';
-          countInput.min = 1;
-          countInput.step = 1;
-          countInput.value = count;
-          countInput.title = 'Количество крафтов (шагов)';
-          countInput.onchange = (e) => {
-            let val = parseInt(e.target.value);
-            if (isNaN(val) || val < 1) {
-              val = 1;
-            }
-            e.target.value = val;
-            selectedItems.find(i => i.id === id).count = val;
-            renderSelectedList(); // Обновить отображение итогов
-            calculateResources();
-          };
-
-          const removeBtn = document.createElement('button');
-          removeBtn.className = 'remove-btn';
-          removeBtn.title = 'Удалить';
-          removeBtn.textContent = '×';
-          removeBtn.onclick = () => {
-            const idx = selectedItems.findIndex(i => i.id === id);
-            if (idx !== -1) {
-              selectedItems.splice(idx, 1);
-              renderSelectedList();
-              calculateResources();
-            }
-          };
-
-          header.appendChild(info);
-          header.appendChild(countInput);
-          header.appendChild(removeBtn);
-          div.appendChild(header);
-          selectedList.appendChild(div);
-        });
-      }
     function getComponentsFromRecipe(recipe) {
       const components = {};
       for (const row of recipe) {
@@ -618,314 +493,110 @@
       return Object.entries(components).map(([id, count]) => ({ id, count }));
     }
 
-          // Рассчёт ресурсов с учётом вложенных крафтов
     function calculateResources() {
       if (selectedItems.length === 0) {
-        resultDiv.innerHTML = '<p style="color:#999;">Выберите предметы для расчёта ресурсов.</p>';
+        resultDiv.innerHTML = '<p style="color:#888;text-align:center;">Выберите предметы для расчёта ресурсов</p>';
         return;
       }
 
       resultDiv.innerHTML = '';
-
-      let matterTotal = 0;
-      const leftovers = {};
       const resourcesCount = {};
       const baseResources = {};
-      const selectedSet = new Set(selectedItems.map(i => i.id));
 
-    function accumulate(craft, quantity, isRoot = false) {
-      const output = craft.outputQuantity || 1;
-      const craftCount = Math.ceil(quantity / output);
-      const totalOutput = craftCount * output;
-      const extra = totalOutput - quantity;
+      function accumulate(craft, quantity, isRoot = false) {
+        const output = craft.outputQuantity || 1;
+        const craftCount = Math.ceil(quantity / output);
+        const components = getComponentsFromRecipe(craft.recipe || []);
 
-      if (extra > 0 && !isRoot) {
-        leftovers[craft.id] = (leftovers[craft.id] || 0) + extra;
+        components.forEach(component => {
+          if (BASE_RESOURCES.includes(component.id)) {
+            baseResources[component.id] = (baseResources[component.id] || 0) + component.count * craftCount;
+          } else {
+            const subCraft = crafts.find(c => c.id === component.id);
+            if (subCraft) {
+              accumulate(subCraft, component.count * craftCount);
+            } else {
+              resourcesCount[component.id] = (resourcesCount[component.id] || 0) + component.count * craftCount;
+            }
+          }
+        });
+
+        if (!isRoot) resourcesCount[craft.id] = (resourcesCount[craft.id] || 0) + quantity;
       }
 
-      const components = getComponentsFromRecipe(craft.recipe || []);
-      components.forEach(component => {
-        if (BASE_RESOURCES.includes(component.id)) {
-          baseResources[component.id] = (baseResources[component.id] || 0) + component.count * craftCount;
-          return;
-        }
-
-        const subCraft = crafts.find(c => c.id === component.id);
-        if (subCraft) {
-          accumulate(subCraft, component.count * craftCount);
-        } else {
-          resourcesCount[component.id] = (resourcesCount[component.id] || 0) + component.count * craftCount;
-        }
-      });
-
-      if (!isRoot) {
-        resourcesCount[craft.id] = (resourcesCount[craft.id] || 0) + quantity;
-      }
-    }
-
-      selectedItems.forEach(({ id, count }) => {
+      selectedItems.forEach(({id, count}) => {
         const craft = crafts.find(c => c.id === id);
-        if (!craft) return;
-        accumulate(craft, count, true);
+        if (craft) accumulate(craft, count, true);
       });
 
-      // Заголовок: "Для крафта надо"
-      const baseTitle = document.createElement('p');
-      baseTitle.style.marginBottom = '8px';
-      baseTitle.style.color = '#ffde59';
-      baseTitle.style.fontWeight = 'bold';
-      baseTitle.innerHTML = 'Для крафта надо:';
-      resultDiv.appendChild(baseTitle);
+      let html = `<p style="color:#ffb800; font-weight:600; margin-bottom:12px;">Для крафта нужно:</p>`;
 
-      // Материя, если есть
-      if (matterTotal > 0) {
-        const matterInfo = document.createElement('p');
-        matterInfo.style.color = '#ff59d6';
-        matterInfo.innerHTML = `
-          <img src="https://ru.minecraft.wiki/images/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%8F_%28IndustrialCraft_2%29.png?518e5" 
-          alt="Материя" style="width: 18px; height: 18px; vertical-align: middle; margin-right: 6px;">
-          Материя: <b>${matterTotal}</b>
-        `;
-        resultDiv.appendChild(matterInfo);
-      }
-
-      // Список базовых ресурсов
       if (Object.keys(baseResources).length > 0) {
-        const ul = document.createElement('ul');
-        ul.style.listStyle = 'none';
-        ul.style.paddingLeft = '20px';
-
-        for (const [id, qty] of Object.entries(baseResources)) {
-          const craft = crafts.find(c => c.id === id);
-          if (!craft) continue;
-
-          const li = document.createElement('li');
-          li.style.display = 'flex';
-          li.style.alignItems = 'center';
-          li.style.gap = '6px';
-
-          const img = document.createElement('img');
-          img.src = craft.img || 'https://via.placeholder.com/20';
-          img.style.width = '20px';
-          img.style.height = '20px';
-          img.style.borderRadius = '4px';
-
-          const text = document.createElement('span');
-          text.textContent = `${craft.name} × ${qty}`;
-
-          li.appendChild(img);
-          li.appendChild(text);
-          ul.appendChild(li);
-        }
-
-        resultDiv.appendChild(ul);
+        html += `<p style="color:#ddd; margin:8px 0 6px 0;">Базовые ресурсы:</p><ul style="list-style:none; padding:0;">`;
+        Object.entries(baseResources).forEach(([id, qty]) => {
+          const item = crafts.find(c => c.id === id);
+          if (item) html += `<li style="display:flex;align-items:center;gap:10px;margin:6px 0;"><img src="${item.img}" width="24" height="24" style="border-radius:4px;"> <span>${item.name} × <b>${qty}</b></span></li>`;
+        });
+        html += `</ul>`;
       }
 
-      // Заголовок: "Необходимые ресурсы:"
-      const title = document.createElement('h3');
-      title.textContent = '📋 Необходимые ресурсы:';
-      title.style.marginTop = '16px';
-      title.style.marginBottom = '10px';
-      title.style.fontSize = '16px';
-      title.style.color = '#ffffff';
-      title.style.fontWeight = '600';
-      resultDiv.appendChild(title);
+      html += `<p style="color:#ddd; margin:12px 0 6px 0;">Необходимые ресурсы:</p><ul style="list-style:none; padding:0;">`;
+      Object.entries(resourcesCount).forEach(([id, qty]) => {
+        const item = crafts.find(c => c.id === id);
+        if (item) html += `<li style="display:flex;align-items:center;gap:10px;margin:6px 0;"><img src="${item.img}" width="24" height="24" style="border-radius:4px;"> <span>${item.name} × <b>${qty}</b></span></li>`;
+      });
+      html += `</ul>`;
 
-      // Основное дерево ресурсов
-      const tree = document.createElement('ul');
-      tree.style.listStyle = 'none';
-      tree.style.paddingLeft = '0';
-
-      for (const [id, qty] of Object.entries(resourcesCount)) {
-        const craft = crafts.find(c => c.id === id);
-        if (!craft || qty <= 0) continue;
-
-        const li = document.createElement('li');
-        li.style.display = 'flex';
-        li.style.alignItems = 'center';
-        li.style.gap = '6px';
-
-        const img = document.createElement('img');
-        img.src = craft.img || 'https://via.placeholder.com/20';
-        img.alt = craft.name;
-        img.style.width = '20px';
-        img.style.height = '20px';
-        img.style.borderRadius = '4px';
-
-        const span = document.createElement('span');
-        span.textContent = `${craft.name} × ${qty}`;
-
-        li.appendChild(img);
-        li.appendChild(span);
-        tree.appendChild(li);
-      }
-
-      if (tree.children.length > 0) {
-        resultDiv.appendChild(tree);
-      }
-
-      // Остатки
-      if (Object.keys(leftovers).length > 0) {
-        const leftoverTitle = document.createElement('p');
-        leftoverTitle.innerHTML = '📦 Остатки после крафта:';
-        leftoverTitle.style.marginTop = '12px';
-        leftoverTitle.style.fontWeight = 'bold';
-        resultDiv.appendChild(leftoverTitle);
-
-        const ul = document.createElement('ul');
-        ul.style.listStyle = 'none';
-        ul.style.paddingLeft = '20px';
-
-        for (const [id, qty] of Object.entries(leftovers)) {
-          const craft = crafts.find(c => c.id === id);
-          if (!craft) continue;
-
-          const li = document.createElement('li');
-          li.style.display = 'flex';
-          li.style.alignItems = 'center';
-          li.style.gap = '6px';
-
-          const img = document.createElement('img');
-          img.src = craft.img || 'https://via.placeholder.com/20';
-          img.style.width = '20px';
-          img.style.height = '20px';
-          img.style.borderRadius = '4px';
-
-          const text = document.createElement('span');
-          text.textContent = `${craft.name}: +${qty}`;
-
-          li.appendChild(img);
-          li.appendChild(text);
-          ul.appendChild(li);
-        }
-
-        resultDiv.appendChild(ul);
-      }
+      resultDiv.innerHTML = html;
     }
 
-      // Модальное окно с рецептом крафта
-    const modalHistory = [];
+    window.showCraftModal = (id) => {
+      const craft = crafts.find(c => c.id === id);
+      if (!craft || !craft.recipe) return;
 
-    function showCraftModal(craft) {
-      if (!craft) return;
-      if (!craft.recipe) return; // Не открывать модалку, если рецепта нет
-      if (modalHistory.length === 0 || modalHistory[modalHistory.length - 1].id !== craft.id) {
-        modalHistory.push(craft);
-      }
-
-      modalImg.src = craft.img || 'https://via.placeholder.com/64';
-      modalImg.alt = craft.name;
+      modalImg.src = craft.img;
+      modalName.textContent = craft.name;
       modalCraft.innerHTML = '';
 
-      // Отрисовка 3x3 рецепта
-      if (!craft.recipe) {
-        modalCraft.textContent = 'Рецепт отсутствует';
-      } else {
-        for (let r = 0; r < 3; r++) {
-          for (let c = 0; c < 3; c++) {
-            const cell = document.createElement('div');
-            cell.className = 'craft-cell';
-            const itemId = craft.recipe[r][c];
-
-            if (itemId) {
-              const cellCraft = crafts.find(x => x.id === itemId);
-              if (cellCraft) {
-                const img = document.createElement('img');
-                img.src = cellCraft.img || 'https://via.placeholder.com/40';
-                img.alt = cellCraft.name;
-                img.title = cellCraft.name;
-                img.style.cursor = 'pointer';
-                img.onclick = () => showCraftModal(cellCraft);
-                cell.appendChild(img);
-              }
+      for (let r = 0; r < 3; r++) {
+        for (let c = 0; c < 3; c++) {
+          const cell = document.createElement('div');
+          cell.className = 'craft-cell';
+          const itemId = craft.recipe[r][c];
+          if (itemId) {
+            const item = crafts.find(x => x.id === itemId);
+            if (item) {
+              const img = document.createElement('img');
+              img.src = item.img;
+              img.style.cursor = 'pointer';
+              img.onclick = () => showCraftModal(itemId);
+              cell.appendChild(img);
             }
-
-            modalCraft.appendChild(cell);
           }
+          modalCraft.appendChild(cell);
         }
       }
-
-      // Удаляем старый футер (если есть)
-      const oldFooter = modalCraft.parentElement.querySelector('.modal-footer');
-      if (oldFooter) oldFooter.remove();
-
-      // Создаём футер с кнопками
-      const footer = document.createElement('div');
-      footer.className = 'modal-footer';
-      footer.style.display = 'flex';
-      footer.style.justifyContent = 'space-between';
-      footer.style.gap = '12px';
-      footer.style.marginTop = '20px';
-      footer.style.width = '100%';
-
-      // Кнопка назад
-      const backButton = document.createElement('button');
-      backButton.textContent = '← Назад';
-      backButton.style.flex = '1';
-      backButton.disabled = modalHistory.length <= 1;
-      backButton.onclick = () => {
-        if (modalHistory.length > 1) {
-          modalHistory.pop();
-          const previousCraft = modalHistory[modalHistory.length - 1];
-          showCraftModal(previousCraft);
-        }
-      };
-
-      // Кнопка закрыть
-      const closeButton = document.createElement('button');
-      closeButton.textContent = 'Закрыть';
-      closeButton.style.flex = '1';
-      closeButton.onclick = () => closeModal();
-
-      // Применяем стили, как у .modal-content button
-      [backButton, closeButton].forEach(btn => {
-        btn.style.backgroundColor = '#ff6b6b';
-        btn.style.color = 'white';
-        btn.style.border = 'none';
-        btn.style.padding = '8px 16px';
-        btn.style.borderRadius = '6px';
-        btn.style.cursor = 'pointer';
-        btn.style.fontWeight = '600';
-        btn.style.fontSize = '14px';
-        btn.onmouseenter = () => btn.style.backgroundColor = '#ff4d4d';
-        btn.onmouseleave = () => btn.style.backgroundColor = '#ff6b6b';
-      });
-
-      footer.appendChild(backButton);
-      footer.appendChild(closeButton);
-      modalCraft.parentElement.appendChild(footer);
-
       modal.style.display = 'flex';
-    }
+    };
 
-      function closeModal() {
-        modal.style.display = 'none';
-      }
+    window.closeModal = () => modal.style.display = 'none';
 
-      // Поиск с автодополнением
-    searchInput.addEventListener('input', () => {
-      const val = searchInput.value.toLowerCase();
-      renderItemGrid(); // просто обновляем сетку
+    // Инициализация
+    document.getElementById('clear-selection').addEventListener('click', () => {
+      selectedItems.length = 0;
+      renderSelectedList();
+      calculateResources();
     });
 
+    searchInput.addEventListener('input', renderItemGrid);
 
-      function clearSearch() {
-        searchInput.value = '';
-        autocompleteList.innerHTML = '';
-        autocompleteList.hidden = true;
-        renderItemGrid();
-      }
-
-      // Закрываем список автодополнения при клике вне
-      document.addEventListener('click', e => {
-        if(!searchInput.contains(e.target) && !autocompleteList.contains(e.target)) {
-          autocompleteList.hidden = true;
-        }
-      });
-
-      // Инициализация страницы
-      renderItemGrid();
-      renderSelectedList();
-    </script>
-  </body>
-  </html>
+    window.addEventListener('resize', resize);
+    resize();
+    initParticles();
+    animate();
+    renderItemGrid();
+    renderSelectedList();
+    calculateResources();
+  </script>
+</body>
+</html>
